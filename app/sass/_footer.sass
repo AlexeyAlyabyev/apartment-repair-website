@@ -77,6 +77,9 @@
 			grid-template-columns: repeat(7,1fr)
 			.contacts_greed
 				width: 70%
+				.phones
+					a
+						font-size: 20px
 			.item
 				display: block
 				font-size: 14px
@@ -84,7 +87,7 @@
 				li
 					padding: 5px 0
 					&:first-child
-						font-size: 16px
+						font-size: 14px
 						font-weight: 700
 						margin: 0 0 5px 0
 					a
@@ -101,3 +104,14 @@
 					padding: 0
 					img
 						width: 100%
+@media (min-width: 1230px)
+	.footer
+		.links_and_contacts
+			.contacts_greed
+				.phones
+					a
+						font-size: 24px
+			.item
+				li
+					&:first-child
+						font-size: 16px
