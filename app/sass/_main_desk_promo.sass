@@ -1,0 +1,132 @@
+.main_desk_promo
+	background: linear-gradient(92.61deg, #F5F5F5 11.89%, #FFFFFF 100.82%)
+	&.akcii
+		margin-bottom: 20px
+	h1
+		position: absolute
+		width: 1px
+		height: 1px
+		margin: -1px
+		border: 0
+		padding: 0
+		white-space: nowrap
+		clip-path: inset(100%)
+		clip: rect(0 0 0 0)
+    overflow: hidden
+	.send_promo
+		display: flex
+		align-items: flex-end
+		gap: 15px
+		margin: 0 0 10px 0
+		p
+			margin: 0
+			font-size: 12px
+		img
+			width: 45px
+	.promocode
+		font-size: 24px
+		font-weight: 800
+		margin: 0 0 10px 0
+		line-height: 1
+		text-transform: uppercase
+	.sale
+		font-size: 12px
+		margin: 0 0 15px 0
+		span
+			color: #FF000F
+			font-weight: 700
+	.link
+		padding: 5px 8px 5px 6px
+		color: #089EFD
+		font-size: 24px
+		font-weight: 500
+		display: flex
+		gap: 5px
+		background-color: #fff
+		border-radius: 12px
+		width: fit-content
+		p
+			margin: 0
+	.ps-wrapper
+		position: relative
+		padding-bottom: 35px
+		padding-top: 25px
+		>picture
+			img
+				position: absolute
+				max-width: 50%
+				max-height: 100%
+				left: 50%
+				bottom: 0
+@media (min-width:640px)
+	.main_desk_promo
+		.send_promo
+			margin: 0 0 15px 0
+			p
+				font-size: 24px
+				line-height: 1.15
+			img
+				width: auto
+		.promocode
+			font-size: 40px
+			margin: 0 0 20px 0
+		.sale
+			font-size: 18px
+			margin: 0 0 20px 0
+		.link
+			align-items: center
+			p
+				font-size: 36px
+				font-weight: 500
+		.ps-wrapper
+			padding-bottom: 70px
+			padding-top: 50px
+			>picture
+				left: 350px
+@media (min-width:992px)
+	.main_desk_promo
+		position: relative
+		.send_promo
+			p
+				font-size: 32px
+				font-weight: 300
+			img
+				width: 80px
+		.promocode
+			font-size: 64px
+			margin: 0 0 10px 0
+		.sale
+			font-size: 24px
+			margin: 0 0 30px 0
+		.link
+			align-items: center
+			p
+				font-size: 48px
+				font-weight: 500
+			img
+				width: 40px
+		.ps-wrapper
+			padding-bottom: 58px
+			padding-top: 58px
+			z-index: 1
+			>picture
+				left: 550px
+				max-width: none
+			&::after
+				content: "3000₽"
+				display: block
+				color: #F4F3F3
+				position: absolute
+				right: 70px
+				transform: translateY(-50%)
+				top: 50%
+				font-size: 250px
+				font-weight: 500
+				z-index: -1
+				font-family: sans-serif
+@media (min-width:1920px)
+	.main_desk_promo
+		.ps-wrapper
+			&::after
+				font-size: 320px
+				right: calc((100% - 1920px)/2 + 70px)

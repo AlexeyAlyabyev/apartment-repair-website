@@ -1,0 +1,102 @@
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	font-size: inherit
+	font-weight: inherit
+	
+html
+	font-size: 16px
+
+body
+	min-width: 320px
+	line-height: 1.2
+	font-family:  Gilroy,Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif
+	color: #23292F
+	position: relative
+	&.no_scroll
+		overflow: hidden
+
+button
+	border: 1px solid #23292F
+	border-radius: 5px
+	transition: .3s
+	font-size: 16px
+	cursor: pointer
+	font-family:  Gilroy,Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif
+	&.transparent
+		background-color: transparent
+		&:hover
+			background-color: #23292F
+			color: #fff
+	&.black
+		background-color: #23292F
+		color: #fff
+		&:hover
+			background-color: transparent
+			color: #23292F
+	&.green
+		background-color: #00B268
+		color: #fff
+		border-color: #00B268
+		&:hover
+			background-color: #23292F
+			color: #fff
+			border-color: #23292F
+
+a
+	color: #23292F
+	text-decoration: none
+	transition: .3s
+	display: block
+
+ul
+	list-style: none
+
+img
+	max-width: 100%
+
+.wrapper
+	padding: 0 15px
+	margin: 0 auto
+	max-width: 1230px
+	width: 100%
+
+@font-face
+	font-family: 'ProximaNova'
+	src: url("../fonts/ProximaNova-Regular.ttf")
+	font-weight: 400
+	font-display: swap
+
+@font-face
+	font-family: 'ProximaNova'
+	src: url("../fonts/ProximaNova-Light.ttf")
+	font-weight: 300
+	font-display: swap
+
+@font-face
+	font-family: 'ProximaNova'
+	src: url("../fonts/ProximaNova-Black.ttf")
+	font-weight: 900
+	font-display: swap
+
+@font-face
+	font-family: 'Gilroy'
+	src: url("../fonts/Gilroy-Regular.ttf")
+	font-weight: 400
+	font-display: swap
+@font-face
+	font-family: 'Gilroy'
+	src: url("../fonts/Gilroy-Medium.ttf")
+	font-weight: 500
+	font-display: swap
+@font-face
+	font-family: 'Gilroy'
+	src: url("../fonts/Gilroy-Bold.ttf")
+	font-weight: 700
+	font-display: swap
+@font-face
+	font-family: 'Gilroy'
+	src: url("../fonts/Gilroy-Extrabold.ttf")
+	font-weight: 800
+	font-display: swap

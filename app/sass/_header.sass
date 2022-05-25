@@ -1,0 +1,83 @@
+header
+	padding: 15px 0
+	.location,
+	.transparent,
+	.black,
+	.contact_us_info .work_time,
+	.contact_us_info .phone_and_messengers .phone,
+	.contact_us_info .phone_and_messengers .messengers a:last-of-type,
+		display: none
+	.wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+	.logo
+		img
+			max-height: 40px
+	.contact_us_info
+		.phone_and_messengers
+			.messengers
+				display: flex
+				gap: 10px
+				a:not(:last-of-type)
+					width: 40px
+@media (min-width: 480px)
+	header
+		.black
+			display: block
+			padding: 12px 20px
+			font-weight: 500
+			font-size: 14px
+			order: 0
+		.contact_us_info
+			order: 1
+		.logo
+			order: 0
+@media (min-width: 640px)
+	header
+		.transparent
+			display: block
+			padding: 12px 20px
+			font-weight: 500
+			font-size: 14px
+			order: 0
+@media (min-width: 768px)
+	header
+		.location
+			display: block
+			font-size: 14px
+			line-height: 1
+			.main_town
+				text-decoration: underline
+				font-weight: 500
+			.additional
+				font-weight: 300
+@media (min-width: 992px)
+	header
+		.logo
+			order: unset
+		.black,
+		.transparent
+			order: unset
+			font-size: 16px
+			padding: 12px 25px
+		.contact_us_info
+			order: unset
+			.phone_and_messengers 
+				display: flex
+				gap: 10px
+				align-items: center
+				.messengers
+					a:not(:last-of-type)
+						display: none
+					a:last-of-type
+						display: block 
+				.phone
+					display: block
+					font-size: 24px
+					font-weight: 700
+			.work_time
+				display: block
+				font-size: 12px
+				font-weight: 300
+				text-align: right

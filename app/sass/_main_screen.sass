@@ -1,0 +1,81 @@
+.main_screen
+	padding: 30px 0 0 0
+	margin: 0 0 50px 0
+	.body
+		text-align: center
+		.title
+			font-size: 28px
+			font-weight: 700
+			margin: 0 0 20px 0
+		.recommend
+			display: none
+		.img_video
+			cursor: pointer
+			margin: 0 0 20px 0
+		.video
+			display: none
+			position: fixed
+			top: 0
+			left: 0
+			z-index: 10
+			background-color: rgba(0, 0, 0, 0.75)
+			width: 100%
+			height: 100%
+			align-items: center
+			justify-content: center
+			&.active
+				display: flex
+			.cross
+				position: absolute
+				top: 0
+				right: 0
+				padding: 20px
+				cursor: pointer
+				background-color: rgba(255, 255, 255, .25)
+				display: flex
+				align-items: center
+				justify-content: center
+				&::before, &::after
+					content: ""
+					display: block
+					width: 30px
+					height: 2px
+					position: absolute
+					background-color: #fff
+				&::before
+					transform: rotate(-45deg)
+				&::after
+					transform: rotate(45deg)
+			video
+				max-width: 1230px
+				width: 100%
+		.subtitle
+			margin: 0 0 10px 0
+		button.black
+			font-size: 22px
+			padding: 20px 45px
+	.video_button
+		display: none
+@media (min-width: 768px)
+	.main_screen
+		background-image: url(../image/main_screen/main.png)
+		background-position: top right
+		background-size: contain
+		background-repeat: no-repeat
+		background-color: #f2f9fc
+		padding: 0
+		.body
+			padding: 40px
+			text-align: left
+			.recommend
+				display: block
+				font-size: 18px
+				font-weight: 700
+				margin: 0 0 20px 0
+			.img_video
+				display: none
+			.subtitle
+				font-size: 18px
+				margin: 0 0 20px 0
+		.video_button
+			display: block
