@@ -1,0 +1,123 @@
+.fixed_menu
+	display: none
+	
+@media (min-width: 992px)
+	.fixed_menu
+		display: block
+		background-color: #00B268
+		border-bottom: 1px solid #00B268
+		position: sticky
+		top: 0
+		z-index: 100
+		transition: .3s
+		&:hover
+			background-color: #fff
+			border-color: #ECECEC
+			.wrapper
+				a
+					color: #23292f
+		.wrapper
+			display: flex
+			justify-content: space-between
+			align-items: center
+			>a, div>a
+				color: #fff
+				padding: 15.5px
+				position: relative
+				&::before
+					content: ""
+					display: block
+					position: absolute
+					bottom: 13px
+					width: 0
+					height: 1px
+					background-color: #23292f
+					transition: .3s
+				&:hover
+					&::before
+						width: calc( 100% - 31px )
+			>a
+				&:first-child, &:last-child
+					&::before
+						width: 0
+					&:hover
+						&::before
+							width: calc( 100% - 15.5px )
+			div
+				&:first-child, &:last-child
+					a
+						&::before
+							width: 0
+						&:hover
+							&::before
+								width: calc( 100% - 15.5px )
+			.dropdown
+				&:first-child
+					a
+						padding-left: 0
+				&:hover
+					.dropdown_menu
+						transform: scaleY(1)
+				.dropdown_menu
+					position: absolute
+					width: 100vw
+					left: 0
+					top: calc( 100% + 1px )
+					background-color: #fff
+					transform: scaleY(0)
+					transition: .3s
+					transform-origin: center top
+					z-index: 3
+					.body
+						max-width: 1230px
+						padding: 40px 15px 90px 15px
+						display: flex
+						justify-content: space-between
+						gap: 20px
+						margin: 0 auto
+					.item
+						a
+							color: #23292f
+							padding: 0
+							margin: 0 0 15px 0
+							width: fit-content
+							&::before
+								bottom: -2px
+							&:hover
+								&::before
+									width: 100%
+									background-color: #23292f
+							&.title
+								margin: 0 0 30px 0
+								font-weight: 600
+							&.see_all
+								margin: 40px 0 0 0
+								color: #989898
+								&::before
+									background-color: #989898
+						p.title
+							margin: 0 0 30px 0
+							font-weight: 600
+						&.offer
+							padding: 20px 10px 0 20px
+							background-color: #FFEDAC
+							max-width: 240px
+							height: 340px
+							&.manufacturing
+								background-color: unset
+								background-image: url("../image/fixed_menu/manufacturing.webp")
+							.title
+								margin: 0 0 10px 0
+								font-weight: 700
+							p:not(.title)
+								font-size: 12px
+								font-weight: 300
+								margin: 0 0 20px 0
+							button
+								font-size: 12px
+								text-decoration: underline
+								margin: 0 0 20px 0
+								background: none
+								border: none
+			>a:last-child
+				padding-right: 0
