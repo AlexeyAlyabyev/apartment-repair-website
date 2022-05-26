@@ -1,24 +1,5 @@
 @@include('jquery.min.js')
 
-$(".mainpage-img-video").click(function () {
-	$(".mainpage-video").addClass("mainpage-video-active");
-	$(".mainpage-video video").trigger('play');
-});
-$(".main-pg-video").click(function () {
-	$(".mainpage-video").addClass("mainpage-video-active");
-	$(".mainpage-video video").trigger('play');
-});
-$(document).click(function (e) {
-	if ($(e.target).hasClass("mainpage-video-active")) {
-		$(".mainpage-video").removeClass("mainpage-video-active");
-		$(".mainpage-video video").trigger('pause');
-	}
-});
-$(".mainpage-video .cross").click(function () {
-	$(".mainpage-video").removeClass("mainpage-video-active");
-	$(".mainpage-video video").trigger('pause');
-});
-
 // Новые скрипты от 05.2022
 $(function(){
 
@@ -64,15 +45,39 @@ $(function(){
 
 	// Триггер видео на главном экране по клику
 	$(".main_screen .body .img_video, .main_screen .video_button .play").click(function(){
-		$(".main_screen .body .video").toggleClass("active");
-		$(".main_screen .body .video video").trigger("play");
+		$(".fazenda_video").toggleClass("active");
+		$(".fazenda_video video").trigger("play");
 	});
 
 	$(document).click(function(e) {
-		if ($(e.target).is(".main_screen .body .video.active") || $(e.target).is(".main_screen .body .video.active .cross")) {
-			$(".main_screen .body .video").toggleClass("active");
-			$(".main_screen .body .video video").trigger("pause");
+		if ($(e.target).is(".fazenda_video.active") || $(e.target).is(".fazenda_video.active .cross")) {
+			$(".fazenda_video").toggleClass("active");
+			$(".fazenda_video video").trigger("pause");
 		}
+	});
+
+
+	const main_screen_swiper = new Swiper('.main_screen_swiper', {
+		loop: true,
+		speed: 500,
+		enabled: false,
+
+		breakpoints: {
+			1230: {
+			enabled: true,
+			slidesPerView: 1,
+			speed: 500,
+			},
+		},
+
+		autoplay: {
+			delay: 5000,
+		},
+	
+		// If we need pagination
+		pagination: {
+			el: '.swiper-pagination',
+		},
 	});
 
 });

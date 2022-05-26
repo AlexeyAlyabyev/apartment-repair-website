@@ -1,0 +1,219 @@
+.main_screen_special_offer
+	// margin: 0 0 50px 0
+	overflow: hidden
+	background: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 100%)
+	.body
+		max-width: 1230px
+		padding: 30px 105px 45px 15px
+		position: relative
+		margin: 0 auto
+		h1
+			font-size: 32px
+			font-weight: 800
+		.subtitle
+			font-size: 22px
+			margin: 0 0 10px 0
+		.price
+			font-size: 40px
+			font-weight: 800
+			color: #EB3323
+			margin: 0 0 15px 0
+			span
+				font-size: 24px
+				font-weight: 400
+				color: #23292f
+				&:first-child
+					display: none
+		.offer
+			margin: 0 0 30px 0
+			.red
+				background-color: #EB3323
+				color: #fff
+				padding: 5px 22px
+				border-radius: 5px
+				font-size: 12px
+				width: fit-content
+				transform: skew(-20deg, 0)
+				box-shadow: 1.98282px 1.98282px 4.95706px rgba(0, 0, 0, 0.25)
+				margin: 0 0 0 20px
+				position: relative
+				span
+					display: block
+					transform: skew(20deg, 0)
+					font-weight: 500
+			.fixtures
+				background-color: #fff
+				border-radius: 20px
+				box-shadow: 0px 1.98282px 14.8712px rgba(0, 0, 0, 0.15)
+				padding: 10px 20px 17px 0
+				position: relative
+				width: 165px
+				transform: translateY(-2px) skew(-20deg, 0)
+				margin: 0 0 0 10px
+				img
+					position: absolute
+					transform: skew(20deg, 0)
+					left: -25px
+					top: -23px
+					width: 100px
+				p
+					transform: skew(20deg, 0)
+					font-size: 14px
+					font-weight: 700
+					width: fit-content
+					margin: 0 0 0 auto
+					span
+						display: none
+		.accurate_calculation
+			font-size: 14px
+			font-weight: 700
+			margin: 0 0 10px 0
+			span
+				display: block
+		button
+			padding: 13px 24px
+		>img:not(.image_on_top)
+			display: none
+		.image_on_top
+			position: absolute
+			bottom: 0
+			right: -90px
+			z-index: 3
+			max-width: 82%
+			max-height: 100%
+		
+@media (min-width: 480px)
+	.main_screen_special_offer
+		.body
+			.accurate_calculation
+				span
+					display: inline
+			.image_on_top
+				right: -50px
+
+@media (min-width: 640px)
+	.main_screen_special_offer
+		.body
+			.accurate_calculation
+				span
+					display: inline
+			.image_on_top
+				right: 0
+
+@media (min-width: 768px)
+	.main_screen_special_offer
+		.body
+			padding: 50px 105px 70px 15px
+			h1
+				font-size: 40px
+			.subtitle
+				font-size: 28px
+				margin: 0 0 20px 0
+			.price
+				font-size: 48px
+				margin: 0 0 60px 0
+				span
+					font-size: 28px
+			.offer
+				position: absolute
+				left: 340px
+				top: 135px
+				.red
+					font-size: 16px
+					padding: 8px 30px
+				.fixtures
+					width: 215px
+					p
+						font-size: 20px
+					img
+						width: 127px
+						left: -40px
+						top: -35px
+			.accurate_calculation
+				font-size: 20px
+				margin: 0 0 25px 0
+			button
+				padding: 20px 45px
+				font-size: 22px
+			>img:not(.image_on_top)
+				display: inline
+				position: absolute
+				transform: translate(15px, -30px)
+			.image_on_top
+				right: -40px
+
+@media (min-width: 992px)
+	.main_screen_special_offer
+		.body
+			padding: 73px 15px
+			h1
+				font-size: 48px
+			.subtitle
+				font-size: 36px
+				margin: 0 0 10px 0
+			.price
+				font-size: 67px
+				span
+					font-size: 36px
+					&:first-child
+						display: inline
+			.offer
+				left: 500px
+				top: 170px
+				.red
+					font-size: 24px
+					z-index: 1
+				.fixtures
+					margin: 0 0 0 -40px
+					width: 360px
+					padding: 30px 80px 15px 0
+					transform: translateY(-20px) skew(-20deg,0)
+					border-radius: 35px
+					p
+						font-size: 24px
+						span
+							display: block
+							font-weight: 400
+							font-size: 16px
+							margin: 5px 0 0 0
+					img
+						left: 5px
+						top: 10px
+			.accurate_calculation
+				font-size: 24px
+			.image_on_top
+				right: -100px
+
+@media (min-width: 1230px)
+	.main_screen_special_offer
+		.body
+			.image_on_top
+				right: 0
+			.offer
+				left: 630px
+
+@media (min-width: 2560px)
+	.main_screen_special_offer
+		.body
+			padding: 115px 15px
+			h1
+				font-size: 64px
+			.subtitle
+				font-size: 48px
+			.price
+				font-size: 80px
+				span
+					font-size: 48px
+			.offer
+				left: 650px
+				top: 290px
+			.accurate_calculation
+				font-size: 32px
+			button
+				padding: 25px 60px
+				font-size: 28px
+			>img:not(.image_on_top)
+				width: 130px
+			.image_on_top
+				right: -100px
+				height: 90%
