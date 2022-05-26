@@ -16,8 +16,18 @@
 	@@include('_header.html')
 	@@include('_mobile_menu.html')
 	@@include('_fixed_menu.html')
-	<!-- @@include('_main_screen.html') -->
-	@@include('_main_screen_special_offer.html')
+	<div class="main_screen_swiper swiper">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				@@include('_main_screen_special_offer.html')
+			</div>
+			<div class="swiper-slide">
+				@@include('_main_screen.html')
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	@@include('_fazenda_video.html')
 
 	<!-- @@include('_catalog.html')
 	@@include('_cena.html')
