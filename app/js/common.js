@@ -56,28 +56,113 @@ $(function(){
 		}
 	});
 
-
-	const main_screen_swiper = new Swiper('.main_screen_swiper', {
-		loop: true,
-		speed: 500,
-		enabled: false,
-
-		breakpoints: {
-			1230: {
-			enabled: true,
-			slidesPerView: 1,
+	if ($(".main_screen_swiper").length) {
+		const main_screen_swiper = new Swiper('.main_screen_swiper', {
+			loop: true,
 			speed: 500,
-			},
-		},
-
-		autoplay: {
-			delay: 5000,
-		},
+			enabled: false,
 	
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-	});
+			breakpoints: {
+				1230: {
+				enabled: true,
+				slidesPerView: 1,
+				speed: 500,
+				},
+			},
+	
+			autoplay: {
+				delay: 5000,
+			},
+		
+			pagination: {
+				el: '.any_types_of_ceiling .swiper-pagination',
+				clickable: true,
+			},
+		});
+	}
 
+	// Слайдер типов потолков на главной
+	var any_types_of_ceiling_thumb = [];
+	var any_types_of_ceiling = [];
+	if ($(".any_types_of_ceiling").length) {
+		if (window.innerWidth < 992) {
+			const any_types_of_ceiling = new Swiper('.any_types_of_ceiling .wrapper .swiper.mobile', {
+				loop: true,
+				speed: 500,
+				spaceBetween: 10,
+				slidesPerView: "auto",
+			});
+		} else {
+
+			$(".any_types_of_ceiling .desktop .types_tumbler p").click(function(){
+				swiperWithThumbInit($(".any_types_of_ceiling .desktop .swiper_thumb").eq($(this).index()), $(".any_types_of_ceiling .desktop .main_swiper").eq($(this).index()));
+			});
+
+			// $(".desktop .swiper_thumb").each(function(index){
+			// 	any_types_of_ceiling_thumb[index] = new Swiper($(this)[0], {
+			// 		loop: true,
+			// 		spaceBetween: 20,
+			// 		slidesPerView: 5,
+			// 		loopedSlides: 5,
+			// 		touchRatio: 0.2,
+			// 		slideToClickedSlide: true,
+			// 	});
+			// });
+			// $(".desktop .main_swiper").each(function(index){
+			// 	any_types_of_ceiling[index] = new Swiper($(this)[0], {
+			// 		loop: true,
+			// 		spaceBetween: 10,
+			// 		loopedSlides: 5,
+			// 		navigation: {
+			// 			nextEl: $(this).find('.swiper-button-next')[0],
+			// 			prevEl: $(this).find('.swiper-button-prev')[0],
+			// 		},
+			// 		pagination: {
+			// 			el: $(this).find(".swiper-pagination")[0],
+			// 			type: "fraction",
+			// 		},
+			// 	});
+			// 	any_types_of_ceiling[index].controller.control = any_types_of_ceiling_thumb[index];
+			// 	any_types_of_ceiling_thumb[index].controller.control = any_types_of_ceiling[index];
+			// });
+
+		}
+	}
+	
+	$(".any_types_of_ceiling .desktop .types_tumbler p").click(function(){
+		$(this).siblings("p").removeClass("active");
+		$(this).addClass("active");
+		$(".any_types_of_ceiling .desktop .item.active").removeClass("active");
+		$(".any_types_of_ceiling .desktop .item").eq($(this).index()).addClass("active");
+	});
 });
+
+function swiperWithThumbInit(thumb_swiper, swiper){
+	if (thumb_swiper[0].swiper == undefined) {
+		any_types_of_ceiling_thumb[thumb_swiper.index()] = new Swiper(thumb_swiper[0], {
+			loop: true,
+			spaceBetween: 20,
+			slidesPerView: 5,
+			loopedSlides: 5,
+			touchRatio: 0.2,
+			slideToClickedSlide: true,
+		});
+
+		any_types_of_ceiling[swiper.index()] = new Swiper(swiper[0], {
+			loop: true,
+			spaceBetween: 10,
+			loopedSlides: 5,
+			navigation: {
+				nextEl: swiper.find('.swiper-button-next')[0],
+				prevEl: swiper.find('.swiper-button-prev')[0],
+			},
+			pagination: {
+				el: swiper.find('.swiper-pagination')[0],
+				type: "fraction",
+			},
+		});
+
+		any_types_of_ceiling[swiper.index()].controller.control = any_types_of_ceiling_thumb[thumb_swiper.index()];
+		any_types_of_ceiling_thumb[thumb_swiper.index()].controller.control = any_types_of_ceiling[swiper.index()];
+	}
+}

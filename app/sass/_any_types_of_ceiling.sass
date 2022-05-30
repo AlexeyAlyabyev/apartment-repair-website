@@ -1,0 +1,182 @@
+.any_types_of_ceiling
+	margin: 0 0 40px 0
+	.title
+		text-align: center
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 12px 0
+		span
+			display: none
+	.mobile
+		margin: 0 0 40px 0
+		.body
+			.item
+				width: 86%
+				img
+					margin: 0 0 20px 0
+					border-radius: 10px
+				.item_title
+					font-size: 16px
+					font-weight: 600
+					margin: 0 0 20px 0
+				.price_description
+					font-size: 12px
+					margin: 0 0 5px 0
+				.price
+					font-weight: 600
+	.desktop
+		display: none
+
+@media (min-width: 640px)
+	.any_types_of_ceiling
+		.mobile
+			.body
+				.item
+					width: 45%
+
+@media (min-width: 768px)
+	.any_types_of_ceiling
+		.title
+			font-size: 32px
+			margin: 0 0 20px 0
+		.mobile
+			.body
+				.item
+					.item_title
+						font-size: 20px
+					.price_description
+						font-size: 16px
+					.price
+						font-size: 18px
+
+@media (min-width: 992px)
+	.any_types_of_ceiling
+		margin: 0 0 100px 0
+		.title
+			display: flex
+			justify-content: space-between
+			margin: 0 0 40px 0
+			h2
+				text-align: left
+				font-size: 48px
+				min-width: 510px
+				width: 510px
+			span
+				display: block
+				text-align: right
+				font-size: 22px
+				font-weight: 600
+				align-self: flex-end
+		.mobile
+			display: none
+		.desktop
+			display: block
+			.types_tumbler
+				display: flex
+				justify-content: space-between
+				background-color: #F6F6F6
+				padding: 10px 0
+				margin: 0 0 30px 0
+				p
+					padding: 3px 13px
+					flex-basis: 100%
+					min-width: fit-content
+					text-align: center
+					cursor: pointer
+					position: relative
+					&:not(:last-child)
+						border-right: 1px solid #D3D3D3
+					&::after
+						content: ""
+						display: block
+						position: absolute
+						bottom: -10px
+						width: 0%
+						left: 10%
+						height: 1px
+						background-color: #00b268
+						transition: .3s
+					&:hover, &.active
+						&::after
+							width: 80%			
+			.item
+				display: flex
+				gap: 20px
+				flex-wrap: wrap
+				&:not(.active)
+					display: none
+				.main_swiper
+					min-width: calc( 100% / 1200 * 707 )
+					width: calc( 100% / 1200 * 707 )
+					line-height: 0
+					.swiper-button-prev, .swiper-button-next 
+						color: #989898
+						width: 40px
+						height: 40px
+						background-color: #fff
+						border-radius: 40px
+						border: 1px solid #989898
+						display: flex
+						align-items: center
+						justify-content: center
+						&::after
+							content: ""
+							display: block
+							width: 8px
+							height: 8px
+							border-radius: 2px
+							transform: translateX(-3px) rotate(45deg)
+							border-top: 2px solid #989898
+							border-right: 2px solid #989898
+							border-left: 2px solid transparent
+							border-bottom: 2px solid transparent
+							position: absolute
+							transition: .3s
+						&:hover
+							&::after
+								border-top-color: #00b268
+								border-right-color: #00b268
+					.swiper-button-prev
+						left: 15px
+						&::after
+							transform: translateX(3px) rotate(-135deg)
+					.swiper-button-next 
+						right: 15px
+					.swiper-pagination
+						text-align: right
+						right: 15px
+						bottom: 20px
+						left: auto
+				.item_info
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					min-width: calc( 100% / 1200 * 468 )
+					width: calc( 100% / 1200 * 468 )
+					.top
+						h3
+							font-size: 24px
+							font-weight: 600
+							margin: 0 0 20px 0
+							line-height: 1
+						p
+							margin: 0 0 20px 0
+							font-size: 14px
+					.price
+						margin: 0 0 40px 0
+						p
+							margin: 0 0 10px 0
+						.amount
+							font-size: 24px
+							font-weight: 700
+							line-height: 1
+					a.transparent
+						width: fit-content
+						padding: 20px 45px
+				.swiper_thumb
+					width: 100%
+					min-width: 100%
+					.swiper-slide
+						filter: brightness(.5)
+					.swiper-slide-active
+						filter: none
