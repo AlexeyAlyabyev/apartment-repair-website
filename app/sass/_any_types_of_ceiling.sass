@@ -177,6 +177,28 @@
 					width: 100%
 					min-width: 100%
 					.swiper-slide
-						filter: brightness(.5)
-					.swiper-slide-active
-						filter: none
+						aspect-ratio: 224 / 147
+						line-height: 0
+						max-width: calc( (100% - 80px) / 5 )
+						margin: 0 20px 0 0
+@media (min-width: 1230px)
+	.any_types_of_ceiling
+		.title
+			span
+				max-width: 530px
+		.desktop
+			.types_tumbler
+				p
+					font-size: 20px
+			.item
+				.item_info
+					.top
+						h3
+							font-size: 32px
+						p
+							font-size: 16px
+					.price
+						.amount
+							font-size: 32px
+					a.transparent
+						font-size: 20px
