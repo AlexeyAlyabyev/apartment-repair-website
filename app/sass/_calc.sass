@@ -1,0 +1,101 @@
+.calc
+	margin: 0 0 50px 0
+	.title
+		text-align: center
+		margin: 0 0 15px 0
+		.strong
+			font-size: 28px
+			font-weight: 700
+			h2
+				display: inline-block
+			span
+				display: none
+		p
+			display: none
+	form.mobile
+		box-shadow: 4px 4px 15px rgba(0, 0, 0, .2)
+		border-radius: 5px
+		padding: 30px 15px
+		text-align: center
+		max-width: 480px
+		margin: 0 auto
+		.area_by_number
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: 10px
+			margin: 0 0 20px 0
+			font-weight: 700
+			input
+				text-align: center
+				font-size: 22px
+				box-shadow: inset 0 4px 4px rgba(0, 0, 0, .15)
+				border-radius: 2px
+				border: 1px solid #dcdcdc
+				padding: 5px 10px
+		.area_by_slider
+			display: flex
+			gap: 10px
+			align-items: center
+			justify-content: center
+			margin: 0 0 45px 0
+			color: #979797
+			.filling
+				background-color: #fff
+				height: 10px
+				border-radius: 10px
+				width: 100%
+				box-shadow: inset 0 4px 4px rgba(0, 0, 0, .25)
+				position: relative
+				*
+					user-select: none
+				.green
+					border-radius: 10px
+					background-color: #00b268
+					height: 100%
+					box-shadow: inset 0 4px 4px rgba(0, 0, 0, .25)
+					width: 20%
+				.circle
+					position: absolute
+					left: calc( 20% - 25px/2 )
+					border: 5px solid #fff
+					width: 25px
+					height: 25px
+					background-color: #00b268
+					border-radius: 25px
+					box-shadow: 2px 2px 8px rgba(0, 0, 0, .3)
+					bottom: calc( 100% - (25px + 10px)/2 )
+					cursor: pointer
+				.current_value
+					position: absolute
+					left: calc( 20% - 18px/2 )
+					top: 20px
+		.ceiling_type
+			display: flex
+			align-items: center
+			justify-content: center
+			gap: 20px
+			margin: 0 0 20px 0
+			p
+				padding: 10px 20px
+				border: 1px solid #dcdcdc
+				border-radius: 2px
+				cursor: pointer
+				&.active
+					border-color: #00b268
+		.description
+			margin: 0 0 20px 0
+		.price
+			margin: 0 0 20px 0
+			font-size: 22px
+			.value
+				font-size: 36px
+				font-weight: 700
+		button.black
+			padding: 20px 45px
+	.desktop
+		display: none
+
+@media (min-width: 992px)
+	.calc
+		margin: 0 0 100px 0

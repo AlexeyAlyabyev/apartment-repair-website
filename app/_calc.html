@@ -1,0 +1,36 @@
+<div class="calc">
+	<div class="wrapper">
+		<div class="title">
+			<div class="strong">
+				<h2>Рассчитайте стоимость натяжного потолка </h2>
+				<span>с установкой</span>
+			</div>
+			<p>После того, как вы получите смету цена не изменится ни на рубль</p>
+		</div>
+		<form class="mobile" action="phpzzayavka.php" method="POST">
+			<div class="area_by_number">
+				<p>Площадь потолка</p>
+				<input type="number" min="5" value="20" name="square" max="90" required>
+				<p>м²</p>
+			</div>
+			<div class="area_by_slider">
+				<p class="min">0</p>
+				<div class="filling">
+					<div class="green"></div>
+					<div class="circle"></div>
+					<p class="current_value">20</p>
+				</div>
+				<p class="max">90</p>
+			</div>
+			<div class="ceiling_type">
+				<p data-price="680" class="active">ПВХ</p>
+				<p data-price="2390">Ткань</p>
+			</div>
+			<p class="description">Стоимость полотна <strong>с установкой!</strong></p>
+			<div class="price">от <span class="value">0</span> руб</div>
+			<!-- [[phpZayavka]] -->
+			<input type="hidden" name="summa" required>
+			<button class="black">Оставить заявку</button>
+		</form>
+	</div>
+</div>
