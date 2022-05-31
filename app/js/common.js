@@ -56,28 +56,77 @@ $(function(){
 		}
 	});
 
-
-	const main_screen_swiper = new Swiper('.main_screen_swiper', {
-		loop: true,
-		speed: 500,
-		enabled: false,
-
-		breakpoints: {
-			1230: {
-			enabled: true,
-			slidesPerView: 1,
+	if ($(".main_screen_swiper").length) {
+		const main_screen_swiper = new Swiper('.main_screen_swiper', {
+			loop: true,
 			speed: 500,
-			},
-		},
-
-		autoplay: {
-			delay: 5000,
-		},
+			enabled: false,
 	
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-	});
+			breakpoints: {
+				1230: {
+				enabled: true,
+				slidesPerView: 1,
+				speed: 500,
+				},
+			},
+	
+			autoplay: {
+				delay: 5000,
+			},
+		
+			pagination: {
+				el: '.main_screen_swiper .swiper-pagination',
+				clickable: true,
+			},
+		});
+	}
 
+	// Слайдер типов потолков на главной
+	var any_types_of_ceiling_thumb = [];
+	var any_types_of_ceiling = [];
+	if ($(".any_types_of_ceiling").length) {
+		if (window.innerWidth < 992) {
+			const any_types_of_ceiling = new Swiper('.any_types_of_ceiling .wrapper .swiper.mobile', {
+				loop: true,
+				speed: 500,
+				spaceBetween: 10,
+				slidesPerView: "auto",
+			});
+		} else {
+			$(".desktop .swiper_thumb").each(function(index){
+				any_types_of_ceiling_thumb[index] = new Swiper($(this)[0], {
+					loop: true,
+					spaceBetween: 20,
+					slidesPerView: 5,
+					loopedSlides: 6,
+					touchRatio: 0.2,
+					slideToClickedSlide: true,
+				});
+			});
+			$(".desktop .main_swiper").each(function(index){
+				any_types_of_ceiling[index] = new Swiper($(this)[0], {
+					loop: true,
+					spaceBetween: 10,
+					loopedSlides: 6,
+					navigation: {
+						nextEl: $(this).find('.swiper-button-next')[0],
+						prevEl: $(this).find('.swiper-button-prev')[0],
+					},
+					pagination: {
+						el: $(this).find(".swiper-pagination")[0],
+						type: "fraction",
+					},
+				});
+				any_types_of_ceiling[index].controller.control = any_types_of_ceiling_thumb[index];
+				any_types_of_ceiling_thumb[index].controller.control = any_types_of_ceiling[index];
+			});
+		}
+	}
+	
+	$(".any_types_of_ceiling .desktop .types_tumbler p").click(function(){
+		$(this).siblings("p").removeClass("active");
+		$(this).addClass("active");
+		$(".any_types_of_ceiling .desktop .item.active").removeClass("active");
+		$(".any_types_of_ceiling .desktop .item").eq($(this).index()).addClass("active");
+	});
 });
