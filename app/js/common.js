@@ -234,4 +234,48 @@ $(function(){
 		$(".calc form.mobile .price .value").html(final_price);
 		$(".calc input[name='summa']").val(final_price);
 	}
+
+	// ПК Калькулятор
+	$(".calc form.desktop .value button").click(function(e){
+		let value_change_direction = ($(this).html() + "1");
+		let input = $(this).siblings("input");
+		input.val(+value_change_direction + +input.val());
+		if (+input.val() < +input[0].min) input.val(+input[0].min);
+		calculatePrice();
+	});
+	$(".calc form.desktop .value input").on("change keydown", function(){
+		let self = $(this);
+		setTimeout(function(){
+			if (+self.val() < +self[0].min) self.val(+self[0].min);
+			self.val(Math.round(self.val()));
+			calculatePrice();
+		},50)
+	});
+
+	$(".calc form.desktop .facture .body label").click(function(){
+		let switchable_class = $(this).siblings("input").eq($(this).index("label")).attr("class");
+		$(".calc form.desktop .manufacturer .body input:not(." + switchable_class + ")").addClass("hidden");
+		$(".calc form.desktop .manufacturer .body input." + switchable_class).removeClass("hidden");
+		if ($(".calc form.desktop .manufacturer .body input:checked").hasClass("hidden")) {
+			$(".calc form.desktop .manufacturer .body input:not(.hidden)+label").eq(0).click();
+		}
+		calculatePrice();
+	});
+
+	$(".calc form.desktop .manufacturer .body input").change(calculatePrice);
+
+	function calculatePrice(){
+		let manufacturer_price = +$(".calc form.desktop .params .manufacturer .body input:checked").attr("data-price");
+		let square = +$(".calc form.desktop .params .room .square input[name='square']").val();
+		let angles = +$(".calc form.desktop .params .room .angles input[name='angles']").val();
+		let fixtures = +$(".calc form.desktop .params .light .fixtures input[name='fixtures']").val();
+		let chandeliers = +$(".calc form.desktop .params .light .chandeliers input[name='chandeliers']").val();
+		let final_price = manufacturer_price * square + 
+											(angles - 4) * 230 + 
+											fixtures * 290 + 
+											chandeliers * 450;
+
+		$(".calc form.desktop .bottom .final_price strong span").html(final_price.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 "));
+		$(".calc form.desktop .params .room .square input[name='final_price']").val(final_price);		
+	}
 });
