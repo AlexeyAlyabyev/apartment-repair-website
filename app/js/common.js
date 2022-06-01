@@ -84,10 +84,10 @@ $(function(){
 	// Слайдер типов потолков на главной
 	if ($(".any_types_of_ceiling").length) {
 		if (window.innerWidth < 992) {
-			const any_types_of_ceiling = new Swiper('.any_types_of_ceiling .wrapper .swiper.mobile', {
+			const any_types_of_ceiling = new Swiper('.any_types_of_ceiling .swiper.mobile', {
 				loop: true,
 				speed: 500,
-				spaceBetween: 10,
+				spaceBetween: 15,
 				slidesPerView: "auto",
 			});
 
@@ -277,5 +277,14 @@ $(function(){
 
 		$(".calc form.desktop .bottom .final_price strong span").html(final_price.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 "));
 		$(".calc form.desktop .params .room .square input[name='final_price']").val(final_price);		
+	}
+
+	if ($(".material_choise").length && window.innerWidth < 1230) {
+		const material_choise = new Swiper('.material_choise .body.swiper', {
+			loop: true,
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
 	}
 });
