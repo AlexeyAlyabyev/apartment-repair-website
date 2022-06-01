@@ -3,9 +3,9 @@
 		<div class="title">
 			<div class="strong">
 				<h2>Рассчитайте стоимость натяжного потолка </h2>
-				<span>с установкой</span>
+				<span>с установкой</span>
 			</div>
-			<p>После того, как вы получите смету цена не изменится ни на рубль</p>
+			<p>После того, как вы получите смету цена не изменится ни на рубль</p>
 		</div>
 		<form class="mobile" action="phpzzayavka.php" method="POST">
 			<div class="area_by_number">
@@ -34,37 +34,85 @@
 		</form>
 
 		<form class="desktop">
-			<div class="facture">
-				<p class="title">1. Фактура</p>
-				<div class="body">
-					<input id="facture1" type="radio" value="Матовые" name="facture" class="mat" checked> 	<label for="facture1">Матовые</label>
-					<input id="facture2" type="radio" value="Глянцевые" name="facture" class="glyanc"> 			<label for="facture2">Глянцевые</label>
-					<input id="facture3" type="radio" value="Сатиновые" name="facture" class="sat"> 				<label for="facture3">Сатиновые</label>
-					<input id="facture4" type="radio" value="Тканевые" name="facture" class="tkan"> 				<label for="facture4">Тканевые</label>
+			<div class="params">
+				<div class="facture">
+					<p class="title">1. Фактура</p>
+					<div class="body">
+						<input id="facture1" type="radio" value="Матовые" name="facture" class="mat" checked> 	<label for="facture1">Матовые</label>
+						<input id="facture2" type="radio" value="Глянцевые" name="facture" class="glyanc"> 			<label for="facture2">Глянцевые</label>
+						<input id="facture3" type="radio" value="Сатиновые" name="facture" class="sat"> 				<label for="facture3">Сатиновые</label>
+						<input id="facture4" type="radio" value="Тканевые" name="facture" class="tkan"> 				<label for="facture4">Тканевые</label>
+					</div>
+				</div>
+				<div class="manufacturer">
+					<p class="title">2. Производитель</p>
+					<div class="body">
+						<input id="manufacturer1" type="radio" value="Classic" name="manufacturer" data-price="430" class="mat glyanc sat" checked> 	<label for="manufacturer1">Classic</label>
+						<input id="manufacturer2" type="radio" value="Premium" name="manufacturer" data-price="480" class="mat glyanc sat"> 					<label for="manufacturer2">Premium</label>
+						<input id="manufacturer3" type="radio" value="Evolution" name="manufacturer" data-price="580" class="mat glyanc sat"> 				<label for="manufacturer3">Evolution</label>
+						<input id="manufacturer4" type="radio" value="Cold Stretch" name="manufacturer" data-price="680" class="mat"> 								<label for="manufacturer4">Cold Stretch</label>
+						<input id="manufacturer5" type="radio" value="Teqtum KM2" name="manufacturer" data-price="730" class="mat"> 									<label for="manufacturer5">Teqtum KM2</label>
+						<input id="manufacturer6" type="radio" value="Teqtum EURO" name="manufacturer" data-price="890" class="mat glyanc sat"> 			<label for="manufacturer6">Teqtum EURO</label>
+						<input id="manufacturer7" type="radio" value="Lumfer" name="manufacturer" data-price="950" class="mat glyanc sat"> 						<label for="manufacturer7">Lumfer</label>
+						<input id="manufacturer8" type="radio" value="D-premium" name="manufacturer" data-price="970"  class="tkan hidden"> 					<label for="manufacturer8">D-premium</label>
+						<input id="manufacturer9" type="radio" value="Clipso" name="manufacturer" data-price="5000"  class="tkan hidden"> 						<label for="manufacturer9">Clipso</label>
+						<input id="manufacturer10" type="radio" value="Cerutti" name="manufacturer" data-price="6000"  class="tkan hidden"> 					<label for="manufacturer10">Cerutti</label>
+					</div>
+				</div>
+				<div class="room">
+					<p class="title">3. Помещение</p>
+					<div class="square">
+						<p>Площадь, м²</p>
+						<div class="value">
+							<button type="button">-</button>
+							<input type="number" name="square" value="0" min="0" required>
+							<button type="button">+</button>
+						</div>
+					</div>
+	
+					<div class="angles">
+						<p>Углы, шт</p>
+						<div class="value">
+							<button type="button">-</button>
+							<input type="number" name="angles" value="4" min="4" required>
+							<button type="button">+</button>
+						</div>
+					</div>
+				</div>
+	
+				<div class="light">
+					<p class="title">4. Освещение</p>
+					<div class="fixtures">
+						<p>Светильники, шт</p>
+						<div class="value">
+							<button type="button">-</button>
+							<input type="number" name="fixtures" value="0" min="0" required> 
+							<button type="button">+</button>
+						</div>
+					</div>
+	
+					<div class="chandeliers">
+						<p>Люстры, шт</p>
+						<div class="value">
+							<button type="button">-</button>
+							<input type="number" name="chandeliers" value="0" min="0" required>
+							<button type="button">+</button>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="manufacturer">
-				<p class="title">2. Производитель</p>
-				<div class="body">
-					<input id="manufacturer1" type="radio" value="Classic" name="manufacturer" class="mat glyanc sat" checked> 	<label for="manufacturer1">Classic</label>
-					<input id="manufacturer2" type="radio" value="Premium" name="manufacturer" class="mat glyanc sat"> 					<label for="manufacturer2">Premium</label>
-					<input id="manufacturer3" type="radio" value="Evolution" name="manufacturer" class="mat glyanc sat"> 				<label for="manufacturer3">Evolution</label>
-					<input id="manufacturer4" type="radio" value="Cold Stretch" name="manufacturer" class="mat"> 								<label for="manufacturer4">Cold Stretch</label>
-					<input id="manufacturer5" type="radio" value="Teqtum KM2" name="manufacturer" class="mat"> 									<label for="manufacturer5">Teqtum KM2</label>
-					<input id="manufacturer6" type="radio" value="Teqtum EURO" name="manufacturer" class="mat glyanc sat"> 			<label for="manufacturer6">Teqtum EURO</label>
-					<input id="manufacturer7" type="radio" value="Lumfer" name="manufacturer" class="mat glyanc sat"> 					<label for="manufacturer7">Lumfer</label>
-					<input id="manufacturer8" type="radio" value="D-premium" name="manufacturer"  class="tkan"> 								<label for="manufacturer8">D-premium</label>
-					<input id="manufacturer9" type="radio" value="Clipso" name="manufacturer"  class="tkan"> 										<label for="manufacturer9">Clipso</label>
-					<input id="manufacturer10" type="radio" value="Cerutti" name="manufacturer"  class="tkan"> 									<label for="manufacturer10">Cerutti</label>
+			<p class="disclaimer">
+				Если введённые вами параметры верны, то это окончательная стоимость полотен с установкой!
+				Фактуру, цвет, аксессуары можно выбрать по образцам у замерщика.
+			</p>
+			<div class="bottom">
+				<p class="final_price">Итоговая стоимость: <strong><span>0</span> рублей</strong></p>
+				<div class="contact_data">
+					<input type="tel" name="phone" placeholder="Ваш телефон" required>
+					<input type="hidden" name="final_price" required>
+					<!-- [[phpZayavka]] -->
+					<button class="black">Рассчитать</button>
 				</div>
-			</div>
-			<div class="room">
-				<p class="title">3. Помещение</p>
-
-			</div>
-			<div class="light">
-				<p class="title">4. Освещение</p>
-
 			</div>
 		</form>
 	</div>

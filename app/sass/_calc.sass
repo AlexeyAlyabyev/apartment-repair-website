@@ -101,9 +101,12 @@
 		div.title
 			text-align: left
 			display: flex
+			gap: 20px
 			align-items: flex-end
+			justify-content: space-between
 			margin: 0 0 40px 0
 			.strong
+				max-width: 450px
 				h2
 					display: inline
 				span
@@ -116,68 +119,177 @@
 		form.mobile
 			display: none
 		form.desktop
-			display: flex
-			gap: 15px
-			>*
-				p.title
-					padding: 15px 0
-					font-weight: 700
-					text-align: center
-					background-color: #F6F6F6
-					border-radius: 5px
-			.facture
-				width: calc( (100% - 45px) / 4 * 1.1 )
-				p.title
-					margin: 0 0 46px 0
-				.body
-					display: flex
-					gap: 15px
-					flex-wrap: wrap
-					label
-						width: calc( (100% - 15px) / 2 )
-						flex-basis: calc( (100% - 15px) / 2 )
+			display: block
+			.params
+				display: flex
+				gap: 15px
+				margin: 0 0 60px 0
+				>*
+					p.title
 						padding: 15px 0
-						border-radius: 5px
-						border: 1px solid #F6F6F6
-						transition: .3s
-						display: flex
-						align-items: center
-						justify-content: center
+						font-weight: 700
 						text-align: center
-					input
-						display: none
-						&:checked + label
-							background-color: #00B268
-							color: #fff
-			.manufacturer
-				width: calc( (100% - 45px) / 4 * 1.3)
-				p.title
-					margin: 0 0 46px 0
-				.body
+						background-color: #F6F6F6
+						border-radius: 5px
+				.facture
+					width: calc( (100% - 45px) / 4 * 1.1 )
+					p.title
+						margin: 0 0 46px 0
+					.body
+						display: flex
+						gap: 15px
+						flex-wrap: wrap
+						label
+							width: calc( (100% - 15px) / 2 )
+							flex-basis: calc( (100% - 15px) / 2 )
+							padding: 11px 0
+							border-radius: 5px
+							border: 1px solid #F6F6F6
+							transition: .3s
+							display: flex
+							align-items: center
+							justify-content: center
+							text-align: center
+							cursor: pointer
+							&:hover
+								background-color: #00B268
+								color: #fff
+						input
+							display: none
+							&:checked + label
+								background-color: #00B268
+								color: #fff
+				.manufacturer
+					width: calc( (100% - 45px) / 4 * 1.3)
+					p.title
+						margin: 0 0 46px 0
+					.body
+						display: flex
+						gap: 15px
+						flex-wrap: wrap
+						label
+							width: calc( (100% - 15px) / 2 )
+							flex-basis: calc( (100% - 15px) / 2 )
+							padding: 11px 0
+							border-radius: 5px
+							border: 1px solid #F6F6F6
+							transition: .3s
+							display: flex
+							align-items: center
+							justify-content: center
+							text-align: center
+							cursor: pointer
+							&:hover
+								background-color: #00B268
+								color: #fff
+						input
+							display: none
+							&:checked + label
+								background-color: #00B268
+								color: #fff
+							&.hidden + label
+								display: none
+								
+									
+				.room, .light
+					width: calc( (100% - 45px) / 4 * 0.8)
 					display: flex
-					gap: 15px
-					flex-wrap: wrap
-					label
-						width: calc( (100% - 15px) / 2 )
-						flex-basis: calc( (100% - 15px) / 2 )
-						padding: 15px 0
-						border-radius: 5px
-						border: 1px solid #F6F6F6
-						transition: .3s
+					flex-direction: column
+					align-items: center
+					p.title
+						margin: 0 0 16px 0
+						width: 100%
+					.square, .angles, .fixtures, .chandeliers
+						p
+							margin: 0 0 10px 0
+						.value
+							display: flex
+							gap: 10px
+							*
+								width: 40px
+								height: 40px
+								text-align: center
+								font-size: 22px
+								font-weight: 600
+							button
+								border: none
+								&:first-child, &:last-child:hover
+									background-color: #F6F6F6
+									color: #23292f
+								&:last-child, &:first-child:hover
+									background-color: #00b268
+									color: #fff
+							input
+								border: none
+								border-radius: 5px
+								&:focus
+									outline: 1px solid #00b268
+								&::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+									-webkit-appearance: none
+									margin: 0
+					.square, .fixtures
+						.value
+							margin: 0 0 41px 0
+			.disclaimer
+				text-align: center
+				margin: 0 auto 50px auto
+				max-width: 750px
+			.bottom
+				display: flex
+				justify-content: space-between
+				gap: 30px
+				.final_price
+					font-size: 24px
+					display: flex
+					align-items: center
+					gap: 10px
+					line-height: 1
+					strong
+						font-size: 32px
 						display: flex
-						align-items: center
-						justify-content: center
-						text-align: center
+						gap: 5px
+				.contact_data
+					display: flex
+					gap: 20px
 					input
-						display: none
-						&:checked + label
-							background-color: #00B268
-							color: #fff
-			.room
-				width: calc( (100% - 45px) / 4 * 0.8)
-			.light
-				width: calc( (100% - 45px) / 4 * 0.8)
-
+						padding: 20px 25px
+						border: 1px solid #23292F
+						border-radius: 5px
+						&::placeholder
+							color: #23292F
+					button
+						padding: 20px 45px
 @media (min-width: 992px)
 	.calc
 		margin: 0 0 100px 0
+		div.title
+			.strong
+				font-size: 48px
+				max-width: 750px
+			p
+				font-size: 22px
+				max-width: 370px
+		form.desktop
+			.params
+				gap: 30px
+				.facture
+					width: calc( (100% - 90px) / 4 * 1.1)
+				.manufacturer
+					width: calc( (100% - 90px) / 4 * 1.1)
+				.room, .light
+					width: calc( (100% - 90px) / 4 * 0.9)
+			.bottom
+				.contact_data
+					input, button
+						font-size: 22px
+@media (min-width: 1230px)
+	.calc
+		margin: 0 0 100px 0
+		form.desktop
+			.params
+				.facture
+					width: calc( (100% - 90px) / 4 * 1)
+				.manufacturer
+					width: calc( (100% - 90px) / 4 * 1)
+				.room, .light
+					width: calc( (100% - 90px) / 4 * 1)
