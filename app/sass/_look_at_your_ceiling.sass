@@ -1,0 +1,108 @@
+.look_at_your_ceiling
+	margin: 0 0 40px 0
+	text-align: center
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 10px 0
+		span
+			display: none
+	.description
+		margin: 0 0 20px 0
+	.body
+		padding: 0 0 0 15px
+		.swiper
+			.swiper-slide
+				width: 85%
+				border-radius: 10px
+			.swiper-button-prev, .swiper-button-next
+				display: none
+		.info
+			display: none
+	.thumb_swiper
+		display: none
+@media (min-width: 640px)
+	.look_at_your_ceiling
+		.body
+			.swiper
+				.swiper-slide
+					width: 45%
+@media (min-width: 768px)
+	.look_at_your_ceiling
+		margin: 0 0 75px 0
+		.title
+			span
+				display: inline
+@media (min-width: 992px)
+	.look_at_your_ceiling
+		margin: 0 0 100px 0
+		.title
+			text-align: left
+			font-size: 48px
+			max-width: 600px
+			margin: 0 0 20px 0
+		.description
+			display: none
+		.body
+			display: flex
+			gap: 20px
+			padding: 0 15px
+			max-width: 1230px
+			margin: 0 auto 20px auto
+			.swiper
+				width: calc( 100% / 1200 * 712 )
+				.swiper-slide
+					width: 100%
+					border-radius: 0
+				.swiper-button-prev, .swiper-button-next
+					color: #989898
+					width: 40px
+					height: 40px
+					background-color: #fff
+					border-radius: 40px
+					border: 1px solid #989898
+					display: flex
+					align-items: center
+					justify-content: center
+					&::after
+						content: ""
+						display: block
+						width: 8px
+						height: 8px
+						border-radius: 2px
+						transform: translateX(-3px) rotate(45deg)
+						border-top: 2px solid #989898
+						border-right: 2px solid #989898
+						border-left: 2px solid transparent
+						border-bottom: 2px solid transparent
+						position: absolute
+						transition: .3s
+					&:hover
+						&::after
+							border-top-color: #00b268
+							border-right-color: #00b268
+				.swiper-button-next
+					right: 15px
+				.swiper-button-prev
+					left: 15px
+					transform: rotate(180deg)
+			.info
+				display: block
+				width: calc( 100% / 1200 * 468 )
+				text-align: left
+				.headline
+					font-size: 32px
+					font-weight: 700
+					margin: 0 0 20px 0
+				p:not(.headline):not(:last-of-type)
+					margin: 0 0 15px 0
+				p:last-of-type
+					margin: 0 0 60px 0
+				button
+					padding: 20px 45px
+					font-size: 22px
+		.thumb_swiper
+			display: block
+			.swiper-slide
+				max-width: calc((100% - 80px)/ 5)
+
