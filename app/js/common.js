@@ -287,4 +287,32 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	// Фазенда - Ютуб API и запуск видео по нажатию на картинку
+	if ($(".fazenda").length) {
+		var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/player_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		var player;
+
+		window.onYouTubePlayerAPIReady = function() {
+			$(".fazenda .videos .item").click(function(){
+				player = new YT.Player($(".fazenda .videos .item").eq($(this).index())[0], {
+					height: 'auto',
+					width: 'fit-content',
+					videoId: $(this).attr("data-video"),
+					events: {
+						'onReady': play,
+					}
+				});		
+			});
+		}
+
+		function play(){
+			player.playVideo();
+		}
+	}	
+
 });

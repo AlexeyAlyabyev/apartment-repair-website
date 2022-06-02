@@ -1,0 +1,66 @@
+.fazenda
+	display: none
+@media (min-width: 992px)
+	.fazenda
+		display: block
+		margin: 0 0 100px 0
+		.preview
+			position: relative
+			.title
+				font-size: 48px
+				max-width: 650px
+				font-weight: 700
+				margin: 0 0 40px 0
+			p
+				max-width: 780px
+				margin: 0 0 40px 0
+			.stickers
+				position: absolute
+				right: 0
+				bottom: 0
+				display: flex
+				gap: 40px
+		.videos
+			display: flex
+			gap: 30px
+			.item
+				display: flex
+				align-items: center
+				justify-content: center
+				overflow: hidden
+				cursor: pointer
+				width: 100%
+				min-height: 180px
+				img
+					transition: .3s
+				&::before
+					display: block
+					content: ""
+					width: 60px
+					height: 42px
+					border-radius: 12px
+					background-color: #EB3323
+					position: absolute
+					z-index: 1
+					transition: .3s
+				&::after
+					content: '▲'
+					font-size: 20px
+					color: #fff
+					display: block
+					position: absolute
+					z-index: 3
+					transition: .3s
+					transform: rotate(90deg)
+				&:hover
+					img
+						transform: scale(1.05)
+					&::before
+						background-color: #fff
+					&::after
+						color: #EB3323
+@media (min-width: 1230px)
+	.fazenda
+		.videos
+			.item
+				min-height: 235px
