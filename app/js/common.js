@@ -313,6 +313,31 @@ $(function(){
 		function play(){
 			player.playVideo();
 		}
-	}	
+	}
+
+	if ($(".look_at_your_ceiling").length) {
+		const look_at_your_ceiling = new Swiper('.look_at_your_ceiling .body .swiper', {
+			loop: true,
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+			navigation: {
+				nextEl: '.look_at_your_ceiling .swiper-button-next',
+				prevEl: '.look_at_your_ceiling .swiper-button-prev',
+			},
+		});
+		if (window.innerWidth >= 992) {
+			const look_at_your_ceiling_thumb = new Swiper('.look_at_your_ceiling .thumb_swiper.swiper', {
+				loop: true,
+				spaceBetween: 20,
+				slidesPerView: 5,
+				loopedSlides: 8,
+				touchRatio: 0.2,
+				slideToClickedSlide: true,
+			});
+			look_at_your_ceiling.controller.control = look_at_your_ceiling_thumb;
+			look_at_your_ceiling_thumb.controller.control = look_at_your_ceiling;
+		}
+	}
 
 });

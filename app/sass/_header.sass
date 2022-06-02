@@ -12,8 +12,9 @@ header
 		align-items: center
 		justify-content: space-between
 	.logo
+		line-height: 0
 		img
-			max-height: 40px
+			max-height: 25px
 	.contact_us_info
 		.phone_and_messengers
 			.messengers
@@ -82,3 +83,8 @@ header
 				font-size: 12px
 				font-weight: 300
 				text-align: right
+@media (min-width: 1230px)
+	header
+		.logo
+			img
+				max-height: 35px
