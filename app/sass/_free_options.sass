@@ -1,0 +1,157 @@
+.free_options
+	margin: 0 0 40px 0
+	text-align: center
+	.title
+		margin: 0 0 15px 0
+		font-size: 28px
+		font-weight: 700
+		&.desktop
+			display: none
+	.special_offer
+		color: #fff
+		background-color: #EB3323
+		font-size: 24px
+		font-weight: 600
+		padding: 10px 0
+		max-width: 300px
+		transform: skew(-20deg)
+		border-radius: 5px
+		margin: 0 auto 20px auto
+		span
+			transform: skew(20deg)
+			display: block
+	.body
+		.right
+			.description
+				margin: 0 0 20px 0
+				span
+					display: none
+				strong
+					text-transform: uppercase
+			.options
+				display: flex
+				gap: 10px
+				flex-wrap: wrap
+				margin: 0 0 20px 0
+				.item
+					width: calc( (100% - 10px) /2 )
+					border: 1px solid #E1E1E1
+					padding: 10px 10px 15px 10px
+					display: flex
+					flex-direction: column
+					justify-content: flex-end
+					align-items: center
+					box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15)
+					img
+						margin: 0 0 10px
+						width: fit-content
+			button.mobile.black
+				padding: 20px 35px
+				font-size: 22px
+				max-width: 300px
+				width: 100%
+			form, .even_if
+				display: none
+		.left
+			display: none
+@media (min-width: 768px)
+	.free_options
+		margin: 0 0 75px 0
+		.body
+			.right
+				.options
+					.item
+						width: calc((100% - 30px)/ 4)
+@media (min-width: 992px)
+	.free_options
+		margin: 0 0 100px 0
+		.title
+			font-size: 48px
+			text-align: left
+			max-width: 800px
+			margin: 0 0 20px 0
+			&.mobile
+				display: none
+			&.desktop
+				display: block
+		.special_offer
+			margin: 0 0 30px calc( (100% - 340px) * 0.6 )
+		.body
+			display: flex
+			gap: 30px
+			align-items: flex-end
+			justify-content: space-between
+			.left
+				display: block
+				width: calc((100% - 30px) / 2)
+				max-width: 500px
+				position: relative
+				padding: 0 0 50px 0
+				img
+					width: 100%
+				.name
+					position: absolute
+					font-size: 28px
+					font-weight: 600
+					padding: 8px 32px
+					background-color: #fff
+					box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25)
+					transform: skew(-20deg)
+					bottom: 37.5px
+					left: 50px
+					border-radius: 5px
+					span
+						display: block
+						transform: skew(20deg)
+				.post
+					position: absolute
+					padding: 5px 25px
+					background-color: #fff
+					box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25)
+					transform: skew(-20deg)
+					bottom: 0
+					left: 55px
+					border-radius: 5px
+					span
+						display: block
+						transform: skew(20deg)
+			.right
+				padding: 30px 0
+				width: calc((100% - 30px) / 2)
+				max-width: 600px
+				.description
+					font-size: 22px
+					text-align: left
+					margin: 0 0 40px 0
+					span
+						display: inline
+				.options
+					gap: 20px
+					margin: 0 0 40px 0
+					.item
+						width: calc((100% - 20px)/ 2)
+						padding: 13px 50px
+						justify-content: space-between
+						p
+							font-size: 22px
+							font-weight: 600
+				button.mobile.black
+					display: none
+				form
+					display: flex
+					gap: 20px
+					margin: 0 0 20px 0
+					>*
+						width: calc( (100% - 20px) / 2 )
+					input
+						padding: 20px 0 20px 30px
+						font-size: 22px
+						border: 1px solid #23292F
+						border-radius: 5px
+						&::placeholder
+							color: #23292F
+					button
+						padding: 20px 0
+						font-size: 22px
+				.even_if
+					display: block
