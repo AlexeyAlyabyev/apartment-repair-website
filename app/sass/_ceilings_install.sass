@@ -1,0 +1,121 @@
+.ceilings_install
+	margin: 0 0 40px 0
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 10px 0
+		text-align: center
+		.desktop
+			display: none
+	.body
+		padding: 0 0 0 15px
+		max-width: 1230px
+		margin: 0 auto
+		.swiper
+			.swiper-slide
+				width: 85%
+				img
+					border-radius: 15px
+					margin: 0 0 10px 0
+				.headline
+					font-weight: 600
+					margin: 0 0 10px 0
+				p:not(.headline)
+					font-size: 12px
+		.info
+			display: none
+@media (min-width: 640px)
+	.ceilings_install
+		.body
+			.swiper
+				.swiper-slide
+					width: 45%
+@media (min-width: 768px)
+	.ceilings_install
+		margin: 0 0 75px 0
+		.body
+			.swiper
+				.swiper-slide
+					.headline
+						font-size: 18px
+					p:not(.headline)
+						font-size: 14px
+@media (min-width: 992px)
+	.ceilings_install
+		margin: 0 0 100px 0
+		.title
+			font-size: 48px
+			text-align: left
+			max-width: 650px
+			margin: 0 0 40px 0
+			.mobile
+				display: none
+			.desktop
+				display: block
+		.body
+			display: flex
+			gap: 20px
+			.swiper
+				width: (100% / 1200 * 712)
+				.swiper-slide
+					width: 85%
+					transition: .3s
+					img
+						border-radius: 0
+						width: 100%
+						margin: 0 0 20px 0
+					.headline
+						font-size: 22px
+					p:not(.headline)
+						font-size: 16px
+					&:not(.swiper-slide-active)
+						opacity: .5
+				.swiper-button-prev, .swiper-button-next
+					color: #989898
+					width: 40px
+					height: 40px
+					background-color: #fff
+					border-radius: 40px
+					border: 1px solid #989898
+					display: flex
+					align-items: center
+					justify-content: center
+					&::after
+						content: ""
+						display: block
+						width: 8px
+						height: 8px
+						border-radius: 2px
+						transform: translateX(-3px) rotate(45deg)
+						border-top: 2px solid #989898
+						border-right: 2px solid #989898
+						border-left: 2px solid transparent
+						border-bottom: 2px solid transparent
+						position: absolute
+						transition: .3s
+					&:hover
+						&::after
+							border-top-color: #00b268
+							border-right-color: #00b268
+				.swiper-button-next
+					right: 15px
+					top: calc( 50% - (95px / 2) )
+				.swiper-button-prev
+					left: 15px
+					top: calc( 50% - (95px / 2) )
+					transform: rotate(180deg)
+			.info
+				display: block
+				width: (100% / 1200 * 468)
+				.headline
+					font-size: 22px
+					font-weight: 600
+					margin: 0 0 20px 0
+					max-width: 430px
+				p:not(.headline):not(:last-of-type)
+					margin: 0 0 15px 0
+				p:last-of-type
+					margin: 0 0 40px 0			
+				button
+					padding: 20px 45px
+					font-size: 22px
