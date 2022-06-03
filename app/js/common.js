@@ -376,12 +376,19 @@ $(function(){
 				}
 			});		
 
-			console.log(player);
-
 			function play(){
 				player.playVideo();
 			}
 		});		
+	}
+
+	if ($(".projects_slider").length){
+		const ceilings_install = new Swiper('.projects_slider .swiper', {
+			speed: 500,
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
 	}
 
 });
