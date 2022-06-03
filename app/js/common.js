@@ -340,4 +340,21 @@ $(function(){
 		}
 	}
 
+	if ($(".ceilings_install").length){
+		const ceilings_install = new Swiper('.ceilings_install .body .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+			navigation: {
+				nextEl: '.ceilings_install .swiper-button-next',
+				prevEl: '.ceilings_install .swiper-button-prev',
+			},
+			breakpoints: {
+				992: {
+					spaceBetween: 20,
+				}
+			}
+		});
+	}
+
 });
