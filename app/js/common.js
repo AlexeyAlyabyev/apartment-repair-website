@@ -288,31 +288,29 @@ $(function(){
 		});
 	}
 
+	// Ютуб API подключение в документ
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 	// Фазенда - Ютуб API и запуск видео по нажатию на картинку
 	if ($(".fazenda").length) {
-		var tag = document.createElement('script');
-		tag.src = "https://www.youtube.com/player_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		$(".fazenda .videos .item").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: 'auto',
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});		
 
-		var player;
-
-		window.onYouTubePlayerAPIReady = function() {
-			$(".fazenda .videos .item").click(function(){
-				player = new YT.Player($(".fazenda .videos .item").eq($(this).index())[0], {
-					height: 'auto',
-					width: 'fit-content',
-					videoId: $(this).attr("data-video"),
-					events: {
-						'onReady': play,
-					}
-				});		
-			});
-		}
-
-		function play(){
-			player.playVideo();
-		}
+			function play(){
+				player.playVideo();
+			}
+		});
 	}
 
 	if ($(".look_at_your_ceiling").length) {
@@ -355,6 +353,35 @@ $(function(){
 				}
 			}
 		});
+	}
+
+	if ($(".happy_client").length && window.innerWidth < 992){
+		const ceilings_install = new Swiper('.happy_client .body.swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
+
+	// Счастливые клиенты - Ютуб API и запуск видео по нажатию на картинку
+	if ($(".happy_client").length) {
+		$(".happy_client .swiper .item .image").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: 'auto',
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});		
+
+			console.log(player);
+
+			function play(){
+				player.playVideo();
+			}
+		});		
 	}
 
 });
