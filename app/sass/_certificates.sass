@@ -1,0 +1,43 @@
+.certificates
+	display: none
+@media (min-width: 992px)
+	.certificates
+		display: block
+		margin: 0 0 40px 0
+		.title
+			font-size: 48px
+			font-weight: 700
+			max-width: 520px
+			margin: 0 0 10px 0
+		.descriptions
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			margin: 0 0 40px 0
+			p:first-child
+				max-width: 320px
+			p:last-child
+				max-width: 510px
+				font-size: 32px
+				font-weight: 600
+				text-align: right
+		.body
+			display: flex
+			gap: 45px
+			.item
+				width: calc( (100% - 180px) / 5 )
+				img
+					width: 100%
+					margin: 0 0 40px 0
+					filter: drop-shadow(0px 8px 25px rgba(0, 0, 0, 0.35))
+				p
+					text-align: center
+					font-size: 12px
+					max-width: 150px
+					margin: 0 auto
+@media (min-width: 1230px)
+	.certificates
+		.body
+			gap: 60px
+			.item
+				width: calc( (100% - 240px) / 5 )
