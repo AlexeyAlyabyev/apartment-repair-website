@@ -383,11 +383,16 @@ $(function(){
 	}
 
 	if ($(".projects_slider").length){
-		const ceilings_install = new Swiper('.projects_slider .swiper', {
+		const projects_slider = new Swiper('.projects_slider .swiper', {
 			speed: 500,
 			loop: true,
 			spaceBetween: 15,
 			slidesPerView: "auto",
+			breakpoints: {
+				992: {
+					centeredSlides: true,
+				}
+			},
 		});
 	}
 
