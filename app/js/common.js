@@ -376,12 +376,24 @@ $(function(){
 				}
 			});		
 
-			console.log(player);
-
 			function play(){
 				player.playVideo();
 			}
 		});		
+	}
+
+	if ($(".projects_slider").length){
+		const projects_slider = new Swiper('.projects_slider .swiper', {
+			speed: 500,
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+			breakpoints: {
+				992: {
+					centeredSlides: true,
+				}
+			},
+		});
 	}
 
 });
