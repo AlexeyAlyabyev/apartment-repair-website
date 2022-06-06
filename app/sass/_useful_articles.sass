@@ -1,0 +1,72 @@
+.useful_articles
+	display: none
+@media (min-width: 992px)
+	.useful_articles
+		display: block
+		padding: 40px 0 60px 0
+		background-color: #F8F9FB
+		border-bottom: 1px solid #989898;
+		.title
+			font-size: 48px
+			font-weight: 700
+			margin: 0 0 40px 0
+		.body
+			display: flex
+			gap: 20px
+			margin: 0 0 40px 0
+			.item
+				overflow: hidden
+				line-height: 0
+				&:first-child
+					position: relative
+					width: calc( (100% - 40px) / 4 * 2 )
+					.info
+						position: absolute
+						bottom: 0
+						right: 0
+						max-width: 290px
+					img
+						object-fit: cover
+						height: 100%
+						width: 100%
+				&:not(:first-child)
+					width: calc( (100% - 40px) / 4 * 1 )				
+					img
+						height: 50%
+						object-fit: cover
+						width: 100%
+				.info
+					padding: 25px 0 40px 20px
+					background-color: #fff
+					line-height: 1.2
+					height: 50%
+					z-index: 1
+					position: relative
+					.date
+						margin: 0 0 20px 0
+						color: #B3B3B3
+					.headline
+						font-size: 22px
+						font-weight: 600
+						margin: 0 0 20px 0
+				img
+					transition: .3s
+				&:hover
+					img
+						transform: scale(1.05)
+		.more_detailes
+			padding: 20px 45px
+			border: 1px solid #23292f
+			border-radius: 5px
+			width: fit-content
+			margin: 0 auto
+			&:hover
+				background-color: #23292f
+				color: #fff
+
+@media (min-width: 1230px)
+	.useful_articles
+		.body
+			.item
+				.info
+					padding: 25px 0 20px 20px
