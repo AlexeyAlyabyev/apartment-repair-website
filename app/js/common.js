@@ -401,8 +401,28 @@ $(function(){
 	}
 
 	$(".zoom_in").click(function(){
-		let other_images = $(this).parents().eq($(this).parents().length - 3).find(".zoom_in");
-		console.log($(this).index($(this).parents().eq($(this).parents().length - 3)));
+		let parent_block = $(this).parents().eq($(this).parents().length - 3);
+		let other_images = false;
+		let zoomed_img = new Image();
+		let zoomed_img_width, zoomed_img_height;
+
+		
+		if (parent_block.find(".swiper-slide .zoom_in").length) 
+			other_images = parent_block.find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
+		else if (parent_block.find(".swiper-slide.zoom_in").length) 
+			other_images = parent_block.find(".zoom_in:not(.swiper-slide-duplicate)");
+		else 
+			other_images = parent_block.find(".zoom_in");
+
+		zoomed_img.src = $(this).attr("src").replace('webp', 'jpg');
+		zoomed_img.onload = function(){
+			zoomed_img_height = zoomed_img.height;
+			zoomed_img_width = zoomed_img.width;
+
+			if (window.innerHeight/1.5 > zoomed_img_height && window.innerWidth/1.5 > zoomed_img_width) {
+				$(".zoom .body img").addClass("scale");
+			}
+		};
 
 		if (other_images) {
 			$(".zoom").addClass("swiper");
@@ -410,20 +430,21 @@ $(function(){
 			other_images.each(function(index, element){
 				$(".zoom .body").append("<div class='swiper-slide'><img src=" + $(element).attr("src").replace('webp', 'jpg') + "></div>");
 			});
+			$(".zoom").append("<div class='swiper-button-prev'></div><div class='swiper-button-next'></div>");
 			var zoom = new Swiper('.zoom.swiper', {
 				speed: 500,
-				loop: true,
-				slidesPerView: 1,
-				// navigation: {
-				// 	nextEl: '.projects_slider .swiper-button-next',
-				// 	prevEl: '.projects_slider .swiper-button-prev',
-				// },
+				spaceBetween: 15,
+				slidesPerView: "auto",
+				navigation: {
+					nextEl: '.zoom .swiper-button-next',
+					prevEl: '.zoom .swiper-button-prev',
+				},
 			});
-			zoom.slideTo($(this).index());
+			zoom.slideTo(other_images.index($(this)), 500);
 		} else {
 			$(".zoom .body").append("<img src=" + $(this).attr("src").replace('webp', 'jpg') + ">");
 		}
-		console.log();
+
 		$(".zoom").fadeIn(300);
 		$('body').addClass('modal_active');
 		$('html').addClass('no_scroll');
