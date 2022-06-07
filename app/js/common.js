@@ -461,4 +461,22 @@ $(function(){
 			$(".zoom .body").empty();
 		});
 	};
+
+	if ($(".catalog .body .swiper").length && window.innerWidth < 992) {
+		var catalog_sliders = [];
+		$(".catalog .body .swiper").each(function(index){
+			catalog_sliders[index] = new Swiper($(this)[0], {
+				spaceBetween: 15,
+				slidesPerView: "auto",
+				speed: 500,
+			});
+		});
+	}	
+
+	$(".catalog .filter .options p").click(function(){
+		$(".catalog .filter .options p.active").removeClass("active");
+		$(this).addClass("active");
+		$(".catalog .body .item:not(." + $(this).attr("data-class") + ")").hide();
+		$(".catalog .body .item." + $(this).attr("data-class")).show();
+	});
 });

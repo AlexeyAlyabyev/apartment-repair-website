@@ -1,0 +1,218 @@
+.catalog
+	margin: 20px 0 40px 0
+	.title
+		font-size: 28px
+		text-align: center
+		margin: 0 0 20px 0
+		h1
+			font-weight: 700
+		p
+			display: none
+	.filter
+		display: none
+	.body
+		.item:not(.accessories)
+			margin: 0 0 30px 0
+			h2
+				font-size: 18px
+				font-weight: 700
+				text-align: center
+				margin: 0 0 10px 0
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						position: relative
+						line-height: 0
+						width: 85%
+						height: auto
+						img
+							border-radius: 10px
+							height: 100%
+							width: 100%
+							object-fit: cover
+						.text
+							display: flex
+							justify-content: space-between
+							font-weight: 700
+							background: rgba(255, 255, 255, 0.3)
+							backdrop-filter: blur(10px)
+							position: absolute
+							bottom: 0
+							left: 0
+							width: 100%
+							border-radius: 0 0 10px 10px
+							line-height: 1.2
+							font-size: 14px
+							padding: 10px 15px
+							border-top: 1px solid #fff
+		.accessories
+			h2 
+				font-size: 18px
+				font-weight: 700
+				text-align: center
+				margin: 0 0 10px 0
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						background-color: rgba(171, 182, 208, 0.15)
+						display: flex
+						justify-content: center
+						height: auto
+						width: 85%
+						border-radius: 10px
+						h3
+							font-size: 18px
+							position: absolute
+							font-weight: 700
+							padding: 20px
+						img
+							width: 100%
+							height: fit-content
+							align-self: flex-end
+@media (min-width: 480px)
+	.catalog
+		.body
+			.item:not(.accessories)
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							.text
+								font-size: 16px
+								backdrop-filter: blur(5px)
+@media (min-width: 640px)
+	.catalog
+		.body
+			.item:not(.accessories)
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							width: 45%
+			.accessories
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							width: 45%
+@media (min-width: 768px)
+	.catalog
+		margin: 30px 0 75px 0
+		.title
+			font-size: 32px
+		.body
+			.item:not(.accessories)
+				h2
+					font-size: 20px
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							.text
+								font-size: 18px
+			.accessories
+				h2
+					font-size: 20px
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							h3
+								font-size: 20px
+								padding: 25px
+@media (min-width: 992px)
+	.catalog
+		margin: 40px 0 100px 0
+		.title
+			text-align: left
+			font-size: 48px
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			margin: 0 0 40px 0
+			p
+				display: block
+				text-align: right
+				font-size: 22px
+				font-weight: 600
+				max-width: 500px
+		.filter
+			display: flex
+			flex-wrap: wrap
+			margin: 0 0 40px 0
+			>p
+				width: 100%
+				margin: 0 0 20px 0
+				font-size: 22px
+				font-weight: 600
+			.options
+				display: flex
+				justify-content: space-between
+				background-color: #F6F6F6
+				padding: 10px 0
+				p
+					padding: 3px 13px
+					flex-basis: 100%
+					min-width: fit-content
+					text-align: center
+					cursor: pointer
+					position: relative
+					&:not(:last-child)
+						border-right: 1px solid #D3D3D3
+					&::after
+						content: ""
+						display: block
+						position: absolute
+						bottom: -10px
+						width: 0%
+						left: 10%
+						height: 1px
+						background-color: #00b268
+						transition: .3s
+					&:hover, &.active
+						&::after
+							width: 80%
+		.body
+			.item:not(.accessories)
+				h2
+					font-size: 32px
+					text-align: left
+					margin: 0 0 20px 0
+				.swiper
+					.swiper-wrapper
+						flex-wrap: wrap
+						.swiper-slide
+							overflow: hidden
+							border: 1px solid #fff
+							&:not(:nth-of-type(4))
+								width: calc( 100% / 3 )
+							&:nth-of-type(4)
+								width: calc( 100% / 3 * 2 )
+							img
+								border-radius: 0
+								display: block
+								transition: .3s
+							.text
+								border-radius: 0
+								border-bottom: 1px solid #fff
+								font-size: 22px
+								padding: 15px 20px
+							&:hover
+								img
+									transform: scale(1.05)
+			.accessories
+				h2
+					font-size: 32px
+					text-align: left
+					margin: 0 0 20px 0
+				.swiper
+					.swiper-wrapper
+						gap: 20px
+						.swiper-slide
+							padding: 70px 0 0 0
+							border-radius: 0
+							width: calc( (100% - 40px) / 3 )
+							overflow: hidden
+							h3
+								font-size: 32px
+								top: 0
+							img
+								transition: .3s
+							&:hover
+								img
+									transform: scale(1.05)
