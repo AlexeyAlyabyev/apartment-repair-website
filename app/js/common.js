@@ -492,4 +492,33 @@ $(function(){
 			},
 		});
 	}
+
+	if ($(".prices").length && window.innerWidth < 992){
+		const prices_slider = new Swiper('.prices .swiper', {
+			speed: 500,
+			slidesPerView: "auto",
+			navigation: {
+				nextEl: '.prices .swiper-button-next',
+				prevEl: '.prices .swiper-button-prev',
+			},
+		});
+	}
+
+	$(".prices .filter .options p").click(function(){
+		$(".prices .filter .options p.active").removeClass("active");
+		$(this).addClass("active");
+		$(".prices .swiper-slide:not(." + $(this).attr("data-class") + ")").hide();
+		$(".prices .swiper-slide." + $(this).attr("data-class")).show();
+
+		if (!$(".prices .ceiling_types .tkan .swiper-slide." + $(this).attr("data-class")).length) 
+			$(".prices .ceiling_types .tkan").hide();
+		else
+			$(".prices .ceiling_types .tkan").show();
+
+		if (!$(".prices .ceiling_types .pvh .swiper-slide." + $(this).attr("data-class")).length) 
+			$(".prices .ceiling_types .pvh").hide();
+		else
+			$(".prices .ceiling_types .pvh").show();
+	});
+
 });

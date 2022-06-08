@@ -1,0 +1,240 @@
+.prices
+	margin: 20px 0 40px 0
+	.title
+		font-size: 28px
+		text-align: center
+		font-weight: 700
+		margin: 0 0 20px 0
+		p
+			display: none
+	.filter
+		display: none
+	.ceiling_types
+		.pvh, .tkan
+			padding: 0 0 0 15px
+			h2
+				text-align: center
+				font-size: 24px
+				font-weight: 600
+				margin: 0 0 10px 0
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						padding: 10px
+						border: 1px solid #B3B3B3
+						width: 60%
+						height: auto
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						&:not(:last-child)
+							border-right: none
+						.headline
+							display: flex
+							justify-content: space-between
+							align-items: center
+							margin: 0 0 5px 0
+							h3
+								font-weight: 600
+							img
+								height: 15px
+						.types
+							margin: 0 0 5px 0
+						.price
+							margin: 0 0 10px 0
+							.value
+								font-size: 16px
+								font-weight: 700
+								span
+									font-size: 12px
+									font-weight: 600
+							.install
+								font-size: 12px
+								font-weight: 600
+						.icon
+							width: 70px
+							height: 70px
+							text-align: center
+							display: flex
+							align-items: center
+							justify-content: center
+							flex-direction: column
+							border-radius: 100px
+							background-color: #fff
+							box-shadow: 1.06683px 1.06683px 4.26733px rgba(142, 153, 178, 0.4)
+							font-size: 12px
+							text-transform: lowercase
+							margin: 0 0 10px 0
+							color: #687798
+							p
+								padding: 0 5px
+								span
+									font-size: 200%
+						.params_title
+							color: #A8A8A8
+							font-size: 12px
+							margin: 0 0 5px 0
+						.params
+							font-size: 12px
+							.item
+								display: flex
+								justify-content: space-between
+								align-items: center
+								margin: 0 0 3px 0
+								span
+									display: none
+						.number
+							font-size: 48px
+							font-weight: 700
+						.facture_and_colors
+							font-size: 18px
+							font-weight: 700
+							margin: 0 0 10px 0
+						.ceiling_icon
+							max-width: 70px
+							margin: 0 0 10px 0
+						.zamer
+							font-size: 12px
+							margin: 0 0 10px 0
+						button
+							width: 100%
+							padding: 15px 0
+		.pvh
+			margin: 0 0 20px 0
+@media (min-width: 420px)
+	.prices
+		.ceiling_types
+			.pvh, .tkan
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							width: 45%
+@media (min-width: 640px)
+	.prices
+		.ceiling_types
+			.pvh, .tkan
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							width: 40%
+@media (min-width: 768px)
+	.prices
+		margin: 40px 0 75px 0
+@media (min-width: 992px)
+	.prices
+		margin: 60px 0 100px 0
+		.title
+			font-size: 48px
+			text-align: left
+			display: flex
+			justify-content: space-between
+			margin: 0 0 40px 0
+			h1
+				max-width: 580px
+			p
+				display: block
+				align-self: flex-end
+				font-size: 22px
+				font-weight: 600
+				text-align: right
+				max-width: 550px
+		.filter
+			display: flex
+			flex-wrap: wrap
+			margin: 0 0 30px 0
+			>p
+				width: 100%
+				margin: 0 0 20px 0
+				font-size: 22px
+				font-weight: 600
+			.options
+				display: flex
+				justify-content: space-between
+				background-color: #F6F6F6
+				padding: 10px 0
+				p
+					padding: 3px 13px
+					flex-basis: 100%
+					min-width: fit-content
+					text-align: center
+					cursor: pointer
+					position: relative
+					&:not(:last-child)
+						border-right: 1px solid #D3D3D3
+					&::after
+						content: ""
+						display: block
+						position: absolute
+						bottom: -10px
+						width: 0%
+						left: 10%
+						height: 1px
+						background-color: #00b268
+						transition: .3s
+					&:hover, &.active
+						&::after
+							width: 80%
+		.ceiling_types
+			.pvh, .tkan
+				padding: 0 15px
+				max-width: 1230px
+				margin: 0 auto
+				h2
+					font-size: 32px
+					text-align: left
+					margin: 0 0 20px 0
+				.swiper
+					.swiper-wrapper
+						flex-wrap: wrap
+						.swiper-slide
+							padding: 20px
+							width: 25%
+							outline: 1px solid #B3B3B3
+							&:not(:last-child)						
+								border: 1px solid #b3b3b3	
+							.headline
+								margin: 0 0 20px 0
+								h3
+									font-size: 22px
+								img
+									height: 25px
+							.types
+								margin: 0 0 30px 0
+							.price
+								margin: 0 0 15px 0
+								.value
+									font-size: 36px
+									span
+										font-size: 22px
+								.install
+									font-size: 22px
+							.icon
+								width: 75px
+								height: 75px
+								text-transform: uppercase
+								gap: 5px
+								margin: 0 0 20px 0
+								&.warranty
+									gap: 0
+							.params_title
+								font-size: 16px
+								margin: 0 0 15px 0
+							.params
+								font-size: 16px
+								.item
+									margin: 0 0 5px 0
+							.number
+								font-size: 72px
+							.facture_and_colors
+								font-size: 22px
+								margin: 0 0 15px 0
+							.ceiling_icon
+								max-width: 75px
+								margin: 0 0 20px 0
+							.zamer
+								font-size: 16px
+								margin: 0 0 20px 0
+							button
+								padding: 20px 0
+			.pvh
+				margin: 0 auto 40px auto
