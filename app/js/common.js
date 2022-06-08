@@ -479,4 +479,17 @@ $(function(){
 		$(".catalog .body .item:not(." + $(this).attr("data-class") + ")").hide();
 		$(".catalog .body .item." + $(this).attr("data-class")).show();
 	});
+
+	if ($(".completed_works").length){
+		const projects_slider = new Swiper('.completed_works .swiper', {
+			speed: 500,
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+			navigation: {
+				nextEl: '.completed_works .swiper-button-next',
+				prevEl: '.completed_works .swiper-button-prev',
+			},
+		});
+	}
 });
