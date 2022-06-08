@@ -1,0 +1,162 @@
+.completed_works
+	margin: 0 0 40px 0
+	.top
+		margin: 0 0 20px 0
+		.title
+			font-size: 28px
+			text-align: center
+			font-weight: 700
+			margin: 0 0 15px 0
+			p
+				display: none
+		.rating
+			display: flex
+			gap: 20px
+			.item
+				text-align: center
+				width: calc( (100% - 40px) / 3 )
+				.number
+					display: flex
+					align-items: center
+					justify-content: center
+					position: relative
+					p
+						position: absolute
+						font-size: 24px
+						font-weight: 700
+						span
+							font-size: 50%
+					img
+						margin: 0 0 5px 0
+				>img
+					margin: 0 0 5px 0
+				>p
+					font-size: 12px
+	.swiper
+		padding: 0 0 0 15px
+		.swiper-wrapper
+			.swiper-slide
+				width: 85%
+				.img
+					position: relative
+					margin: 0 0 10px 0
+					p
+						position: absolute
+						bottom: 10px
+						right: 10px
+						padding: 5px 12px
+						font-size: 12px
+						background-color: rgba(255, 255, 255, .5)
+						border-radius: 2px
+					img
+						width: 100%
+				.headline
+					font-size: 18px
+					font-weight: 600
+					margin: 0 0 10px 0
+				.location
+					display: flex
+					gap: 10px
+					align-items: center
+					color: #B3B3B3
+					margin: 0 0 10px 0
+					p
+						line-height: 1
+						font-size: 14px
+				.details
+					display: flex
+					gap: 20px
+					margin: 0 0 10px 0
+					.square, .time
+						display: flex
+						gap: 10px
+						div
+							display: flex
+							flex-direction: column
+							justify-content: space-between
+							p:first-child
+								font-size: 14px
+								font-weight: 600
+							p:last-child
+								font-size: 12px				
+				.price
+					font-size: 12px
+					span
+						font-size: 14px
+						font-weight: 600
+	.all_works
+		display: none
+@media (min-width: 640px)
+	.completed_works
+		.swiper
+			.swiper-wrapper
+				.swiper-slide
+					width: 45%
+@media (min-width: 768px)
+	.completed_works
+		margin: 0 0 75px 0
+		.swiper
+			.swiper-wrapper
+				.swiper-slide
+					.img
+@media (min-width: 992px)
+	.completed_works
+		margin: 0 0 100px 0
+		.top
+			margin: 0 0 40px 0
+			display: flex
+			justify-content: space-between
+			.title
+				font-size: 48px
+				text-align: left
+				max-width: 540px
+				margin: 0
+				h2
+					margin: 0 0 40px 0
+				p
+					display: block
+					font-size: 16px
+					font-weight: 400
+					max-width: 410px
+			.rating
+				align-items: flex-end
+				.item
+					.number
+						p
+							font-size: 48px
+							span
+								font-size: 33.3333%
+					>p
+						font-size: 16px
+		.swiper
+			max-width: 1230px
+			padding: 0 15px
+			margin: 0 auto 60px auto
+			.swiper-wrapper
+				.swiper-slide
+					width: 28%
+					.img
+						margin: 0 0 20px 0
+					.headline
+						font-size: 22px
+						margin: 0 0 20px 0
+					.location
+						margin: 0 0 20px 0
+						p
+							font-size: 16px
+					.details
+						margin: 0 0 20px 0
+					.price
+						span
+							font-size: 16px
+		.all_works
+			display: block
+			margin: 0 auto
+			width: fit-content
+			padding: 20px 45px
+			border: 1px solid #23292f
+			border-radius: 5px
+			font-size: 22px
+			&:hover
+				background-color: #23292f
+				color: #fff
