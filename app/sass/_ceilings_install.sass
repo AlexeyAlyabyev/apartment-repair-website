@@ -22,8 +22,6 @@
 					margin: 0 0 10px 0
 				p:not(.headline)
 					font-size: 12px
-			.swiper-button-prev, .swiper-button-next
-				display: none
 		.info
 			display: none
 @media (min-width: 640px)
@@ -72,40 +70,10 @@
 						font-size: 16px
 					&:not(.swiper-slide-active)
 						opacity: .5
-				.swiper-button-prev, .swiper-button-next
-					color: #989898
-					width: 40px
-					height: 40px
-					background-color: #fff
-					border-radius: 40px
-					border: 1px solid #989898
-					display: flex
-					align-items: center
-					justify-content: center
-					&::after
-						content: ""
-						display: block
-						width: 8px
-						height: 8px
-						border-radius: 2px
-						transform: translateX(-3px) rotate(45deg)
-						border-top: 2px solid #989898
-						border-right: 2px solid #989898
-						border-left: 2px solid transparent
-						border-bottom: 2px solid transparent
-						position: absolute
-						transition: .3s
-					&:hover
-						&::after
-							border-top-color: #00b268
-							border-right-color: #00b268
 				.swiper-button-next
-					right: 15px
 					top: calc( 50% - (95px / 2) )
 				.swiper-button-prev
-					left: 15px
 					top: calc( 50% - (95px / 2) )
-					transform: rotate(180deg)
 			.info
 				display: block
 				width: (100% / 1200 * 468)
