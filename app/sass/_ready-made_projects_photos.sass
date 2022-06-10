@@ -1,0 +1,71 @@
+.ready-made_projects_photos
+	margin: 0 0 40px 0
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 10px 0
+		text-align: center
+	.body
+		display: flex
+		flex-direction: column
+		gap: 10px
+		.top
+			display: flex
+			flex-direction: column
+			gap: 10px
+		.middle
+			display: none
+		.bottom
+			display: flex
+			flex-direction: column
+			gap: 10px		
+		.square
+			display: flex
+			gap: 10px
+			flex-wrap: wrap
+			img
+				width: calc( (100% - 10px) / 2 )
+@media (min-width: 640px)
+	.ready-made_projects_photos
+		.body
+			flex-direction: row
+@media (min-width: 768px)
+	.ready-made_projects_photos
+		margin: 0 0 75px 0
+@media (min-width: 992px)
+	.ready-made_projects_photos
+		margin: 0 0 100px 0
+		.body
+			flex-direction: column
+			.top
+				flex-direction: row
+				>img
+					width: calc( (100% - 20px) / 3 )
+			.middle
+				display: flex
+				gap: 10px
+				>img
+					width: calc( (100% - 10px) / 2)
+				.one_big_two_small
+					width: calc(((100% - 20px)/ 3))
+					// width: calc( ((100% - 10px) / 2 - 10px) / 3 * 2)
+					// width: calc( (100% - 20px) / 6 * 2)
+					display: flex
+					flex-direction: column
+					gap: 10px
+					.flex_horizontal
+						display: flex
+						gap: 10px
+						img
+							width: calc( (100% - 10px) / 2 )
+				.flex_vertical
+					width: calc(((100% - 20px)/ 3 - 10px) / 2)
+					// width: calc( ((100% - 10px) / 2 - 10px) / 3 * 1)		
+					// width: calc( (100% - 20px) / 6 * 1)
+					display: flex
+					flex-direction: column
+					gap: 10px
+			.bottom
+				flex-direction: row				
+				>img
+					width: calc( (100% - 20px) / 3 )
