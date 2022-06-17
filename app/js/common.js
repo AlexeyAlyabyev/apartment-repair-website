@@ -574,4 +574,28 @@ $(function(){
 		});		
 	}
 
+	// Модалка на вызов замерщика
+	$(".specialist_modal .body .confirm label").click(function(){
+		$(".specialist_modal .body button").toggleClass("disabled");
+	});
+
+	$(".zamer_modal").click(showZamerModal);
+
+	$(".specialist_modal").click(function(e){
+		if ($(e.target).hasClass("specialist_modal") || $(e.target).hasClass("cross")) closeZamerModal();
+	})
+
+	function showZamerModal(){
+		$(".specialist_modal").fadeIn(300);
+		$('body').addClass('modal_active');
+		$('html').addClass('no_scroll');
+	}
+
+	function closeZamerModal(){
+		$(".specialist_modal").fadeOut(300, 'linear', function(){
+			$('body').removeClass('modal_active');
+			$('html').removeClass('no_scroll');
+		});
+	}
+
 });
