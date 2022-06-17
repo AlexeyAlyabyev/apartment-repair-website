@@ -598,4 +598,28 @@ $(function(){
 		});
 	}
 
+	// Модалка на обратный звонок
+	$(".callback .body .confirm label").click(function(){
+		$(".callback .body button").toggleClass("disabled");
+	});
+
+	$(".call_back").click(showCallbackModal);
+
+	$(".callback").click(function(e){
+		if ($(e.target).hasClass("callback") || $(e.target).hasClass("cross")) closeCallbackModal();
+	})
+
+	function showCallbackModal(){
+		$(".callback").fadeIn(300);
+		$('body').addClass('modal_active');
+		$('html').addClass('no_scroll');
+	}
+
+	function closeCallbackModal(){
+		$(".callback").fadeOut(300, 'linear', function(){
+			$('body').removeClass('modal_active');
+			$('html').removeClass('no_scroll');
+		});
+	}
+
 });
