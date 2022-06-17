@@ -1,4 +1,4 @@
-.specialist_modal
+.callback
 	display: none
 	position: fixed
 	top: 0
@@ -55,7 +55,7 @@
 			display: inline-block
 			font-weight: 600
 			margin: 0 0 10px 0
-		>input
+		>input, textarea
 			display: block
 			margin: 0 0 15px 0
 			background-color: #FAFAFC
@@ -65,31 +65,9 @@
 			border-radius: 5px
 			&:placeholder
 				color: #A7AABB
-		.call_type
-			display: flex
-			flex-wrap: wrap
-			gap: 10px
-			margin: 0 0 20px 0
-			>p
-				font-weight: 600
-				width: 100%
-			label
-				padding: 10px 15px	
-				background-color: #FAFAFC
-				border: 1px solid #FAFAFC
-				border-radius: 5px
-				cursor: pointer
-				transition: .3s
-				&:hover
-					border-color:#00B268
-				p
-					display: none
-				img
-					width: 30px
-			input
-				display: none
-				&:checked+label
-					border-color:#00B268
+		textarea
+			resize: none
+			height: calc(30px + 3 * 16px * 1.2)
 		.confirm
 			display: flex
 			align-items: center
@@ -133,7 +111,7 @@
 				pointer-events: none
 				cursor: default
 @media (min-width: 992px)
-	.specialist_modal
+	.callback
 		.body
 			padding: 40px
 			border-radius: 10px
@@ -151,23 +129,11 @@
 				right: 40px
 			>label
 				font-size: 20px
-			>input
+			>input,textarea
 				padding: 20px
 				margin: 0 0 30px 0
-			.call_type
-				margin: 0 0 40px 0
-				>p
-					font-size: 20px
-				label
-					width: fit-content
-					display: flex
-					align-items: center
-					gap: 5px
-					padding: 15px 20px
-					p
-						display: block
-					img
-						width: 20px
+			textarea
+				height: calc(40px + 10 * 16px * 1.2)				
 			.confirm
 				margin: 0 0 40px 0
 				p
