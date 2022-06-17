@@ -1,0 +1,96 @@
+.technology_description
+	display: none
+@media (min-width: 992px)
+	.technology_description
+		display: block
+		margin: 0 0 100px 0
+		.title
+			display: flex
+			justify-content: space-between
+			margin: 0 0 60px 0
+			.left
+				max-width: 550px
+				h2
+					font-size: 48px
+					font-weight: 700
+					margin: 0 0 40px 0
+			.right
+				max-width: 650px
+				align-self: flex-end
+				text-align: right
+				font-size: 32px
+				font-weight: 600
+		.body
+			.top
+				display: flex
+				gap: 20px
+				justify-content: space-between
+				margin: 0 0 10px 0
+				.item
+					max-width: 360px
+					position: relative
+					.info
+						position: absolute
+						top: 0
+						left: 0
+						.headline
+							font-size: 22px
+							font-weight: 600
+							margin: 0 0 10px 0
+						.name
+							margin: 0 0 10px 0
+						.material
+							display: flex
+							align-items: center
+							gap: 10px
+			.bottom
+				display: flex
+				gap: 10px
+				>img
+					width: calc((100% - 10px) / 2 )
+				.tiles
+					display: flex
+					flex-direction: column
+					gap: 10px
+					.youtube
+						overflow: hidden
+						position: relative
+						display: flex
+						align-items: center
+						justify-content: center
+						cursor: pointer
+						height: 100%
+						img
+							transition: .3s
+						&::before
+							display: block
+							content: ""
+							width: 60px
+							height: 42px
+							border-radius: 12px
+							background-color: #eb3323
+							position: absolute
+							z-index: 1
+							transition: .3s
+						&::after
+							content: '▲'
+							font-size: 20px
+							color: #fff
+							display: block
+							position: absolute
+							z-index: 3
+							transition: .3s
+							transform: rotate(90deg)
+						&:hover
+							&::before
+								background-color: #23292f
+							img
+								transform: scale(1.05)
+					.two
+						display: flex
+						gap: 10px
+						img
+							&:first-child
+								width: calc(100% / 595 * 393)
+							&:last-child
+								width: calc(100% / 595 * 192)
