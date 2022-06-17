@@ -52,6 +52,40 @@
 					display: flex
 					flex-direction: column
 					gap: 10px
+					.youtube
+						overflow: hidden
+						position: relative
+						display: flex
+						align-items: center
+						justify-content: center
+						cursor: pointer
+						height: 100%
+						img
+							transition: .3s
+						&::before
+							display: block
+							content: ""
+							width: 60px
+							height: 42px
+							border-radius: 12px
+							background-color: #eb3323
+							position: absolute
+							z-index: 1
+							transition: .3s
+						&::after
+							content: '▲'
+							font-size: 20px
+							color: #fff
+							display: block
+							position: absolute
+							z-index: 3
+							transition: .3s
+							transform: rotate(90deg)
+						&:hover
+							&::before
+								background-color: #23292f
+							img
+								transform: scale(1.05)
 					.two
 						display: flex
 						gap: 10px

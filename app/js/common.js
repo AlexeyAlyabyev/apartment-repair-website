@@ -555,4 +555,23 @@ $(function(){
 		}
 	}
 
+	// Счастливые клиенты - Ютуб API и запуск видео по нажатию на картинку
+	if ($(".technology_description").length) {
+		$(".technology_description .body .bottom .tiles .youtube").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: 'auto',
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});		
+
+			function play(){
+				player.playVideo();
+			}
+		});		
+	}
+
 });
