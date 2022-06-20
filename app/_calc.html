@@ -7,7 +7,7 @@
 			</div>
 			<p>После того, как вы получите смету цена не изменится ни на рубль</p>
 		</div>
-		<form class="mobile" action="phpzzayavka.php" method="POST">
+		<form class="mobile" action="form_handler.php" method="POST">
 			<div class="area_by_number">
 				<p>Площадь потолка</p>
 				<input type="number" min="5" value="20" name="square" max="90" required>
@@ -32,7 +32,7 @@
 			<button class="black">Оставить заявку</button>
 		</form>
 
-		<form class="desktop">
+		<form class="desktop" method="POST" action="form_handler.php">
 			<div class="params">
 				<div class="facture">
 					<p class="title">1. Фактура</p>
@@ -108,7 +108,7 @@
 				<p class="final_price">Итоговая стоимость: <strong><span>0</span> рублей</strong></p>
 				<div class="contact_data">
 					<input type="tel" name="phone" placeholder="Ваш телефон" required>
-					<input type="hidden" name="final_price" required>
+					<input type="hidden" name="summa" required>
 					<button class="black">Рассчитать</button>
 				</div>
 			</div>

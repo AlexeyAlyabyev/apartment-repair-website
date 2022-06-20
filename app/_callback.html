@@ -1,19 +1,21 @@
 <div class="callback">
-	<form action="#" method="POST" class="body">
+	<form action="form_handler.php" method="POST" class="body">
 		<p class="title">Обратный звонок</p>
 		<p class="description">Вы можете задать вопрос или получить консультацию, для этого закажите обратный звонок.</p>
 		<div class="cross"></div>
 		<label for="callback_modal_name">Ваше имя</label>
 		<input id="callback_modal_name" type="text" name="name" placeholder="Имя" required>
 		<label for="callback_modal_phone">Ваш телефон</label>
-		<input id="callback_modal_phone" type="text" name="name" placeholder="+7 (_ _ _) _ _ _  _ _  _ _" required>
+		<input id="callback_modal_phone" type="text" name="phone" placeholder="+7 (_ _ _) _ _ _  _ _  _ _" required>
 		<label for="callback_modal_comment">Комментарий</label>
 		<textarea name="comment" id="comment"></textarea>
-		<div class="confirm">
-			<input id="callback_confirm" type="checkbox" name="confirm" value="1" required>
-			<label for="callback_confirm"></label>
+		<div class="submit">
+			<input id="callback_submit" type="checkbox" name="submit" value="1" required>
+			<label for="callback_submit"></label>
 			<p>Нажимая эту кнопку вы даете согласие на обработку персональных данных</p>
 		</div>
 		<button class="black disabled">Отправить</button>
+		<input type="hidden" name="page" value="[[*pagetitle]]">
+		[[advertising_data]]
 	</form>
 </div>
