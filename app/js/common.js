@@ -514,6 +514,12 @@ $(function(){
 		$(this).addClass("active");
 		$(".prices .swiper-slide:not(." + $(this).attr("data-class") + ")").hide();
 		$(".prices .swiper-slide." + $(this).attr("data-class")).show();
+		$(".prices .swiper-slide .types span").hide().removeClass("active");
+		if ($(this).attr("data-class") != "all")
+			$(".prices .swiper-slide .types span." + $(this).attr("data-class")).show().addClass("active");
+		else
+		$(".prices .swiper-slide .types span." + $(this).attr("data-class")).show();
+		
 
 		if (!$(".prices .ceiling_types .tkan .swiper-slide." + $(this).attr("data-class")).length) 
 			$(".prices .ceiling_types .tkan").hide();
