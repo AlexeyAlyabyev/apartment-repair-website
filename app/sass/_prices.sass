@@ -40,6 +40,11 @@
 								height: 15px
 						.types
 							margin: 0 0 5px 0
+							span
+								&:not(:last-child)::after
+									content: ", "
+								&.active::after
+									content: none
 						.price
 							margin: 0 0 10px 0
 							.value
