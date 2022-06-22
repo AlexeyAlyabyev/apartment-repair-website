@@ -31,6 +31,7 @@
 			<p class="description">Стоимость полотна <strong>с установкой!</strong></p>
 			<div class="price">от <span class="value">0</span> руб</div>
 			<input type="hidden" name="summa" required>
+			<input type="hidden" name="goal" value="Расчет стоимости">
 			<input type="tel" name="phone" placeholder="Ваш телефон" required>
 			<input type="submit" class="button black" name="submit" value="Рассчитать" required>
 		</form>
@@ -110,6 +111,7 @@
 			<div class="bottom">
 				<p class="final_price">Итоговая стоимость: <strong><span>0</span> рублей</strong></p>
 				<div class="contact_data">
+					<input type="hidden" name="goal" value="Расчет стоимости">
 					<input type="tel" name="phone" placeholder="Ваш телефон" required>
 					<input type="hidden" name="summa" required>
 					<input type="submit" class="button black" name="submit" value="Рассчитать" required>

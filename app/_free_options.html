@@ -32,10 +32,11 @@
 						<p>Шины<br>для штор</p>
 					</div>
 				</div>
-				<button class="mobile black">Получить бесплатно</button>
-				<form action="#" method="POST">
-					<input type="tel" placeholder="Ваш телефон" required>
-					<button class="desktop black">Получить бесплатно</button>					
+				<button class="mobile black zamer_modal">Получить бесплатно</button>
+				<form action="form_handler.php" method="POST">
+					<input type="hidden" name="goal" value="Вызов замерщика">
+					<input type="tel" name="phone" placeholder="Ваш телефон" required>
+					<input type="submit" class="button black" name="submit" value="Получить бесплатно" required>			
 				</form>
 				<p class="even_if">Даже если вы откажетесь от заказа, замер останется для вас – <strong>бесплатным!</strong></p>
 			</div>
