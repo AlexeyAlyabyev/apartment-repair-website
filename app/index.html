@@ -7,7 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+	<!-- ИСПОЛЬЗУЕТСЯ В ТЕСТЕ -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8.2.4/swiper-bundle.min.css" />
+	<!-- ИСПОЛЬЗУЕТСЯ В ПРОДЕ 
+	<link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
 	<link rel="stylesheet" href="css/main.min.css" />
 	
 </head>
@@ -49,6 +52,8 @@
 	@@include('_completed_works.html') -->
 
 	<!-- ЦЕНЫ -->
+	@@include('_breadcrumbs.html')
+	@@include('_calc.html')
 	@@include('_prices.html')
 	@@include('_free_options.html')
 	@@include('_any_types_of_ceiling.html')
@@ -65,7 +70,10 @@
 	@@include('_specialist_modal.html')
 	@@include('_callback.html')
 	
-	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<!-- ИСПОЛЬЗУЕТСЯ В ТЕСТЕ -->
+	<script src="https://unpkg.com/swiper@8.2.4/swiper-bundle.min.js"></script>
+	<!-- ИСПОЛЬЗУЕТСЯ В ПРОДЕ
+		<script src="js/swiper-bundle.min.js"></script> -->
 	<script src="js/common.min.js"></script>
 </body>
 

@@ -1,12 +1,12 @@
 <div class="specialist_modal">
-	<form action="#" method="POST" class="body">
+	<form action="form_handler.php" method="POST" class="body">
 		<p class="title">Вызов замерщика</p>
 		<p class="description">Наш специалист расскажет об особенностях, плюсах и минусах каждого варианта, чтобы вы сделали правильный выбор!</p>
 		<div class="cross"></div>
 		<label for="specialist_modal_name">Ваше имя</label>
 		<input id="specialist_modal_name" type="text" name="name" placeholder="Имя" required>
 		<label for="specialist_modal_phone">Ваш телефон</label>
-		<input id="specialist_modal_phone" type="text" name="name" placeholder="+7 (_ _ _) _ _ _  _ _  _ _" required>
+		<input id="specialist_modal_phone" type="text" name="phone" placeholder="+7 (_ _ _) _ _ _  _ _  _ _" required>
 		<div class="call_type">
 			<p>Выберите удобный способ связи:</p>
 			<input id="specialist_modal_telephone" type="radio" name="call_type" value="Телефон" required checked>
@@ -25,11 +25,13 @@
 				<img src="image/specialist_modal/telegram.svg" alt="Вызов замерщика через telegram">
 			</label>
 		</div>
-		<div class="confirm">
-			<input id="confirm" type="checkbox" name="confirm" value="1" required>
-			<label for="confirm"></label>
+		<div class="submit">
+			<input id="submit" type="checkbox" name="submit" value="1" required>
+			<label for="submit"></label>
 			<p>Нажимая эту кнопку вы даете согласие на обработку персональных данных</p>
 		</div>
 		<button class="black disabled">Отправить</button>
+		<input type="hidden" name="page" value="[[*pagetitle]]">
+		[[advertising_data]]
 	</form>
 </div>

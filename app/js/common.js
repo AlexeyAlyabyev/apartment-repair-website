@@ -167,7 +167,7 @@ $(function(){
 			current_value.html(square_value);
 			$(".calc form.mobile .area_by_number input").val(square_value);
 			$(".calc form.mobile .price .value").html(final_price);
-			$(".calc input[name='summa']").val(final_price);
+			$(".calc form.mobile input[name='summa']").val(final_price);
 		}
 	});
 	$(document).on("touchmove",function(e){
@@ -185,7 +185,7 @@ $(function(){
 			current_value.html(square_value);
 			$(".calc form.mobile .area_by_number input").val(square_value);
 			$(".calc form.mobile .price .value").html(final_price);
-			$(".calc input[name='summa']").val(final_price);
+			$(".calc form.mobile input[name='summa']").val(final_price);
 		}
 	});
 
@@ -208,7 +208,7 @@ $(function(){
 		square_value = parseInt($(".calc form.mobile .area_by_number input[name='square']").val());
 		final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
 		$(".calc form.mobile .price .value").html(final_price);
-		$(".calc input[name='summa']").val(final_price);
+		$(".calc form.mobile input[name='summa']").val(final_price);
 	}
 
 	function recalculateWithMoving(){
@@ -232,7 +232,7 @@ $(function(){
 
 		final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
 		$(".calc form.mobile .price .value").html(final_price);
-		$(".calc input[name='summa']").val(final_price);
+		$(".calc form.mobile input[name='summa']").val(final_price);
 	}
 
 	// ПК Калькулятор
@@ -276,7 +276,7 @@ $(function(){
 											chandeliers * 450;
 
 		$(".calc form.desktop .bottom .final_price strong span").html(final_price.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 "));
-		$(".calc form.desktop .params .room .square input[name='final_price']").val(final_price);		
+		$(".calc form.desktop .bottom .contact_data input[name='summa']").val(final_price);		
 	}
 
 	if ($(".material_choise").length && window.innerWidth < 1230) {
@@ -581,7 +581,7 @@ $(function(){
 	}
 
 	// Модалка на вызов замерщика
-	$(".specialist_modal .body .confirm label").click(function(){
+	$(".specialist_modal .body .submit label").click(function(){
 		$(".specialist_modal .body button").toggleClass("disabled");
 	});
 
@@ -605,7 +605,7 @@ $(function(){
 	}
 
 	// Модалка на обратный звонок
-	$(".callback .body .confirm label").click(function(){
+	$(".callback .body .submit label").click(function(){
 		$(".callback .body button").toggleClass("disabled");
 	});
 
