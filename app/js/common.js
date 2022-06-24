@@ -624,4 +624,15 @@ $(function(){
 		});
 	}
 
+	if ($(".fixtures").length && window.innerWidth < 992){
+		let fixtures_swiper = [];
+		$(".fixtures .item.swiper").each(function(index){
+			fixtures_swiper[index] = new Swiper($(this)[0], {
+				spaceBetween: 15,
+				speed: 500,
+				slidesPerView: "auto",
+			});
+		});
+	}
+
 });
