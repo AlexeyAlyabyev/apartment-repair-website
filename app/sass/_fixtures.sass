@@ -8,6 +8,30 @@
 	.body
 		padding: 0 0 0 15px
 		.item
+			&:first-child
+				.swiper-slide:last-child
+					text-align: center
+					padding: 40px 20px 0 20px
+					height: auto
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					p
+						font-size: 36px
+						font-weight: 700
+						margin: 0 0 20px 0
+						span
+							display: block
+							&:first-child
+								font-size: 26px
+					button
+						margin: 0 auto 30px auto
+						border-radius: 0
+						width: 210px
+						padding: 20px 0
+					img
+						width: 220px
+						margin: 0 auto
 			&:not(.swiper)
 				border: 1px solid #F3F2F2
 				margin: 0 15px 0 0
@@ -65,6 +89,18 @@
 			margin: 0 auto
 			font-size: 0
 			.item
+				&:first-child
+					.swiper-slide:last-child
+						display: inline-block
+						margin: 0 15px 0 0
+						padding: 40px 20px 0 20px
+						p
+							margin: 0 0 50px 0
+						img
+							width: 160px
+						button
+							margin: 0 auto 49px auto
+							width: 100%
 				&.swiper
 					display: inline
 					.swiper-wrapper
@@ -80,6 +116,7 @@
 					width: calc( (100% - 45px) / 4 )
 					display: inline-block
 					margin: 0 15px 20px 0
+					vertical-align: top
 					&:nth-of-type(4n)
 						margin: 0 0 20px 0
 				&:nth-child(2)
@@ -87,9 +124,16 @@
 					.swiper-slide
 						&:nth-of-type(4n)
 							margin: 0 15px 20px 0
-						&:nth-of-type(4n+2)
+						&:nth-of-type(4n+1)
 							margin: 0 0 20px 0
 				.content
 					font-size: 16px
 					img
 						height: 160px
+@media (min-width: 1230px)
+	.fixtures
+		.body
+			.item
+				&:first-child
+					.swiper-slide:last-child
+						padding: 40px 40px 0 40px
