@@ -160,7 +160,7 @@ $(function(){
 			left_percentage = Math.floor(circle_pos / filling_width * 100);
 			square_value = Math.round(left_percentage / 100 * 90);
 			left_percentage += "%";
-			final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
+			final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
 			circle.css("left", "calc(" + left_percentage + " - 25px/2)");
 			current_value.css("left", "calc(" + left_percentage + " - 18px/2)");
 			green_filling.css("width", left_percentage);
@@ -178,7 +178,7 @@ $(function(){
 			left_percentage = Math.floor(circle_pos / filling_width * 100);
 			square_value = Math.round(left_percentage / 100 * 90);
 			left_percentage += "%";
-			final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
+			final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
 			circle.css("left", "calc(" + left_percentage + " - 25px/2)");
 			current_value.css("left", "calc(" + left_percentage + " - 18px/2)");
 			green_filling.css("width", left_percentage);
@@ -189,11 +189,7 @@ $(function(){
 		}
 	});
 
-	$(".calc form.mobile .ceiling_type p").click(function(){
-		$(this).siblings("p.active").removeClass("active");
-		$(this).addClass("active");
-		recalculateWithoutMoving();
-	});
+	$(".calc form.mobile .ceiling_type label").click(recalculateWithoutMoving);
 
 	$(".calc form.mobile .area_by_number input[name='square']").on("change", recalculateWithMoving);
 
@@ -206,7 +202,7 @@ $(function(){
 
 	function recalculateWithoutMoving(){
 		square_value = parseInt($(".calc form.mobile .area_by_number input[name='square']").val());
-		final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
+		final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
 		$(".calc form.mobile .price .value").html(final_price);
 		$(".calc form.mobile input[name='summa']").val(final_price);
 	}
@@ -230,7 +226,7 @@ $(function(){
 		current_value.css("left", "calc(" + left_percentage + " - 18px/2)");
 		green_filling.css("width", left_percentage);
 
-		final_price = parseInt($(".calc form.mobile .ceiling_type p.active").attr("data-price")) * square_value;
+		final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
 		$(".calc form.mobile .price .value").html(final_price);
 		$(".calc form.mobile input[name='summa']").val(final_price);
 	}
@@ -625,6 +621,17 @@ $(function(){
 		$(".callback").fadeOut(300, 'linear', function(){
 			$('body').removeClass('modal_active');
 			$('html').removeClass('no_scroll');
+		});
+	}
+
+	if ($(".fixtures").length && window.innerWidth < 992){
+		let fixtures_swiper = [];
+		$(".fixtures .item.swiper").each(function(index){
+			fixtures_swiper[index] = new Swiper($(this)[0], {
+				spaceBetween: 15,
+				speed: 500,
+				slidesPerView: "auto",
+			});
 		});
 	}
 

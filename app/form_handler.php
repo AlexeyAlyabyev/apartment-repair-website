@@ -14,6 +14,7 @@ if(isset($_POST['submit'])){
 	$mail_to_myemail = "
 	Имя: ".$_POST['name']."
 	Телефон: ".$_POST['phone']."
+	Цель обращения: ".$_POST['goal']."
 	Страница: ".$_POST['page']."
 	Комментарий: ".$_POST['comment']."
 	Предпочитаемый способ связи: ".$_POST['call_type']."

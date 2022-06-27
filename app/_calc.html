@@ -23,14 +23,18 @@
 				<p class="max">90</p>
 			</div>
 			<div class="ceiling_type">
-				<p data-price="680" class="active">ПВХ</p>
-				<p data-price="2390">Ткань</p>
+				<input id="facture_pvh" type="radio" name="facture" value="ПВХ" required checked>
+				<label for="facture_pvh" data-price="680">ПВХ</label>
+				<input id="facture_tkan" type="radio" name="facture" value="Ткань" required>
+				<label for="facture_tkan" data-price="2390">Ткань</label>
 			</div>
 			<p class="description">Стоимость полотна <strong>с установкой!</strong></p>
 			<div class="price">от <span class="value">0</span> руб</div>
 			<input type="hidden" name="summa" required>
+			<input type="hidden" name="goal" value="Расчет стоимости">
+			<input type="hidden" name="page" value="[[*pagetitle]]">
 			<input type="tel" name="phone" placeholder="Ваш телефон" required>
-			<button class="black">Оставить заявку</button>
+			<input type="submit" class="button black" name="submit" value="Рассчитать" required>
 		</form>
 
 		<form class="desktop" method="POST" action="form_handler.php">
@@ -108,9 +112,11 @@
 			<div class="bottom">
 				<p class="final_price">Итоговая стоимость: <strong><span>0</span> рублей</strong></p>
 				<div class="contact_data">
+					<input type="hidden" name="goal" value="Расчет стоимости">
+					<input type="hidden" name="page" value="[[*pagetitle]]">
 					<input type="tel" name="phone" placeholder="Ваш телефон" required>
 					<input type="hidden" name="summa" required>
-					<button class="black">Рассчитать</button>
+					<input type="submit" class="button black" name="submit" value="Рассчитать" required>
 				</div>
 			</div>
 		</form>
