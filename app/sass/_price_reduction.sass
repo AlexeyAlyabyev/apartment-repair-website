@@ -1,0 +1,49 @@
+.price_reduction
+	margin: 0 0 40px 0
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 15px 0
+	.body
+		.item
+			display: flex
+			gap: 10px
+			.number
+				font-size: 32px
+				font-weight: 700
+				color: #F3F2F2
+			.text
+				padding: 15px 0 0 0
+				h3
+					font-size: 18px
+					font-weight: 700
+					margin: 0 0 5px 0
+			&:not(:last-child)
+				margin: 0 0 20px 0
+@media (min-width:768px)
+	.price_reduction
+		margin: 0 0 75px 0
+		.body
+			display: flex
+			flex-wrap: wrap
+			gap: 20px
+			.item
+				gap: 20px
+				width: calc((100% - 20px) / 2)
+				&:not(:last-child)
+					margin: 0
+@media (min-width:992px)
+	.price_reduction
+		margin: 0 0 100px 0
+		.title
+			font-size: 48px
+			margin: 0 0 30px 0
+		.body
+			gap: 30px 20px
+			.item
+				.number
+					font-size: 52px
+				.text
+					padding: 30px 0 0 0
+					h3
+						font-size: 22px
