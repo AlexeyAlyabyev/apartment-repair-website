@@ -1,0 +1,53 @@
+.clients_trust_us
+	margin: 0 0 40px 0
+	text-align: center
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 15px 0
+	.description
+		margin: 0 0 30px 0
+	.body
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		gap: 20px 40px
+		.item
+			.number
+				font-size: 128px
+				font-weight: 700
+				color: #00B268		
+@media (min-width: 640px)
+	.clients_trust_us
+		.body
+			justify-content: space-between
+@media (min-width: 768px)
+	.clients_trust_us
+		margin: 0 0 75px 0
+@media (min-width: 992px)
+	.clients_trust_us
+		margin: 0 0 100px 0
+		text-align: left
+		.title
+			font-size: 48px
+			margin: 0 0 40px 0
+		.description
+			margin: 0 0 60px 0
+			max-width: 450px
+		.body
+			.item:not(:last-child)
+				position: relative
+				&::after
+					content: ""
+					display: block
+					width: calc((100vw - 680px) / 2 )
+					height: 1px
+					background-color: #B3B3B3
+					position: absolute
+					left: calc(100% + 40px)
+					top: 50%
+@media (min-width: 1230px)
+	.clients_trust_us
+		.body
+			.item:not(:last-child)::after
+				width: calc((1230px - 680px) / 2 )
