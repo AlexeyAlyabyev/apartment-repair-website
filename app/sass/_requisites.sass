@@ -1,0 +1,42 @@
+.requisites
+	margin: 0 0 40px 0
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 20px 0
+	.body
+		.item
+			font-size: 14px
+			display: flex
+			gap: 20px
+			padding: 17px 15px
+			&:nth-child(2n-1)
+				background-color: #F9F9F9
+			p
+				&:first-child
+					min-width: 30px
+@media (min-width:640px)
+	.requisites
+		.body
+			.item
+				font-size: 16px
+				p
+					&:first-child
+						min-width: 200px
+@media (min-width:768px)
+	.requisites
+		margin: 0 0 75px 0
+@media (min-width:992px)
+	.requisites
+		margin: 0 0 100px 0
+		.title
+			font-size: 48px
+			margin: 0 0 40px 0
+			max-width: 550px
+		.body
+			.item
+				font-size: 22px
+				gap: 40px
+				p
+					&:first-child
+						min-width: 225px
