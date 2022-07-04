@@ -641,5 +641,4 @@ $(function(){
 		$(".our_works .body img:not(." + $(this).attr("data-class") + ")").hide();
 		$(".our_works .body img." + $(this).attr("data-class")).show();
 	});
-
 });
