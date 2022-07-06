@@ -264,7 +264,7 @@ $(function(){
 		let manufacturer_price = +$(".calc form.desktop .params .manufacturer .body input:checked").attr("data-price");
 		let square = +$(".calc form.desktop .params .room .square input[name='square']").val();
 		let angles = +$(".calc form.desktop .params .room .angles input[name='angles']").val();
-		let fixtures = +$(".calc form.desktop .params .light .fixtures input[name='fixtures']").val();
+		let fixtures = +$(".calc form.desktop .params .light .calc_fixtures input[name='fixtures']").val();
 		let chandeliers = +$(".calc form.desktop .params .light .chandeliers input[name='chandeliers']").val();
 		let final_price = manufacturer_price * square + 
 											(angles - 4) * 230 + 
