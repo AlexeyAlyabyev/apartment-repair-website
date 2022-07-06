@@ -56,19 +56,11 @@ $(function(){
 		}
 	});
 
+	if (window.innerWidth < 1230) $(".only_desktop").remove();
 	if ($(".main_screen_swiper").length) {
 		const main_screen_swiper = new Swiper('.main_screen_swiper', {
 			loop: true,
 			speed: 500,
-			enabled: false,
-	
-			breakpoints: {
-				1230: {
-				enabled: true,
-				slidesPerView: 1,
-				speed: 500,
-				},
-			},
 	
 			autoplay: {
 				delay: 5000,
