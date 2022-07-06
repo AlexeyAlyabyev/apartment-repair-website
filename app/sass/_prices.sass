@@ -1,5 +1,49 @@
 .prices
 	margin: 20px 0 40px 0
+	&.only_msd, &.only_satin, &.only_mat, &.only_glyanc
+		.filter
+			display: none
+		.ceiling_types
+			.tkan
+				display: none
+			.pvh h2
+				display: none
+	&.only_msd
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide:not(.msd)
+			display: none
+	&.only_mat
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide .types span
+			&:not(:last-child)::after
+				content: none
+			&:not(.mat)
+				display: none
+	&.only_satin
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide:not(.satin)
+			display: none
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide .types span
+			&:not(:last-child)::after
+				content: none
+			&:not(.satin)
+				display: none
+	&.only_glyanc
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide:not(.glyanc)
+			display: none
+		.ceiling_types .pvh .swiper .swiper-wrapper .swiper-slide .types span
+			&:not(:last-child)::after
+				content: none
+			&:not(.glyanc)
+				display: none
+	&.only_tkan
+		.filter
+			display: none
+		.ceiling_types
+			.pvh
+				display: none
+			.tkan 
+				h2
+					display: none
+				.swiper .swiper-wrapper .swiper-slide:last-child
+					display: flex
 	.title
 		font-size: 28px
 		text-align: center
@@ -106,6 +150,9 @@
 							padding: 15px 0
 		.pvh
 			margin: 0 0 20px 0
+		.tkan
+			.swiper .swiper-wrapper .swiper-slide:last-child
+				display: none
 @media (min-width: 420px)
 	.prices
 		.ceiling_types
