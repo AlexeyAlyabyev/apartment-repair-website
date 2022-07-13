@@ -2,6 +2,16 @@
 	display: none
 @media (min-width: 992px)
 	.technology_description
+		&.without_bottom
+			.body
+				.top
+					.item
+						.info
+							top: 60px
+							left: auto
+							right: 15px
+				.bottom
+					display: none
 		display: block
 		margin: 0 0 100px 0
 		.title
@@ -9,13 +19,13 @@
 			justify-content: space-between
 			margin: 0 0 60px 0
 			.left
-				max-width: 550px
+				max-width: 530px
 				h2
 					font-size: 48px
 					font-weight: 700
 					margin: 0 0 40px 0
 			.right
-				max-width: 650px
+				max-width: 670px
 				align-self: flex-end
 				text-align: right
 				font-size: 32px
