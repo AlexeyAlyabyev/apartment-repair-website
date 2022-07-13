@@ -1,0 +1,91 @@
+.main_screen_fixtures
+	background-color: #F8F8F8
+	.wrapper
+		background-image: url(../image/main_screen_fixtures/fixtures.gif)
+		background-position: left bottom
+		background-repeat: no-repeat
+		background-size: 85%
+		padding: 32px 15px 44px 15px
+	.promotion
+		font-size: 24px
+		font-weight: 600
+		color: #EB3323
+		margin: 0 0 20px 0
+	.title
+		font-size: 48px
+		font-weight: 700
+		line-height: 1
+		margin: 0 0 10px 0
+		max-width: 270px
+	.text
+		font-weight: 300
+		margin: 0 0 140px 0
+		max-width: 260px
+	button
+		background-color: #23292F
+		color: #fff
+		padding: 13px 20px
+		&:hover
+			background-color: transparent
+			color: #23292F
+@media (min-width: 360px)
+	.main_screen_fixtures
+		.wrapper
+			background-image: url(../image/main_screen_fixtures/fixtures-reverse.gif)
+			background-position: 150% bottom
+@media (min-width: 480px)
+	.main_screen_fixtures
+		.wrapper
+			background-position: 175% bottom
+			background-size: 80%
+@media (min-width: 640px)
+	.main_screen_fixtures
+		.wrapper
+			background-position: right bottom
+			background-size: 70%
+@media (min-width: 768px)
+	.main_screen_fixtures
+		.wrapper
+			background-position: 300px bottom
+			background-size: 55%
+			background-image: url(../image/main_screen_fixtures/fixtures.gif)
+			padding: 32px 15px 70px 15px
+		.title
+			margin: 0 0 30px 0
+		.text
+			margin: 0 0 80px 0
+		button
+			padding: 20px 45px
+			background-color: transparent
+			color: #23292F
+			&:hover
+				background-color: #23292F
+				color: #fff
+@media (min-width: 992px)
+	.main_screen_fixtures
+		background-image: url(../image/main_screen_fixtures/background.svg)
+		background-position: calc(70% + 700px) 70%
+		background-repeat: no-repeat
+		background-size: auto 250%
+		.wrapper
+			padding: 50px 15px 75px 15px
+			background-position: right bottom
+			background-size: auto 100%
+		.promotion
+			margin: 0 0 60px 0
+		.title
+			max-width: none
+			margin: 0 0 10px 0
+		.text
+			font-size: 32px
+			max-width: 610px
+			margin: 0 0 102px 0
+		button
+			font-size: 22px
+@media (min-width: 1230px)
+	.main_screen_fixtures
+		background-position: calc(50% + 700px) 70%
+		.wrapper
+			padding: 50px 15px 75px 15px
+			background-size: contain
+			background-position: right bottom
