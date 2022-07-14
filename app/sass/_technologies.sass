@@ -1,0 +1,61 @@
+.technologies
+	margin: 0 0 40px 0
+	&.small
+		.body
+			.swiper-wrapper
+				flex-wrap: wrap
+				gap: 20px
+				.item
+					width: 100%
+	.title
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 15px 0
+		text-align: center
+	.body
+		.swiper-wrapper
+			.item
+				width: 85%
+				img
+					margin: 0 0 10px 0
+				.headline
+					margin: 0 0 5px 0
+					font-size: 18px
+					font-weight: 600
+				.text
+					font-size: 14px
+@media (min-width: 640px)
+	.technologies
+		&.small
+			.body
+				.swiper-wrapper
+					gap: 20px 10px
+					.item
+						width: calc((100% - 10px) / 2)
+@media (min-width: 768px)
+	.technologies
+		margin: 0 0 75px 0
+		.body
+			.swiper-wrapper
+				.item
+					width: 45%
+@media (min-width: 992px)
+	.technologies
+		margin: 0 0 100px 0
+		.title
+			font-size: 48px
+			margin: 0 0 40px 0
+			text-align: left
+		.body
+			.swiper-wrapper
+				flex-wrap: wrap
+				gap: 20px 10px
+				.item
+					width: calc((100% - 10px) / 2)
+					img
+						margin: 0 0 20px 0
+					.headline
+						margin: 0 0 10px 0
+						font-size: 22px
+					.text
+						font-size: 16px
