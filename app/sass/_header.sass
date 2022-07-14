@@ -14,14 +14,20 @@ header
 	.logo
 		line-height: 0
 		img
-			max-height: 25px
+			max-height: 40px
 	.contact_us_info
 		.phone_and_messengers
+			display: flex
+			gap: 10px
+			align-items: center
 			.messengers
 				display: flex
 				gap: 10px
 				a:not(:last-of-type)
-					width: 40px
+					width: 35px
+			.burger
+				height: 30px
+				cursor: pointer
 @media (min-width: 480px)
 	header
 		.black
@@ -53,6 +59,8 @@ header
 				font-weight: 500
 			.additional
 				font-weight: 300
+		.transparent, .black
+			padding: 12px 10px
 @media (min-width: 992px)
 	header
 		border-bottom: 1px solid #ECECEC
@@ -71,13 +79,17 @@ header
 				align-items: center
 				.messengers
 					a:not(:last-of-type)
-						display: none
+						width: 25px
 					a:last-of-type
 						display: block 
+					a:first-of-type
+						display: none
 				.phone
 					display: block
 					font-size: 24px
 					font-weight: 700
+				.burger
+					display: none
 			.work_time
 				display: block
 				font-size: 12px
@@ -87,4 +99,4 @@ header
 	header
 		.logo
 			img
-				max-height: 35px
+				max-height: 40px

@@ -4,7 +4,7 @@
 $(function(){
 
 	// Переключения экранов в мобильной менюшке
-	$(".mobile_menu .navigation .catalog_opener, .mobile_menu .catalog .body >.close").click(function(){		
+	$(".mobile_menu .navigation .catalog_opener, .mobile_menu .catalog .body >.close, header .contact_us_info .phone_and_messengers .burger").click(function(){		
 		$("body").toggleClass("no_scroll");
 		$(".mobile_menu .catalog").toggleClass("active");
 	});
@@ -633,4 +633,12 @@ $(function(){
 		$(".our_works .body img:not(." + $(this).attr("data-class") + ")").hide();
 		$(".our_works .body img." + $(this).attr("data-class")).show();
 	});
+
+	if ($(".technologies").length && !$(".technologies").hasClass("small") && window.innerWidth < 992){
+		const technologies_slider = new Swiper('.technologies .swiper', {
+			spaceBetween: 15,
+			speed: 500,
+			slidesPerView: "auto",
+		});
+	}
 });
