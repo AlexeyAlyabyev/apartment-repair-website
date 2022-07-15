@@ -1,24 +1,18 @@
 .about_company
-	margin: 0 0 40px 0
+	@extend %regular_block
 	text-align: center
 	.title
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		margin: 0 0 15px 0
 	.description
 		margin: 0 0 20px 0
 		p
 			&.creed
 				display: none
-@media (min-width:768px)
-	.about_company
-		margin: 0 0 75px 0
 @media (min-width:992px)
 	.about_company
-		margin: 40px 0 100px 0
 		text-align: left
 		.title
-			font-size: 48px
 			margin: 0 0 5px 0
 		.description
 			display: flex

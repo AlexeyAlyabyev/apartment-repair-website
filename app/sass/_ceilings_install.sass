@@ -1,8 +1,7 @@
 .ceilings_install
-	margin: 0 0 40px 0
+	@extend %regular_block
 	.title
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		margin: 0 0 10px 0
 		text-align: center
 		.desktop
@@ -31,7 +30,6 @@
 					width: 45%
 @media (min-width: 768px)
 	.ceilings_install
-		margin: 0 0 75px 0
 		.body
 			.swiper
 				.swiper-slide
@@ -41,9 +39,7 @@
 						font-size: 14px
 @media (min-width: 992px)
 	.ceilings_install
-		margin: 0 0 100px 0
 		.title
-			font-size: 48px
 			text-align: left
 			max-width: 650px
 			margin: 0 0 40px 0

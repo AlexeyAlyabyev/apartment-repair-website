@@ -641,4 +641,54 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".double_vision").length && window.innerWidth < 992){
+		const double_vision_slider = new Swiper('.double_vision .swiper', {
+			spaceBetween: 15,
+			speed: 500,
+			slidesPerView: "auto",
+		});
+	}
+
+	if ($(".double_vision").length  && window.innerWidth < 992){
+		let swipe_trigger = false;
+		let review_img_border = $(".double_vision .before_after").eq(0)[0].offsetLeft;
+		let review_block_width = $(".double_vision .before_after").eq(0)[0].clientWidth;
+		let swipe_position;
+
+		$(".double_vision .before_after").mousemove(function(e){
+			if (swipe_trigger) {
+				swipe_position = e.originalEvent.clientX;
+				console.log(e.originalEvent.clientX);
+				changeSwipePosition();
+			}
+		});
+		$(".double_vision  .before_after").on("touchmove", function(e){
+			if (swipe_trigger) {
+				swipe_position = e.originalEvent.targetTouches[0].clientX;
+				changeSwipePosition();
+			}
+		});
+
+		$(".double_vision .before_after .slider").mousedown(function(){
+			swipe_trigger = true;
+		});
+		$(".double_vision .before_after .slider").on("touchstart", function(){
+			swipe_trigger = true;
+		});
+
+		$(document).mouseup(function(){
+			swipe_trigger = false;
+		});
+		$(document).on("touchend", function(){
+			swipe_trigger = false;
+		});
+
+		function changeSwipePosition(){
+			if (swipe_position < review_img_border) swipe_position = review_img_border;
+			if (swipe_position > (review_block_width + review_img_border)) swipe_position = review_block_width + review_img_border;
+			$(".double_vision .before_after .bottom_layer").css("width", (review_block_width - swipe_position + review_img_border) + "px");
+			$(".double_vision .slider").css("left", swipe_position - review_img_border + "px");
+		}
+	}
 });

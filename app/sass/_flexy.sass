@@ -1,0 +1,150 @@
+.flexy
+	@extend %regular_block
+	.top
+		margin: 0 0 20px 0
+		.left
+			text-align: center
+			.title
+				@extend %block_title
+				margin: 0 0 20px 0
+			p
+				margin: 0 auto
+		.subtitle
+			display: none
+	.swg
+		margin: 0 0 30px 0
+		img
+			margin: 0 0 10px 0
+	.control_and_power
+		display: flex
+		flex-direction: column
+		gap: 25px
+		.control
+			display: flex
+			gap: 40px
+			.info
+				.headline
+					margin: 0 0 10px 0
+				p:not(.headline)
+					font-size: 12px
+					margin: 0 0 15px 0
+					max-width: 120px
+				.light_temp
+					background: linear-gradient(270deg, #FFE587 0%, rgba(247, 232, 182, 0.900015) 18.09%, #FFFFFF 48.8%, rgba(213, 239, 254, 0.730722) 77.81%, #BAE6FF 102.38%)
+					border-radius: 40px
+					padding: 6px 30px
+					width: fit-content
+		.power
+			display: flex
+			gap: 15px
+			.info
+				padding: 15px 0 0 0
+				.headline
+					margin: 0 0 10px 0
+				p:not(.headline)
+					font-size: 12px
+	.bottom
+		img
+			margin: -30px 0 0 0
+			width: 100%
+@media (min-width: 480px)
+	.flexy
+		.top
+			margin: 0 0 40px 0
+			.left
+				p
+					max-width: 360px
+		.swg
+			img
+				margin: 0 0 15px 0
+			p
+				margin: 0 0 40px 0
+		.control_and_power
+			flex-direction: row
+			justify-content: space-between
+			.control
+				width: calc(100% / 442 * 234)
+				gap: 20px
+				.info
+					.light_temp
+						padding: 6px 20px
+			.power
+				width: calc(100% / 442 * 168)
+				position: relative
+				align-items: flex-end
+				.info
+					position: absolute
+					top: 0
+					left: 0
+					padding: 0
+		.bottom
+			img
+				margin: 0
+@media (min-width: 640px)
+	.flexy
+		.control_and_power
+			gap: 40px
+			justify-content: flex-start
+			.control
+				width: auto
+			.power
+				width: auto
+				img
+					padding: 0 0 0 20px
+@media (min-width: 768px)
+	.flexy
+		.bottom
+			img
+				margin: -50px 0 0 0
+@media (min-width: 992px)
+	.flexy
+		.top
+			margin: 0 0 60px 0
+			display: flex
+			justify-content: space-between
+			.left
+				text-align: left
+				.title
+					margin: 0 0 40px 0
+					width: 500px
+				p
+					margin: 0
+			.subtitle
+				display: block
+				text-align: right
+				font-weight: 600
+				font-size: 32px
+				width: 450px
+				align-self: flex-end
+		.swg
+			margin: 0 0 40px 0
+			img
+				margin: 0 0 10px 0
+		.control_and_power
+			gap: 60px
+			.control, .power
+				.info
+					.headline
+						margin: 0 0 15px 0
+		.bottom
+			img
+				margin: -150px 0 0 0
+				position: relative
+@media (min-width: 1230px)
+	.flexy
+		.bottom
+			img
+				margin: -180px 0 0 0
+				position: relative
+@media (min-width: 1600px)
+	.flexy
+		.bottom
+			img
+				margin: -220px 0 0 0
+				position: relative
+@media (min-width: 1920px)
+	.flexy
+		.bottom
+			img
+				margin: -250px 0 0 0
+				position: relative

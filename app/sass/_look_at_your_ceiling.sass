@@ -1,9 +1,8 @@
 .look_at_your_ceiling
-	margin: 0 0 40px 0
+	@extend %regular_block
 	text-align: center
 	.title
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		margin: 0 0 10px 0
 		span
 			display: none
@@ -26,16 +25,13 @@
 					width: 45%
 @media (min-width: 768px)
 	.look_at_your_ceiling
-		margin: 0 0 75px 0
 		.title
 			span
 				display: inline
 @media (min-width: 992px)
 	.look_at_your_ceiling
-		margin: 0 0 100px 0
 		.title
 			text-align: left
-			font-size: 48px
 			max-width: 600px
 			margin: 0 0 20px 0
 		.description

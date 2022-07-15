@@ -18,8 +18,11 @@ body
 	position: relative
 	&.no_scroll
 		overflow: hidden
-	&.modal_active
-		margin: 0 17px 0 0
+
+@media (min-width: 992px)
+	body
+		&.modal_active
+			margin: 0 17px 0 0
 
 button, .button
 	border: 1px solid #23292F
@@ -101,3 +104,30 @@ strong, b
 	src: url("../fonts/Gilroy-Extrabold.ttf")
 	font-weight: 800
 	font-display: swap
+
+%regular_block
+	margin: 0 0 40px 0
+@media (min-width: 768px)
+	%regular_block
+		margin: 0 0 75px 0
+@media (min-width: 992px)
+	%regular_block
+		margin: 0 0 100px 0
+
+%block_title
+	font-size: 28px
+	font-weight: 700
+@media (min-width: 992px)
+	%block_title
+		font-size: 48px
+
+=font($weight, $size)
+	font-weight: $weight
+	font-size: $size
+
+=absolute($top, $right: $top, $bottom: $top, $left: $right)
+	position: absolute
+	top: $top
+	right: $right
+	bottom: $bottom
+	left: $left
