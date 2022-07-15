@@ -1,10 +1,9 @@
 .free_options
-	margin: 0 0 40px 0
+	@extend %regular_block
 	text-align: center
 	.title
 		margin: 0 0 15px 0
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		&.desktop
 			display: none
 	.special_offer
@@ -56,7 +55,6 @@
 			display: none
 @media (min-width: 768px)
 	.free_options
-		margin: 0 0 75px 0
 		.body
 			.right
 				.options
@@ -64,9 +62,7 @@
 						width: calc((100% - 30px)/ 4)
 @media (min-width: 992px)
 	.free_options
-		margin: 0 0 100px 0
 		.title
-			font-size: 48px
 			text-align: left
 			max-width: 800px
 			margin: 0 0 20px 0

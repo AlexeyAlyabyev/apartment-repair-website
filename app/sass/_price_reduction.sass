@@ -1,8 +1,7 @@
 .price_reduction
-	margin: 0 0 40px 0
+	@extend %regular_block
 	.title
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		margin: 0 0 15px 0
 	.body
 		.item
@@ -22,7 +21,6 @@
 				margin: 0 0 20px 0
 @media (min-width:768px)
 	.price_reduction
-		margin: 0 0 75px 0
 		.body
 			display: flex
 			flex-wrap: wrap
@@ -34,9 +32,7 @@
 					margin: 0
 @media (min-width:992px)
 	.price_reduction
-		margin: 0 0 100px 0
 		.title
-			font-size: 48px
 			margin: 0 0 30px 0
 		.body
 			gap: 30px 20px

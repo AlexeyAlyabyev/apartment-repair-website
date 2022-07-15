@@ -1,11 +1,10 @@
 .completed_works
-	margin: 0 0 40px 0
+	@extend %regular_block
 	.top
 		margin: 0 0 20px 0
 		.title
-			font-size: 28px
+			@extend %block_title
 			text-align: center
-			font-weight: 700
 			margin: 0 0 15px 0
 			p
 				display: none
@@ -91,18 +90,13 @@
 			.swiper-wrapper
 				.swiper-slide
 					width: 45%
-@media (min-width: 768px)
-	.completed_works
-		margin: 0 0 75px 0
 @media (min-width: 992px)
 	.completed_works
-		margin: 0 0 100px 0
 		.top
 			margin: 0 0 40px 0
 			display: flex
 			justify-content: space-between
 			.title
-				font-size: 48px
 				text-align: left
 				max-width: 540px
 				margin: 0

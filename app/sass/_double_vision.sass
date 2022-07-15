@@ -1,0 +1,98 @@
+.double_vision
+	@extend %regular_block
+	.title
+		@extend %block_title
+	.body
+		padding: 25px 0 30px 15px
+		.swiper-wrapper
+			.item
+				filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.25))
+				width: 85%
+	.before_after
+		display: none
+@media (min-width: 480px)
+	.double_vision
+		.body
+			.swiper-wrapper
+				.item
+					width: 45%
+@media (min-width: 768px)
+	.double_vision
+		.body
+			.swiper-wrapper
+				.item
+					width: 30%
+@media (min-width: 992px)
+	.double_vision
+		overflow: hidden
+		.title
+			margin: 0 0 25px 0
+			max-width: 700px
+		.body
+			padding: 15px
+			margin: 0 auto 45px auto
+			max-width: 1230px
+			.swiper-wrapper
+				gap: 20px
+				.item
+					filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2))
+					width: calc((100% - 60px) / 4)
+		.before_after
+			display: block
+			position: relative
+			user-select: none
+			.bottom_layer
+				position: absolute
+				top: 0
+				right: 0
+				width: 50%
+				height: 100%
+				object-fit: cover
+				object-position: right
+			p
+				position: absolute
+				left: 20px
+				top: 20px
+				+font(700, 32px)
+			.before_lamp
+				position: absolute
+				left: 20px
+				bottom: 20px
+			.after_lamp
+				position: absolute
+				right: 20px
+				bottom: 20px
+		.slider
+			width: 2px
+			height: 100%
+			background-color: #fff
+			position: absolute
+			top: 0
+			left: calc( 50% - 1px )
+			cursor: pointer
+			.circle
+				width: 100px
+				height: 100px
+				background-color: rgba(255, 255, 255, .5)
+				position: absolute
+				top: calc(50% - 50px)
+				left: calc(50% - 50px)
+				border-radius: 100px
+				display: flex
+				align-items: center
+				justify-content: center
+				gap: 10px
+				&::before, &::after
+					content: ""
+					display: block
+					width: 15px
+					height: 15px
+					border-top: 4px solid #B3B3B3
+					border-right: 4px solid #B3B3B3
+					border-bottom: 3px solid transparent
+					border-left: 3px solid transparent
+					border-radius: 3px
+				&::before
+					transform: rotate(-135deg)
+				&::after
+					transform: rotate(45deg)

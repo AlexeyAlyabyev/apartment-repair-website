@@ -1,9 +1,8 @@
 .clients_trust_us
-	margin: 0 0 40px 0
+	@extend %regular_block
 	text-align: center
 	.title
-		font-size: 28px
-		font-weight: 700
+		@extend %block_title
 		margin: 0 0 15px 0
 	.description
 		margin: 0 0 30px 0
@@ -21,15 +20,10 @@
 	.clients_trust_us
 		.body
 			justify-content: space-between
-@media (min-width: 768px)
-	.clients_trust_us
-		margin: 0 0 75px 0
 @media (min-width: 992px)
 	.clients_trust_us
-		margin: 0 0 100px 0
 		text-align: left
 		.title
-			font-size: 48px
 			margin: 0 0 40px 0
 		.description
 			margin: 0 0 60px 0
