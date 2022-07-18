@@ -192,11 +192,14 @@ $(function(){
 		}
 	});
 
+	//  ПЕРЕПИСАТЬ БЕЗ ТАЙМЕРА ЗАДЕРЖКИ !!!!!!!!!!!!!!!!!!!!!!!!
 	function recalculateWithoutMoving(){
-		square_value = parseInt($(".calc form.mobile .area_by_number input[name='square']").val());
-		final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
-		$(".calc form.mobile .price .value").html(final_price);
-		$(".calc form.mobile input[name='summa']").val(final_price);
+		setTimeout(function(){
+			square_value = parseInt($(".calc form.mobile .area_by_number input[name='square']").val());
+			final_price = parseInt($(".calc form.mobile .ceiling_type input:checked+label").attr("data-price")) * square_value;
+			$(".calc form.mobile .price .value").html(final_price);
+			$(".calc form.mobile input[name='summa']").val(final_price);
+		},50);
 	}
 
 	function recalculateWithMoving(){
@@ -241,7 +244,7 @@ $(function(){
 	});
 
 	$(".calc form.desktop .facture .body label").click(function(){
-		let switchable_class = $(this).siblings("input").eq($(this).index("label")).attr("class");
+		let switchable_class = $(this).siblings("input").eq($(this).index(".facture .body label")).attr("class");
 		$(".calc form.desktop .manufacturer .body input:not(." + switchable_class + ")").addClass("hidden");
 		$(".calc form.desktop .manufacturer .body input." + switchable_class).removeClass("hidden");
 		if ($(".calc form.desktop .manufacturer .body input:checked").hasClass("hidden")) {
@@ -394,8 +397,11 @@ $(function(){
 		let zoomed_img = new Image();
 		let zoomed_img_width, zoomed_img_height;
 
-		
-		if (parent_block.find(".swiper-slide .zoom_in").length) 
+		console.log($(this).parents(".item").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img"));
+
+		if ($(this).parents(".item").length)
+			other_images = $(this).parents(".item").find(".swiper:not(.swiper_thumb)").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
+		else if (parent_block.find(".swiper-slide .zoom_in").length) 
 			other_images = parent_block.find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
 		else if (parent_block.find(".swiper-slide.zoom_in").length) 
 			other_images = parent_block.find(".zoom_in:not(.swiper-slide-duplicate)");
@@ -539,9 +545,7 @@ $(function(){
 			const product_card_slider_thumb = new Swiper('.product_card .swiper_thumb.swiper', {
 				loop: true,
 				spaceBetween: 20,
-				slidesPerView: 4,
-				loopedSlides: 6,
-				touchRatio: 0.2,
+				slidesPerView: "auto",
 				slideToClickedSlide: true,
 			});
 			product_card_slider.controller.control = product_card_slider_thumb;
@@ -650,7 +654,7 @@ $(function(){
 		});
 	}
 
-	if ($(".double_vision").length  && window.innerWidth < 992){
+	if ($(".double_vision").length  && window.innerWidth >= 992){
 		let swipe_trigger = false;
 		let review_img_border = $(".double_vision .before_after").eq(0)[0].offsetLeft;
 		let review_block_width = $(".double_vision .before_after").eq(0)[0].clientWidth;
@@ -659,7 +663,6 @@ $(function(){
 		$(".double_vision .before_after").mousemove(function(e){
 			if (swipe_trigger) {
 				swipe_position = e.originalEvent.clientX;
-				console.log(e.originalEvent.clientX);
 				changeSwipePosition();
 			}
 		});

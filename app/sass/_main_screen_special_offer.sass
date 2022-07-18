@@ -1,5 +1,4 @@
 .main_screen_special_offer
-	// margin: 0 0 50px 0
 	overflow: hidden
 	background: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 100%)
 	.body
@@ -7,6 +6,11 @@
 		padding: 30px 105px 45px 15px
 		position: relative
 		margin: 0 auto
+		p.limited_offer
+			font-size: 24px
+			font-weight: 700
+			color: #eb3323
+			margin: 0 0 15px 0
 		h1
 			font-size: 32px
 			font-weight: 800
@@ -45,25 +49,18 @@
 				background-color: #fff
 				border-radius: 20px
 				box-shadow: 0px 1.98282px 14.8712px rgba(0, 0, 0, 0.15)
-				padding: 10px 20px 17px 0
+				padding: 13px 12px 14px 12px
 				position: relative
-				width: 165px
+				width: 184px
 				transform: translateY(-2px) skew(-20deg, 0)
-				margin: 0 0 0 10px
-				img
-					position: absolute
-					transform: skew(20deg, 0)
-					left: -25px
-					top: -23px
-					width: 100px
+				margin: 0 15px 0 0
 				p
 					transform: skew(20deg, 0)
-					font-size: 14px
-					font-weight: 700
+					font-size: 12px
 					width: fit-content
 					margin: 0 0 0 auto
-					span
-						display: none
+					strong
+						text-transform: uppercase
 		.accurate_calculation
 			font-size: 14px
 			font-weight: 700
@@ -94,9 +91,6 @@
 @media (min-width: 640px)
 	.main_screen_special_offer
 		.body
-			.accurate_calculation
-				span
-					display: inline
 			.image_on_top
 				right: 0
 
@@ -116,19 +110,15 @@
 					font-size: 28px
 			.offer
 				position: absolute
-				left: 310px
-				top: 135px
+				right: 245px
+				top: 140px
 				.red
 					font-size: 16px
 					padding: 8px 30px
 				.fixtures
 					width: 215px
 					p
-						font-size: 20px
-					img
-						width: 127px
-						left: -40px
-						top: -35px
+						font-size: 14px
 			.accurate_calculation
 				font-size: 20px
 				margin: 0 0 25px 0
@@ -144,8 +134,11 @@
 
 @media (min-width: 992px)
 	.main_screen_special_offer
+		background: url(../image/main_screen_special_offer/main_screen_special_offer_back.webp)
+		background-position-x: right
+		background-size: cover
 		.body
-			padding: 73px 15px
+			padding: 28px 15px 73px 15px
 			h1
 				font-size: 48px
 			.subtitle
@@ -158,27 +151,20 @@
 					&:first-child
 						display: inline
 			.offer
-				left: 500px
+				right: 165px
 				top: 170px
 				.red
 					font-size: 24px
 					z-index: 1
 				.fixtures
-					margin: 0 0 0 -40px
-					width: 360px
+					margin: 0 0 0 30px
+					width: 315px
 					padding: 30px 80px 15px 0
 					transform: translateY(-20px) skew(-20deg,0)
-					border-radius: 35px
+					border-radius: 30px
 					p
-						font-size: 24px
-						span
-							display: block
-							font-weight: 400
-							font-size: 16px
-							margin: 5px 0 0 0
-					img
-						left: 5px
-						top: 10px
+						font-size: 16px
+						max-width: 210px
 			.accurate_calculation
 				font-size: 24px
 			.image_on_top
@@ -195,7 +181,7 @@
 @media (min-width: 2560px)
 	.main_screen_special_offer
 		.body
-			padding: 115px 15px
+			padding: 95px 15px
 			h1
 				font-size: 64px
 			.subtitle
