@@ -695,6 +695,7 @@ $(function(){
 		}
 	}
 
+	// Интерктивная карта с точками филиалов на странице контактов
 	if ($(".contacts_map").length) {
 		ymaps.ready(function ()
 		{
@@ -704,7 +705,6 @@ $(function(){
 				controls:['zoomControl']
 			});
 
-			// map.behaviors.disable('scrollZoom');
 			map.behaviors.disable('MultiTouch');
 
 			var marks = [];
@@ -719,6 +719,7 @@ $(function(){
 			marks.forEach(function (element, index){
 				map.geoObjects.add(element);
 				element.events.add('click', function (){
+					console.log(1231);
 					marks.forEach(function (element2){
 						element2.options.set('preset','islands#Icon');
 						element2.options.set('iconColor','#23292f');
@@ -734,7 +735,7 @@ $(function(){
 				$(".contacts_map .map_marks .mark").stop().fadeOut();
 			});
 
-			mark1.events.fire('click');
+			marks[0].events.fire('click');
 		});
 	}
 });
