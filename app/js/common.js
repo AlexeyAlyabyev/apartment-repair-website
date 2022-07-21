@@ -694,4 +694,48 @@ $(function(){
 			$(".double_vision .slider").css("left", swipe_position - review_img_border + "px");
 		}
 	}
+
+	// Интерктивная карта с точками филиалов на странице контактов
+	if ($(".contacts_map").length) {
+		ymaps.ready(function ()
+		{
+			var map = new ymaps.Map("map", {
+				center: [55.708582, 37.605294],
+				zoom: 9,
+				controls:['zoomControl']
+			});
+
+			map.behaviors.disable('MultiTouch');
+
+			var marks = [];
+
+			$(".contacts_map .map_marks .mark").each(function(index){
+				marks[index] = new ymaps.Placemark([$(this).attr("data-latitude"), $(this).attr("data-longitude")], {}, {
+					preset:'islands#Icon',
+					iconColor:'#23292f'
+				});
+			});
+			
+			marks.forEach(function (element, index){
+				map.geoObjects.add(element);
+				element.events.add('click', function (){
+					console.log(1231);
+					marks.forEach(function (element2){
+						element2.options.set('preset','islands#Icon');
+						element2.options.set('iconColor','#23292f');
+					});
+					element.options.set('preset','islands#dotIcon');
+					element.options.set('iconColor','#00926b');
+					$(".contacts_map .map_marks .mark").stop().fadeOut();
+					$(".contacts_map .map_marks .mark").eq(index).stop().fadeIn();
+				});
+			});
+
+			$(".contacts_map .map_marks .mark .cross").click(function(){
+				$(".contacts_map .map_marks .mark").stop().fadeOut();
+			});
+
+			marks[0].events.fire('click');
+		});
+	}
 });

@@ -1,6 +1,7 @@
 <?php
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']) && $_POST['antispam'] == md5($_SERVER['SERVER_NAME'])){
+	if (isset($_POST['name']) && preg_match("/[^а-яё ]/iu", $_POST['name'])) return;
 	$to = "admin@rumexpert.ru";
 	$from = "info@rumexpert.ru";
 

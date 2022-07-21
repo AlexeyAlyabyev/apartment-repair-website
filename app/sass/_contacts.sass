@@ -1,0 +1,115 @@
+.contacts
+	margin: 20px 0 40px 0
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	h2
+		font-weight: 600
+		font-size: 24px
+		text-align: center
+		margin: 0 0 25px 0
+	.body
+		display: flex
+		flex-direction: column
+		gap: 40px
+		.left
+			.info
+				margin: 0 0 30px 0
+				>.item
+					margin: 0 0 15px 0
+					.name
+						font-weight: 700
+						margin: 0 0 10px 0
+					.values
+						display: flex
+						flex-wrap: wrap
+						gap: 15px
+						.item
+							p
+								color: #898989
+								font-size: 12px
+								margin: 0 0 5px 0
+							a
+								font-weight: 700
+			form
+				text-align: center
+				input[type="text"]
+					padding: 20px 45px
+					font-size: 22px
+					width: 100%
+					margin: 0 0 10px 0
+					cursor: auto
+					&::placeholder
+						color: #23292f
+				input[type="submit"]
+					padding: 20px 45px
+					font-size: 22px
+					width: 100%
+		.right
+			background-color: #F5F5F5
+			padding: 15px
+			.headline
+				font-weight: 700
+			p:not(:last-child)
+				margin: 0 0 15px 0
+@media (min-width: 480px)
+	.contacts
+		.body
+			.left
+				form
+					display: flex
+					gap: 15px
+					input[type=text]
+						padding: 20px 25px
+						font-size: 16px
+						margin: 0
+					input[type=submit]
+						padding: 20px 25px
+						font-size: 16px						
+@media (min-width: 768px)
+	.contacts
+		margin: 25px 0 75px 0
+@media (min-width: 992px)
+	.contacts
+		margin: 30px 0 100px 0
+		.title
+			margin: 0 0 40px 0
+		h2
+			font-size: 32px
+			text-align: left
+			margin: 0 0 50px 0
+		.body
+			flex-direction: row
+			justify-content: space-between
+			.left
+				width: calc( 100% / 1230 * 640  )
+				.info
+					margin: 0 0 60px 0
+					padding: 25px 0 0 0
+					>.item
+						display: flex
+						gap: 30px
+						margin: 0 0 30px 0
+						&:first-child
+							margin: 0 0 60px 0
+						&:nth-child(2)
+							.name
+								align-self: flex-end
+						.name
+							width: 150px
+							min-width: 150px
+						.value
+							width: calc( 100% - 150px )
+				form
+					gap: 20px
+					input[type=text]
+						padding: 20px 25px
+						font-size: 22px
+					input[type=submit]
+						padding: 20px 45px
+						font-size: 22px
+			.right
+				width: calc( 100% / 1230 * 480  )
+				padding: 30px
+				p:not(:last-child)
+					margin: 0 0 30px 0

@@ -1,0 +1,74 @@
+.contacts_command
+	@extend %regular_block
+	text-align: center
+	h3
+		font-size: 24px
+		font-weight: 600
+		margin: 0 0 20px 0
+	.department
+		margin: 0 0 40px 0
+		.item
+			margin: 0 0 40px 0
+			h4
+				font-size: 20px
+				font-weight: 600
+				margin: 0 0 20px 0
+			.employee
+				img
+					margin: 0 0 15px 0
+				.info
+					.name
+						font-size: 18px
+						font-weight: 700
+						margin: 0 0 5px 0
+					.post
+						margin: 0 0 10px 0
+					a
+						font-size: 20px
+						font-weight: 600
+@media (min-width: 640px)
+	.contacts_command
+		.department
+			.item
+				.employee
+					display: flex
+					align-items: center
+					gap: 30px
+					text-align: left
+@media (min-width: 768px)
+	.contacts_command
+		.department
+			display: flex
+			gap: 40px
+			.item
+				margin: 0
+				width: calc( 100% - 40px )
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				.employee
+					img
+						width: 35%
+						margin: 0
+@media (min-width: 992px)
+	.contacts_command
+		text-align: left
+		h3
+			font-size: 32px
+			margin: 0 0 40px 0
+		.department
+			gap: 80px
+			margin: 0 0 80px 0
+			.item
+				h4
+					font-size: 24px
+					margin: 0 0 40px 0
+				.employee
+					.info
+						.name
+							font-size: 22px
+							margin: 0 0 10px 0
+						.post
+							margin: 0 0 20px 0
+						a
+							font-size: 24px
