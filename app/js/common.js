@@ -781,4 +781,15 @@ $(function(){
 			}
 		});		
 	}
+
+	if ($(".baguette_bar").length && window.innerWidth < 992){
+		let baguette_bar_swiper = [];
+		$(".baguette_bar .item.swiper").each(function(index){
+			baguette_bar_swiper[index] = new Swiper($(this)[0], {
+				spaceBetween: 15,
+				speed: 500,
+				slidesPerView: "auto",
+			});
+		});
+	}
 });
