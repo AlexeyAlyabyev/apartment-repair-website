@@ -763,4 +763,22 @@ $(function(){
 			cornices_and_niches_slider_thumb.controller.control = cornices_and_niches_slider;
 		}
 	}
+
+	if ($(".slott_parsek").length) {
+		$(".slott_parsek .body .bottom .right .youtube").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: parseInt($(this).css("height")),
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});		
+
+			function play(){
+				player.playVideo();
+			}
+		});		
+	}
 });
