@@ -738,4 +738,29 @@ $(function(){
 			marks[0].events.fire('click');
 		});
 	}
+
+	// Карнизы
+	if ($(".cornices_and_niches").length){
+		const cornices_and_niches_slider = new Swiper('.cornices_and_niches .swiper_main', {
+			speed: 500,
+			slidesPerView: "auto",
+			spaceBetween: 15,
+			loop: true,
+			navigation: {
+				nextEl: '.cornices_and_niches .swiper-button-next',
+				prevEl: '.cornices_and_niches .swiper-button-prev',
+			},
+		});
+		if (window.innerWidth < 992) {
+			const cornices_and_niches_slider_thumb = new Swiper('.cornices_and_niches .swiper_thumb', {
+				speed: 500,
+				loop: true,
+				spaceBetween: 15,
+				slidesPerView: "auto",
+				slideToClickedSlide: true,
+			});
+			cornices_and_niches_slider.controller.control = cornices_and_niches_slider_thumb;
+			cornices_and_niches_slider_thumb.controller.control = cornices_and_niches_slider;
+		}
+	}
 });
