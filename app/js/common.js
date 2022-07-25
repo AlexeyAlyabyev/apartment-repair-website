@@ -34,6 +34,10 @@ $(function(){
 		$(".mobile_menu .contact_us_choise").toggleClass("active");
 	});
 
+	$(document).scroll(function(){
+		$(".mobile_menu .contact_us_choise").removeClass("active");
+	});
+
 	// Плавный скролл по якорным ссылкам
 	$("a[href^='#']").click(function () {
 		var _href = $(this).attr("href");
@@ -790,6 +794,16 @@ $(function(){
 				speed: 500,
 				slidesPerView: "auto",
 			});
+		});
+	}
+
+	// Слайдеры на гланых блоках элементов декора
+	if ($(".decor_main_block").length && window.innerWidth < 992){
+		const decor_slider = new Swiper('.decor_main_block .swiper', {
+			speed: 500,
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: "auto",
 		});
 	}
 });

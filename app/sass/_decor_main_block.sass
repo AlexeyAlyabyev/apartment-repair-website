@@ -1,0 +1,85 @@
+.decor_main_block
+	margin: 20px 0 40px 0
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.description
+		display: none
+	.body
+		padding: 0 0 0 15px
+		.left
+			margin: 0 0 15px 0
+			width: 100%
+			padding: 0 15px 0 0
+			max-height: 50vh
+			object-fit: cover
+			object-position: center
+		.right
+			.swiper-wrapper
+				.swiper-slide
+					width: 85%
+					img
+						width: 100%
+						margin: 0 0 10px 0
+						aspect-ratio: 282/169
+					p
+						font-size: 14px
+@media (min-width: 640px)
+	.decor_main_block
+		.body
+			.right
+				.swiper-wrapper
+					.swiper-slide
+						width: 45%
+@media (min-width: 768px)
+	.decor_main_block
+		margin: 25px 0 75px 0
+@media (min-width: 992px)
+	.decor_main_block
+		margin: 30px 0 100px 0
+		.title
+			margin: 0 0 5px 0
+			max-width: 700px
+		.description
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			margin: 0 0 40px 0
+			gap: 20px
+			.left
+				width: calc(40% - 20px)
+				max-width: 500px
+			.right
+				width: 60%
+				max-width: 590px
+				text-align: right
+				+font(600, 32px)
+				align-self: flex-end
+		.body
+			max-width: 1200px
+			padding: 0 15px
+			margin: 0 auto
+			display: flex
+			gap: 20px
+			.left
+				width: calc(100% / 1160 * 560)
+				margin: 0
+				padding: 0
+				max-height: none
+			.right
+				width: calc(100% / 1160 * 580)
+				.swiper-wrapper
+					flex-wrap: wrap
+					gap: 15px
+					.swiper-slide
+						width: calc((100% - 15px) / 2)
+						height: auto
+@media (min-width: 1230px)
+	.decor_main_block
+		.description
+			.left
+				width: auto
+		.body
+			box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15)
+			padding: 20px
+			background-color: #FBFBFB
