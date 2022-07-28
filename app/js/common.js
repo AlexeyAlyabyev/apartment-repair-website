@@ -806,4 +806,30 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".decor_review_block").length) {
+		$(".decor_review_block .body .bottom .right .youtube").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: parseInt($(this).css("height")),
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});		
+
+			function play(){
+				player.playVideo();
+			}
+		});		
+	}
+
+	if ($(".decor_variants").length && window.innerWidth < 992){
+		const decor_variants = new Swiper('.decor_variants .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
 });
