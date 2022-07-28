@@ -1,0 +1,34 @@
+.partition_in_interier
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	p
+		display: none
+	.body
+		padding: 0 0 0 15px
+		.swiper-wrapper
+			img
+				width: 85%
+@media (min-width: 640px)
+	.partition_in_interier
+		.body
+			.swiper-wrapper
+				img
+					width: 45%
+@media (min-width: 992px)
+	.partition_in_interier
+		.title
+			margin: 0 0 40px 0
+			max-width: 800px
+		p
+			display: block
+			margin: 0 0 40px 0
+		.body
+			padding: 0 15px
+			max-width: 1230px
+			.swiper-wrapper
+				flex-wrap: wrap
+				gap: 20px
+				img
+					width: calc((100% - 40px) / 3)

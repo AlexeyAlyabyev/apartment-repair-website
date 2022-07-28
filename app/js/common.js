@@ -832,4 +832,12 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".partition_in_interier").length && window.innerWidth < 992){
+		const partition_in_interier = new Swiper('.partition_in_interier .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
 });
