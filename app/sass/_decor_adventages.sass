@@ -1,0 +1,27 @@
+.decor_adventages
+	@extend %regular_block
+	display: none
+	.title
+		@extend %block_title
+@media (min-width: 992px)
+	.decor_adventages
+		display: block
+		.title
+			margin: 0 0 30px 0
+			max-width: 760px
+		.body
+			display: flex
+			flex-wrap: wrap
+			gap: 30px 20px
+			.item
+				width: calc((100% - 20px) / 2)
+				display: flex
+				gap: 20px
+				.number
+					+font(700, 52px)
+					color: #F3F2F2
+				.info
+					padding: 30px 0 0 0
+					.headline
+						+font(700, 22px)
+						margin: 0 0 10px 0

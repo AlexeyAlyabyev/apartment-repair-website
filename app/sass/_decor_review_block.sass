@@ -1,0 +1,132 @@
+.decor_review_block
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.description
+		display: none
+	.body
+		.top
+			margin: 0 0 10px 0
+			.item
+				position: relative
+				padding: 60px 0 0 0
+				&:last-child
+					display: none
+				.info
+					position: absolute
+					top: 0
+					left: 0
+					.name
+						font-weight: 600
+						margin: 0 0 10px 0
+					.color
+						font-size: 12px
+						margin: 0 0 10px 0
+					.material
+						font-size: 12px
+						display: flex
+						gap: 10px
+						align-items: center
+		.bottom
+			.left
+				display: none
+			.right
+				.youtube
+					margin: 0 0 10px 0
+					overflow: hidden
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					cursor: pointer
+					width: 100%
+					img
+						transition: .3s
+						width: 100%
+					&::before
+						display: block
+						content: ""
+						width: 60px
+						height: 42px
+						border-radius: 12px
+						background-color: #eb3323
+						position: absolute
+						z-index: 1
+						transition: .3s
+					&::after
+						content: '▲'
+						font-size: 20px
+						color: #fff
+						display: block
+						position: absolute
+						z-index: 3
+						transition: .3s
+						transform: rotate(90deg)
+					&:hover
+						&::before
+							background-color: #23292f
+						img
+							transform: scale(1.05)
+				.small_images
+					display: flex
+					gap: 10px
+					img
+						width: calc((100% - 20px) / 3)
+						&.wide
+							width: calc((100% - 20px) / 3 * 2 + 10px)
+@media (min-width: 480px)
+	.decor_review_block
+		.body
+			.top
+				.item
+					padding: 20px 0 0 0
+					>img
+						width: 100%
+@media (min-width: 768px)
+	.decor_review_block
+		.body
+			.top
+				display: flex
+				gap: 20px
+				.item
+					&:last-child
+						display: block
+@media (min-width: 992px)
+	.decor_review_block
+		.title
+			margin: 0 0 5px 0
+			max-width: 720px
+		.description
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			margin: 0 0 60px 0
+			gap: 20px
+			.left
+				width: calc(44% - 20px)
+				max-width: 560px
+			.right
+				width: 56%
+				max-width: 600px
+				text-align: right
+				+font(600, 32px)
+				align-self: flex-end
+		.body
+			.top
+				gap: 40px
+				.item
+					padding: 0
+					.info
+						.name
+							font-size: 22px
+						.color
+							font-size: 16px
+						.material
+							font-size: 16px
+			.bottom
+				display: flex
+				gap: 10px
+				.left
+					display: block
+					width: calc(100% / 1200 * 596)

@@ -1,0 +1,97 @@
+.decor_variants
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.description
+		display: none
+	.body
+		padding: 0 0 0 15px
+		.swiper-wrapper
+			.item
+				width: 85%
+				.img
+					background-color: #F3F2F2
+					height: 170px
+					text-align: right
+					margin: 0 0 10px 0
+					img
+						object-fit: cover
+						height: 100%
+				.info
+					.headline
+						+font(700, 16px)
+						margin: 0 0 5px 0
+					p:not(.headline)
+						+font(400, 12px)
+						&:not(:last-child)
+							margin: 0 0 10px 0
+@media (min-width: 480px)
+	.decor_variants
+		.body
+			.swiper-wrapper
+				.item
+					position: relative
+					.info
+						position: absolute
+						z-index: 1
+						top: 15px
+						left: 15px
+						max-width: 55%
+					.img
+						height: 200px
+@media (min-width: 640px)
+	.decor_variants
+		.body
+			.swiper-wrapper
+				.item
+					width: 45%
+					.info
+						position: relative
+						max-width: 95%
+						left: auto
+						top: auto
+					.img
+						height: 170px
+@media (min-width: 992px)
+	.decor_variants
+		.title
+			margin: 0 0 5px 0
+			max-width: 560px
+		.description
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			margin: 0 0 60px 0
+			gap: 20px
+			.left
+				width: calc(44% - 20px)
+				max-width: 560px
+			.right
+				width: 56%
+				max-width: 560px
+				text-align: right
+				+font(600, 32px)
+				align-self: flex-end
+		.body
+			max-width: 1230px
+			padding: 0 15px
+			.swiper-wrapper
+				flex-wrap: wrap
+				gap: 20px
+				.item
+					width: calc((100% - 20px) / 2) 
+					.info
+						position: absolute
+						max-width: 57%
+						left: 15px
+						top: 15px
+						.headline
+							+font(700, 22px)
+							margin: 0 0 20px 0
+						p:not(.headline)
+							+font(400, 16px)
+							&:not(:last-child)
+								margin: 0 0 15px 0
+					.img
+						height: 250px
