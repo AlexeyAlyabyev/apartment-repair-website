@@ -866,4 +866,12 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".ceiling_install_advantages").length && window.innerWidth < 992){
+		const ceiling_install_advantages = new Swiper('.ceiling_install_advantages .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
 });
