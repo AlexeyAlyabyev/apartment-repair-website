@@ -840,4 +840,30 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".ceiling_install").length) {
+		$(".ceiling_install .youtube .video").css("height", $(".ceiling_install .youtube .video").css("height"));
+		$(".ceiling_install .youtube .video").click(function(){
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: 'auto',
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});
+
+			function play(){
+				player.playVideo();
+			}
+		});		
+	}
+	if ($(".ceiling_install").length && window.innerWidth < 992){
+		const ceiling_install = new Swiper('.ceiling_install .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
 });
