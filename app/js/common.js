@@ -842,8 +842,8 @@ $(function(){
 	}
 
 	if ($(".ceiling_install").length) {
-		$(".ceiling_install .youtube .video").css("height", $(".ceiling_install .youtube .video").css("height"));
 		$(".ceiling_install .youtube .video").click(function(){
+			$(this).css("height", $(this).css("height"));
 			var player;
 			player = new YT.Player($(this)[0], {
 				height: 'auto',
@@ -874,4 +874,11 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	$(".our_team .filter p").click(function(){
+		$(".our_team .filter p.active").removeClass("active");
+		$(this).addClass("active");
+		$(".our_team .body .item:not(." + $(this).attr("data-class") + ")").hide();
+		$(".our_team .body .item." + $(this).attr("data-class")).show();
+	});
 });

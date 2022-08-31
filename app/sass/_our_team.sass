@@ -1,0 +1,109 @@
+.our_team
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 15px 0
+	.description
+		display: none
+	.filter
+		display: flex
+		justify-content: space-between
+		padding: 10px 0
+		margin: 0 0 30px 0
+		background-color: #F6F6F6
+		overflow-x: scroll
+		&::-webkit-scrollbar-thumb
+			background-color: #ccc
+		&::-webkit-scrollbar
+			-webkit-appearance: none
+			border: 1px solid #EEEEEE
+		&::-webkit-scrollbar:horizontal
+			height: 4px
+		&::-webkit-scrollbar-thumb
+			background-color: rgba(0,0,0,.05)
+		p
+			padding: 3px 13px
+			flex-basis: 100%
+			min-width: max-content
+			text-align: center
+			cursor: pointer
+			position: relative
+			&:not(:last-child)
+				border-right: 1px solid #D3D3D3
+			&::after
+				content: ""
+				display: block
+				position: absolute
+				bottom: -5px
+				width: 0%
+				left: 10%
+				height: 1px
+				background-color: #00926b
+				transition: .3s
+			&:hover, &.active
+				&::after
+					width: 80%
+	.body
+		display: flex
+		flex-wrap: wrap
+		gap: 15px
+		.item
+			width: calc((100% - 20px) / 2)
+			&.installers, &.measurer
+				display: none 
+			&.big
+				width: 100%
+			img
+				margin: 0 0 10px 0
+			.name
+				margin: 0 0 5px 0
+				+font(700, 12px)
+			.post
+				+font(400, 12px)
+
+@media (min-width: 420px)
+	.our_team
+		.body
+			.item
+				.name
+					font-size: 16px
+@media (min-width: 768px)
+	.our_team
+		margin: 25px 0 75px 0
+		.filter
+			overflow: auto
+		.body
+			.item
+				width: calc((100% - 40px) / 3)
+				.name
+					font-size: 18px
+@media (min-width: 992px)
+	.our_team
+		margin: 30px 0 100px 0
+		.title
+			margin: 0 0 5px 0
+		.description
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+			gap: 40px
+			margin: 0 0 40px 0
+			.left
+				max-width: 475px
+			.right
+				+font(600, 32px)
+				max-width: 640px
+				text-align: right
+		.filter
+			margin: 0 0 40px 0
+			width: fit-content
+		.body
+			gap: 40px 20px
+			.item
+				img
+					margin: 0 0 20px 0
+				.name
+					font-size: 22px
+					margin: 0 0 10px 0
+				.post
+					font-size: 16px
