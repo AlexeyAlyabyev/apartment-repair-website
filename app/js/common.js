@@ -401,9 +401,7 @@ $(function(){
 		let zoomed_img = new Image();
 		let zoomed_img_width, zoomed_img_height;
 
-		console.log($(this).parents(".item").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img"));
-
-		if ($(this).parents(".item").length)
+		if ($(this).parents(".item").length && !$(this).parents(".body>.item").length)
 			other_images = $(this).parents(".item").find(".swiper:not(.swiper_thumb)").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
 		else if (parent_block.find(".swiper-slide .zoom_in").length) 
 			other_images = parent_block.find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
@@ -411,7 +409,7 @@ $(function(){
 			other_images = parent_block.find(".zoom_in:not(.swiper-slide-duplicate)");
 		else 
 			other_images = parent_block.find(".zoom_in:not([style='display: none;'])");
-
+		
 		zoomed_img.src = $(this).attr("src").replace('webp', 'jpg');
 		zoomed_img.onload = function(){
 			zoomed_img_height = zoomed_img.height;
