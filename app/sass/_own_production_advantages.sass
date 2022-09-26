@@ -1,0 +1,49 @@
+.own_production_advantages
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.body
+		counter-reset: numbers
+		.item
+			display: flex
+			gap: 10px
+			&:not(:last-child)
+				margin: 0 0 15px 0
+			div
+				padding: 20px 0 0 0
+			&::before
+				counter-increment: numbers
+				content: "0"counter(numbers)
+				color: #F3F2F2
+				+font(700, 36px)
+			.headline
+				+font(600, 18px)
+				margin: 0 0 5px 0
+@media (min-width: 768px)
+	.own_production_advantages
+		.body
+			display: flex
+			flex-wrap: wrap
+			gap: 30px 15px
+			.item
+				width: calc((100% - 15px) / 2)
+				&:not(:last-child)
+					margin: 0
+@media (min-width: 992px)
+	.own_production_advantages
+		.title
+			max-width: 700px
+			margin: 0 0 30px 0
+		.body
+			gap: 30px
+			.item
+				width: calc((100% - 30px) / 2)
+				gap: 20px
+				&::before
+					font-size: 52px
+				div
+					padding: 30px 0 0 0
+				.headline
+					+font(700, 22px)
+					margin: 0 0 10px 0
