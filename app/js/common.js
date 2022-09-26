@@ -721,7 +721,6 @@ $(function(){
 			marks.forEach(function (element, index){
 				map.geoObjects.add(element);
 				element.events.add('click', function (){
-					console.log(1231);
 					marks.forEach(function (element2){
 						element2.options.set('preset','islands#Icon');
 						element2.options.set('iconColor','#23292f');
