@@ -1,0 +1,31 @@
+<div class="repair_form">
+	<div class="wrapper">
+		<div class="left">
+			<picture>
+				<source srcset="image/repair_form/installer.webp" media="(min-width: 768px)">
+				<img src="image/repair_form/installer-mobile.webp" alt="Монтажник натяжных потолков">
+			</picture>
+			<div class="numbers">
+				<p><span>5</span> лет минимальный опыт в натяжных потолках</p>
+				<p><span>3</span> месяца обучения установки по новым технологиям</p>
+			</div>
+		</div>
+		<div class="right">
+			<h2 class="title">Порвали потолок или залили соседи - звоните нам!</h2>
+			<p class="description">Обращайтесь прямо сейчас и наш специалист скажет, что необходимо сделать до приезда монтажной бригады и что делать нельзя. Выезд мастера возможен уже сегодня.</p>
+			<div class="for_free">ЭТО БЕСПЛАТНО!</div>
+			<p class="call_to_us">
+				<span>Звоните</span> <a href="whatsapp://send?phone=74951350036"><img src="image/header/whatsapp.svg" alt="Написать в whatsapp"></a> <a href="tel:+7 (495) 135-00-36">+7 (495) 135-00-36</a>
+			</p>
+			<form action="form_handler.php" method="POST">
+				<input type="hidden" name="goal" value="Ремонт потолка">
+				<input type="hidden" name="page" value="[[*pagetitle]]">
+				<input type="tel" name="phone" placeholder="Ваш телефон" required>
+				<input type="submit" class="button black" name="submit" value="Отправить" required>		
+				[[advertising_data]]
+				[[form_antispam]]
+			</form>
+			<p class="repair_callback">Или оставьте телефон, мы перезвоним в течении 5 минут!</p>
+		</div>
+	</div>
+</div>

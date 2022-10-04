@@ -1,0 +1,53 @@
+.ceiling_install_advantages
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.body
+		padding: 0 0 0 15px
+		.swiper
+			.swiper-wrapper
+				.swiper-slide
+					border: 1px solid rgba(171, 182, 208, .5)
+					width: 85%
+					height: auto
+					position: relative
+					img
+						width: 100%
+					.text
+						padding: 10px
+						.headline
+							+font(600, 18px)
+							margin: 0 0 5px 0
+
+@media (min-width: 640px)
+	.ceiling_install_advantages
+		.body
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						width: 45%
+
+@media (min-width: 768px)
+	.ceiling_install_advantages
+		margin: 25px 0 75px 0
+@media (min-width: 992px)
+	.ceiling_install_advantages
+		margin: 30px 0 100px 0
+		.title
+			max-width: 825px
+			margin: 0 0 40px 0
+		.body
+			max-width: 1230px
+			padding: 0 15px
+			margin: 0 auto
+			.swiper
+				.swiper-wrapper
+					flex-wrap: wrap
+					gap: 20px
+					.swiper-slide
+						width: calc((100% - 40px) / 3)
+						.text
+							padding: 20px 25px
+							.headline
+								margin: 0 0 10px 0

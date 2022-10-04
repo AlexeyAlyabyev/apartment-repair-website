@@ -1,0 +1,57 @@
+.our_production
+	@extend %regular_block
+	padding: 40px 0
+	background-color: #F6F6F6
+	.title
+		@extend %block_title
+		margin: 0 0 15px 0
+	.description
+		display: none
+	.body
+		.item
+			background-color: #fff
+			&:not(:last-child)
+				margin: 0 0 20px 0
+			img
+				width: 100%
+			.text
+				padding: 20px
+				.headline
+					+font(600, 22px)
+					margin: 0 0 10px 0
+@media (min-width: 768px)
+	.our_production
+		.description
+			display: block
+			text-align: center
+			margin: 0 0 20px 0
+		.body
+			.item
+				display: flex
+				justify-content: space-between
+				img
+					max-width: 50%
+					object-fit: cover
+					object-position: 20%
+				&:nth-child(2n)
+					.text
+						order: -1
+@media (min-width: 992px)
+	.our_production
+		padding: 80px 0
+		.title
+			margin: 0 0 40px 0
+		.description
+			max-width: 640px
+			text-align: left
+			margin: 0 0 60px 0
+		.body
+			.item
+				height: 310px
+				align-items: center
+				&:not(:last-child)
+					margin: 0 0 40px 0
+				img
+					height: 100%
+				.text
+					padding: 40px

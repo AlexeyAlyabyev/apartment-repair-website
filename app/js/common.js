@@ -401,9 +401,7 @@ $(function(){
 		let zoomed_img = new Image();
 		let zoomed_img_width, zoomed_img_height;
 
-		console.log($(this).parents(".item").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img"));
-
-		if ($(this).parents(".item").length)
+		if ($(this).parents(".item").length && !$(this).parents(".body>.item").length)
 			other_images = $(this).parents(".item").find(".swiper:not(.swiper_thumb)").find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
 		else if (parent_block.find(".swiper-slide .zoom_in").length) 
 			other_images = parent_block.find(".swiper-slide:not(.swiper-slide-duplicate)").find("img");
@@ -411,7 +409,7 @@ $(function(){
 			other_images = parent_block.find(".zoom_in:not(.swiper-slide-duplicate)");
 		else 
 			other_images = parent_block.find(".zoom_in:not([style='display: none;'])");
-
+		
 		zoomed_img.src = $(this).attr("src").replace('webp', 'jpg');
 		zoomed_img.onload = function(){
 			zoomed_img_height = zoomed_img.height;
@@ -723,7 +721,6 @@ $(function(){
 			marks.forEach(function (element, index){
 				map.geoObjects.add(element);
 				element.events.add('click', function (){
-					console.log(1231);
 					marks.forEach(function (element2){
 						element2.options.set('preset','islands#Icon');
 						element2.options.set('iconColor','#23292f');
@@ -832,4 +829,53 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".partition_in_interier").length && window.innerWidth < 992){
+		const partition_in_interier = new Swiper('.partition_in_interier .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
+
+	if ($(".ceiling_install").length) {
+		$(".ceiling_install .youtube .video").click(function(){
+			$(this).css("height", $(this).css("height"));
+			var player;
+			player = new YT.Player($(this)[0], {
+				height: 'auto',
+				width: 'fit-content',
+				videoId: $(this).attr("data-video"),
+				events: {
+					'onReady': play,
+				}
+			});
+
+			function play(){
+				player.playVideo();
+			}
+		});		
+	}
+	if ($(".ceiling_install").length && window.innerWidth < 992){
+		const ceiling_install = new Swiper('.ceiling_install .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
+
+	if ($(".ceiling_install_advantages").length && window.innerWidth < 992){
+		const ceiling_install_advantages = new Swiper('.ceiling_install_advantages .swiper', {
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: "auto",
+		});
+	}
+
+	$(".our_team .filter p").click(function(){
+		$(".our_team .filter p.active").removeClass("active");
+		$(this).addClass("active");
+		$(".our_team .body .item:not(." + $(this).attr("data-class") + ")").hide();
+		$(".our_team .body .item." + $(this).attr("data-class")).show();
+	});
 });
