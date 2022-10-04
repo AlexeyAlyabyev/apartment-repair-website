@@ -1,7 +1,19 @@
 <?php
 
 if(isset($_POST['submit']) && $_POST['antispam'] == md5($_SERVER['SERVER_NAME'])){
-	if (isset($_POST['name']) && preg_match("/[^а-яё ]/iu", $_POST['name'])) return;
+	if (isset($_POST['name']) && preg_match("/[^а-яё ]/iu", $_POST['name'])) {
+		header('Content-Type: text/html; charset=utf-8');
+		echo "<html><script>alert('Имя необходимо указать на кириллице'); window.location = 'stranicza-ne-najdena.html';</script></html>";
+		return;
+	}
+	if (isset($_POST['phone'])) {
+		$phone = preg_replace('/[\+,\-,\(,\), ]+/', "", $_POST['phone']);
+		if ($phone[strlen($phone)-10] != 9) {
+			header('Content-Type: text/html; charset=utf-8');
+			echo "<html><script>alert('Неправильный формат номера телефона'); window.location = 'stranicza-ne-najdena.html';</script></html>";
+			return;
+		}
+	}
 	$to = "admin@rumexpert.ru";
 	$from = "info@rumexpert.ru";
 
