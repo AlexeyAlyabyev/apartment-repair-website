@@ -1,0 +1,61 @@
+.сooperation_socials
+	@extend %regular_block
+	.title
+		@extend %block_title
+		margin: 0 0 20px 0
+	.body
+		display: flex
+		flex-direction: column
+		gap: 30px
+		.mark_us
+			text-align: center
+			p
+				margin: 0 auto 15px auto
+				max-width: 620px
+			a
+				display: flex
+				flex-wrap: wrap
+				gap: 5px
+				justify-content: center
+				align-items: center
+				+font(600, 18px)				
+				img
+					width: 40px
+		.hashtag
+			text-align: center
+			.text
+				margin: 0 0 10px 0
+			.tag
+				color: #00926b
+				+font(600, 24px)
+
+@media (min-width: 360px)
+	.сooperation_socials
+		.body
+			.mark_us
+				a
+					gap: 10px
+
+@media (min-width: 992px)
+	.сooperation_socials
+		.title
+			margin: 0 0 40px 0
+		.body
+			.mark_us
+				text-align: left
+				p
+					margin: 0 0 15px 0
+				a
+					font-size: 22px
+					justify-content: flex-start
+					gap: 20px
+			.hashtag
+				text-align: left
+				.tag
+					font-size: 36px
+
+@media (min-width: 1230px)
+	.сooperation_socials
+		.body
+			flex-direction: row
+			gap: 85px
