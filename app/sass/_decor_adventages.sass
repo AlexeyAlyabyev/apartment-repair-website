@@ -3,6 +3,8 @@
 	display: none
 	.title
 		@extend %block_title
+	.wrapper
+		position: relative
 @media (min-width: 992px)
 	.decor_adventages
 		display: block
@@ -25,3 +27,16 @@
 					.headline
 						+font(700, 22px)
 						margin: 0 0 10px 0
+		&.msd_translucent, &.bauf
+			.description
+				margin: 45px 0 80px 0
+				max-width: 570px
+			.background_text
+				font-size: 360px
+				line-height: .65
+				font-weight: 900
+				z-index: -1
+				color: #FBFBFB
+				position: absolute
+				top: 60px
+				left: 0
