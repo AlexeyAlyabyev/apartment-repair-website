@@ -5,6 +5,11 @@
 		@extend %block_title
 	.wrapper
 		position: relative
+	&.bauf
+		.stretch_ceiling_info
+			display: none
+		.right
+			display: none
 @media (min-width: 992px)
 	.decor_adventages
 		display: block
@@ -40,3 +45,29 @@
 				position: absolute
 				top: 60px
 				left: 0
+@media (min-width: 1230px)
+	.decor_adventages
+		&.bauf
+			.top
+				display: flex
+				justify-content: space-between
+				.left
+					.stretch_ceiling_info
+						display: block
+						>img
+							margin: 0 0 40px 0
+						.params
+							display: flex
+							gap: 50px
+							img.circle_shadow
+								box-shadow: 2px 2px 8px rgba(142, 153, 178, 0.4)
+								border-radius: 100px
+				.right
+					display: block
+					position: relative
+					img.ceiling_width.circle_shadow
+						position: absolute
+						top: 40px
+						left: 20px
+						box-shadow: 5px 0px 50px rgba(0, 0, 0, 0.15)
+						border-radius: 200px
