@@ -4,8 +4,7 @@ header
 	.transparent,
 	.black,
 	.contact_us_info .work_time,
-	.contact_us_info .phone_and_messengers .phone,
-	.contact_us_info .phone_and_messengers .messengers a:last-of-type
+	.contact_us_info .phone_and_messengers .phone
 		display: none
 	.wrapper
 		display: flex
@@ -23,8 +22,10 @@ header
 			.messengers
 				display: flex
 				gap: 10px
-				a:not(:last-of-type)
+				a
 					width: 35px
+					img
+						width: 100%
 			.burger
 				height: 30px
 				cursor: pointer
@@ -78,12 +79,8 @@ header
 				gap: 10px
 				align-items: center
 				.messengers
-					a:not(:last-of-type)
+					a
 						width: 25px
-					a:last-of-type
-						display: block 
-					a:first-of-type
-						display: none
 				.phone
 					display: block
 					font-size: 24px
