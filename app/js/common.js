@@ -878,4 +878,12 @@ $(function(){
 		$(".our_team .body .item:not(." + $(this).attr("data-class") + ")").hide();
 		$(".our_team .body .item." + $(this).attr("data-class")).show();
 	});
+
+	if ($(".product_related").length && window.innerWidth < 992){
+		const product_related = new Swiper('.product_related .swiper', {
+			spaceBetween: 15,
+			speed: 500,
+			slidesPerView: "auto",
+		});
+	}
 });
