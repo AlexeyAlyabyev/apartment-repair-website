@@ -1,0 +1,158 @@
+.ready_solutions_of_ceilings_types
+	@extend %regular_block
+	.title
+		text-align: center
+		font-size: 28px
+		font-weight: 700
+		margin: 0 0 12px 0
+	.mobile
+		margin: 0 0 40px 0
+		padding: 0 0 0 15px
+		.body
+			.item
+				width: 86%
+				.item_title
+					font-size: 16px
+					font-weight: 600
+					margin: 0 0 20px 0
+				.price_description
+					font-size: 12px
+					margin: 0 0 5px 0
+				.price
+					font-weight: 600
+	.desktop
+		display: none
+
+@media (min-width: 640px)
+	.ready_solutions_of_ceilings_types
+		.mobile
+			.body
+				.item
+					width: 45%
+
+@media (min-width: 768px)
+	.ready_solutions_of_ceilings_types
+		.title
+			font-size: 32px
+			margin: 0 0 20px 0
+		.mobile
+			.body
+				.item
+					.item_title
+						font-size: 20px
+					.price_description
+						font-size: 16px
+					.price
+						font-size: 18px
+
+@media (min-width: 992px)
+	.ready_solutions_of_ceilings_types
+		.title
+			display: flex
+			justify-content: space-between
+			margin: 0 0 40px 0
+			h2
+				text-align: left
+				font-size: 48px
+				min-width: 860px
+				width: 860px
+		.mobile
+			display: none
+		.desktop
+			display: block
+			.types_tumbler
+				display: flex
+				justify-content: space-between
+				background-color: #F6F6F6
+				padding: 10px 0
+				margin: 0 0 30px 0
+				p
+					padding: 3px 13px
+					flex-basis: 100%
+					min-width: fit-content
+					text-align: center
+					cursor: pointer
+					position: relative
+					&:not(:last-child)
+						border-right: 1px solid #D3D3D3
+					&::after
+						content: ""
+						display: block
+						position: absolute
+						bottom: -10px
+						width: 0%
+						left: 10%
+						height: 1px
+						background-color: #00926b
+						transition: .3s
+					&:hover, &.active
+						&::after
+							width: 80%			
+			.item
+				display: flex
+				gap: 20px
+				flex-wrap: wrap
+				&:not(.active)
+					display: none
+				.main_swiper
+					min-width: calc( 100% / 1200 * 707 )
+					width: calc( 100% / 1200 * 707 )
+					line-height: 0
+					.swiper-pagination
+						text-align: right
+						right: 15px
+						bottom: 20px
+						left: auto
+				.item_info
+					display: flex
+					flex-direction: column
+					gap: 40px
+					min-width: calc( 100% / 1200 * 468 )
+					width: calc( 100% / 1200 * 468 )
+					.top
+						h3, h4
+							font-size: 24px
+							font-weight: 600
+							line-height: 1
+						span
+							font-size: 22px
+							color: #B3B3B3
+							margin: 0 0 10px 0
+							display: block
+					.price
+						display: flex
+						align-items: flex-end
+						gap: 5px
+						p
+							font-size: 22px
+						.amount
+							font-size: 24px
+							font-weight: 700
+							line-height: 1
+					button.transparent
+						width: fit-content
+						padding: 20px 45px
+				.swiper_thumb
+					width: 100%
+					min-width: 100%
+					.swiper-slide
+						aspect-ratio: 224 / 147
+						line-height: 0
+						max-width: calc( (100% - 80px) / 5 )
+						margin: 0 20px 0 0
+@media (min-width: 1230px)
+	.ready_solutions_of_ceilings_types
+		.desktop
+			.types_tumbler
+				p
+					font-size: 20px
+			.item
+				.item_info
+					.top
+						h3, h4
+							font-size: 32px
+					.price
+						.amount
+							font-size: 32px
+					button.transparent
+						font-size: 20px

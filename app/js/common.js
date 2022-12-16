@@ -128,6 +128,64 @@ $(function(){
 		}
 	}
 
+	// Слайдер типов потолков на страницах под определенные запросы
+	if ($(".ready_solutions_of_ceilings_types").length) {
+		if (window.innerWidth < 992) {
+			const ready_solutions_of_ceilings_types = new Swiper('.ready_solutions_of_ceilings_types .swiper.mobile', {
+				loop: true,
+				speed: 500,
+				spaceBetween: 15,
+				slidesPerView: "auto",
+			});
+
+		} else {
+			var ready_solutions_of_ceilings_types_thumb = [];
+			var ready_solutions_of_ceilings_types = [];
+			$(".desktop .swiper_thumb").each(function(index){
+				ready_solutions_of_ceilings_types_thumb[index] = new Swiper($(this)[0], {
+					loop: true,
+					spaceBetween: 20,
+					slidesPerView: 5,
+					loopedSlides: 6,
+					touchRatio: 0.2,
+					slideToClickedSlide: true,
+				});
+			});
+			$(".desktop .main_swiper").each(function(index){
+				ready_solutions_of_ceilings_types[index] = new Swiper($(this)[0], {
+					loop: true,
+					spaceBetween: 10,
+					loopedSlides: 6,
+					navigation: {
+						nextEl: $(this).find('.swiper-button-next')[0],
+						prevEl: $(this).find('.swiper-button-prev')[0],
+					},
+					pagination: {
+						el: $(this).find(".swiper-pagination")[0],
+						type: "fraction",
+					},
+				});
+				ready_solutions_of_ceilings_types[index].controller.control = ready_solutions_of_ceilings_types_thumb[index];
+				ready_solutions_of_ceilings_types_thumb[index].controller.control = ready_solutions_of_ceilings_types[index];
+			});
+
+			// Переключение типов потолков на слайдере на главной
+			$(".ready_solutions_of_ceilings_types .desktop .types_tumbler p").click(function(){
+				$(this).siblings("p").removeClass("active");
+				$(this).addClass("active");
+				$(".ready_solutions_of_ceilings_types .desktop .item.active").removeClass("active");
+				$(".ready_solutions_of_ceilings_types .desktop .item").eq($(this).index()).addClass("active");
+			});
+
+			$(".ready_solutions_of_ceilings_types .main_swiper .swiper-button-next, .ready_solutions_of_ceilings_types .main_swiper .swiper-button-prev").click(function(){
+				let solution_name = $(this).parent().find(".swiper-slide-active").attr("data-name");
+				let solution_price = $(this).parent().find(".swiper-slide-active").attr("data-price");
+				$(this).parents(".item").find(".item_info .top h3").text(solution_name);
+				$(this).parents(".item").find(".item_info .price .amount span").text(solution_price);
+			});
+		}
+	}
+
 	// Мобильный калькулятор
 	var range_druggable = false;
 	var circle = $(".calc form.mobile .area_by_slider .filling .circle");
