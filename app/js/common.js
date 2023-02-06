@@ -944,4 +944,13 @@ $(function(){
 			slidesPerView: "auto",
 		});
 	}
+
+	if ($(".faq").length) {
+		$(".faq .filter .items button").click(function(){
+			$(".faq .filter .items button").removeClass("active");
+			$(this).addClass("active");
+			$(".faq .question_answer .item").addClass("disabled");
+			$(".faq .question_answer .item." + $(this).attr("data-faq-filter")).removeClass("disabled");
+		});
+	}
 });

@@ -1,0 +1,104 @@
+.faq
+	@extend %regular_block
+	.title
+		margin: 0 0 20px 0
+		h1
+			@extend %block_title
+		p
+			display: none
+	.filter
+		p
+			+font(600, 18px)
+			margin: 0 0 10px 0
+		.items
+			display: flex
+			justify-content: space-between
+			padding: 10px 0
+			margin: 0 0 30px 0
+			background-color: #F6F6F6
+			overflow-x: auto
+			&::-webkit-scrollbar-thumb
+				background-color: #ccc
+			&::-webkit-scrollbar
+				-webkit-appearance: none
+				border: 1px solid #EEEEEE
+			&::-webkit-scrollbar:horizontal
+				height: 4px
+			&::-webkit-scrollbar-thumb
+				background-color: rgba(0,0,0,.05)
+			button
+				padding: 3px 13px
+				flex-basis: 100%
+				min-width: fit-content
+				text-align: center
+				cursor: pointer
+				position: relative
+				border: none
+				border-radius: 0
+				background: none
+				&:not(:last-child)
+					border-right: 1px solid #D3D3D3
+				&::after
+					content: ""
+					display: block
+					position: absolute
+					bottom: -5px
+					width: 0%
+					left: 10%
+					height: 1px
+					background-color: #00926b
+					transition: .3s
+				&:hover, &.active
+					&::after
+						width: 80%
+	.question_answer
+		display: flex
+		flex-direction: column
+		gap: 20px
+		counter-reset: numbers
+		.item
+			display: flex
+			gap: 10px
+			.text
+				padding: 20px 0 0 0
+				.question
+					+font(600, 18px)
+					margin: 0 0 10px 0
+				.answer
+					font-size: 14px
+			&::before
+				counter-increment: numbers
+				content: counters(numbers, "", decimal-leading-zero)
+				color: #F3F2F2
+				+font(700, 36px)
+			&.disabled
+				display: none
+	@media (min-width: 992px)
+		.title
+			margin: 0 0 40px 0
+			display: flex
+			gap: 30px
+			justify-content: space-between
+			align-items: flex-end
+			h1
+				max-width: 500px
+			p
+				display: block
+				max-width: 530px
+				text-align: right
+		.filter
+			p
+				font-size: 22px
+				margin: 0 0 20px 0
+		.question_answer
+			.item
+				gap: 20px
+				.text
+					padding: 30px 0 0 0
+					.question
+						font-size: 22px
+						margin: 0 0 20px 0
+					.answer
+						font-size: 16px
+				&::before
+					font-size: 52px
